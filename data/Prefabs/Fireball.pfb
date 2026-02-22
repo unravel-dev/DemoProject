@@ -2,7 +2,7 @@
  "entities": [
   {
    "prefab_uid": "50011467-0fdc-9849-9586-0218049419ea",
-   "id": 3,
+   "id": 4194305,
    "components": {
     "has_tag_component": true,
     "tag_component": {
@@ -132,12 +132,12 @@
         }
        }
       ],
-      "lod_limits": [
-       {
-        "min": 0,
-        "max": 100
-       }
-      ]
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
      }
     },
     "has_physics_component": true,
@@ -191,9 +191,21 @@
      "enabled": true,
      "shape": 1,
      "direction": 1,
+     "spawn_location": 0,
+     "simulation_space": 0,
      "max_particles": 1024,
      "emission_lifetime": {
       "count": 2.0
+     },
+     "emission_shape_position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "emission_shape_scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
      },
      "gravity_scale": 0.0,
      "emission_rate": 245.0,
@@ -238,6 +250,22 @@
       "min": 0.0,
       "max": 10.0
      },
+     "lifetime_by_emitter_speed_gradient": {
+      "points": [
+       {
+        "progress": 0.0,
+        "element": 1.0
+       },
+       {
+        "progress": 1.0,
+        "element": 1.0
+       }
+      ]
+     },
+     "lifetime_by_emitter_speed_range": {
+      "min": 0.0,
+      "max": 10.0
+     },
      "lifetime": {
       "count": 0.699999988079071
      },
@@ -277,25 +305,12 @@
        }
       ]
      },
-     "blend_gradient": {
-      "points": [
-       {
-        "progress": 0.0,
-        "element": {
-         "min": 0.800000011920929,
-         "max": 1.0
-        }
-       },
-       {
-        "progress": 1.0,
-        "element": {
-         "min": 0.0,
-         "max": 0.20000000298023225
-        }
-       }
-      ]
+     "initial_scale_3d": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
      },
-     "blend_multiplier": 1.0,
+     "opacity": 1.0,
      "color_gradient": {
       "points": [
        {
@@ -348,6 +363,24 @@
      "position_easing": 0,
      "texture": {
       "uid": "4124b193-3b63-b246-a59b-3cd6ef50d701"
+     },
+     "texture_mode": 0,
+     "render_mode": 0,
+     "blend_mode": 1,
+     "texture_sheet_tiles": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "texture_sheet_cycles": 0.0,
+     "texture_sheet_randomize": false,
+     "loop": true,
+     "start_delay": {
+      "count": 0.0
+     },
+     "align_to_direction": false,
+     "pivot": {
+      "x": 0.5,
+      "y": 0.5
      }
     }
    }
