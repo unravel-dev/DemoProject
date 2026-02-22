@@ -1,0 +1,13 @@
+*.user
+*.cache
+*.csproj
+*.temp
+settings.cfg
+app-script.*
+
+[Bb]uild_*/
+[Bb]uild/
+[Bb]in/
+.vs/
+.vscode/
+.cache/

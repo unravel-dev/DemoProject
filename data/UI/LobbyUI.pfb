@@ -1,0 +1,296 @@
+{
+ "entities": [
+  {
+   "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
+   "id": 1048579,
+   "components": {
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "LobbyUI",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "5100a106-231b-8840-b67e-df42df315363"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0,
+       "w": 1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "00000000-0000-0000-0000-000000000000",
+      "id": 4294967295
+     },
+     "children": [
+      {
+       "prefab_uid": "af8efd56-6ba6-c946-aefb-45bbcc79cff5",
+       "id": 1048580
+      },
+      {
+       "prefab_uid": "f0be3f9a-2578-484e-9862-596215a6c9a9",
+       "id": 1048581
+      },
+      {
+       "prefab_uid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+       "id": 1048582
+      }
+     ],
+     "active": true
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "LobbyUI",
+       "MainMenu": {
+        "flags": 2,
+        "prefab_uid": "00000000-0000-0000-0000-000000000000",
+        "id": 4294967295
+       },
+       "SettingsMenu": {
+        "flags": 2,
+        "prefab_uid": "00000000-0000-0000-0000-000000000000",
+        "id": 4294967295
+       },
+       "GameScene": {
+        "uid": "1da1116f-307c-fd49-8002-81a794aa83d9"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "prefab_uid": "af8efd56-6ba6-c946-aefb-45bbcc79cff5",
+   "id": 1048580,
+   "components": {
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "MainMenu",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "af8efd56-6ba6-c946-aefb-45bbcc79cff5"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0,
+       "w": 1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
+      "id": 1048579
+     },
+     "children": [],
+     "active": true
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "MainMenu"
+      }
+     ]
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "d3f75e99-1d69-4e47-96d8-9da797deda18"
+     }
+    }
+   }
+  },
+  {
+   "prefab_uid": "f0be3f9a-2578-484e-9862-596215a6c9a9",
+   "id": 1048581,
+   "components": {
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "SettingsMenu",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "f0be3f9a-2578-484e-9862-596215a6c9a9"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0,
+       "w": 1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
+      "id": 1048579
+     },
+     "children": [],
+     "active": false
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "SettingsMenu"
+      }
+     ]
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
+     }
+    }
+   }
+  },
+  {
+   "prefab_uid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+   "id": 1048582,
+   "components": {
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "BackgroundMusicSource",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0,
+       "w": 1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
+      "id": 1048579
+     },
+     "children": [],
+     "active": true
+    },
+    "has_audio_source_component": true,
+    "audio_source_component": {
+     "auto_play": true,
+     "loop": true,
+     "volume": 0.37299999594688418,
+     "pitch": 1.0,
+     "volume_rolloff": 0.0,
+     "range": {
+      "min": 1.0,
+      "max": 20.0
+     },
+     "clip": {
+      "uid": "c3015e55-b5cc-3c4c-a695-821016c5d381"
+     }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0"
+}

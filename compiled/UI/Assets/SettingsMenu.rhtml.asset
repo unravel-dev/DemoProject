@@ -1,0 +1,79 @@
+<rml>
+  <head>
+    <title>Settings Menu</title>
+    <link type="text/rcss" href="engine:/data/ui/rml.rcss" />
+    <link type="text/rcss" href="CommonMenu.rcss" />
+    <link type="text/rcss" href="SettingsMenu.rcss" />
+  </head>
+
+  <body id="body" class="theme-dark">
+    <div class="menu-container menu-container--top menu-container--scrollable">
+      
+      <!-- Settings Title -->
+      <header class="menu-header menu-header--medium">
+        <h1 id="settings_title" class="menu-title menu-title--medium">Settings</h1>
+        <div class="menu-subtitle menu-subtitle--medium">Configure your game preferences</div>
+      </header>
+
+      <!-- Settings Content -->
+      <main class="settings-content">
+        
+        <!-- Audio Settings Section -->
+        <section class="settings-section">
+          <h2 class="section-title">Audio</h2>
+          
+          <div class="setting-item">
+            <label id="volume_label" class="setting-label">Volume: 100%</label>
+            <div class="slider-container">
+              <input id="volume_slider" type="range" 
+                     min="0" max="1" step="0.01" value="1.0" />
+              <div class="slider-track"></div>
+            </div>
+          </div>
+          
+        </section>
+
+        <!-- Graphics Settings Section -->
+        <section class="settings-section">
+          <h2 class="section-title">Graphics</h2>
+          
+          <div class="setting-item">
+            <label id="graphics_quality_label" class="setting-label">Graphics Quality</label>
+            <div class="dropdown-container">
+              <select id="graphics_quality_dropdown" class="graphics-dropdown">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high" selected>High</option>
+                <option value="ultra">Ultra</option>
+              </select>
+            </div>
+          </div>
+          
+        </section>
+
+      </main>
+
+      <!-- Settings Menu Buttons -->
+      <nav class="settings-nav">
+        <div class="settings-buttons">
+          <button id="apply_btn" class="menu-btn menu-btn--medium menu-btn-primary">
+            <span class="btn-icon"></span>
+            <span class="btn-text">Apply</span>
+          </button>
+          
+          <button id="back_btn" class="menu-btn menu-btn--medium menu-btn-secondary">
+            <span class="btn-icon"></span>
+            <span class="btn-text">Back</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Footer Info -->
+      <footer class="menu-footer">
+        <div class="version-info">Settings Menu</div>
+        <div class="copyright">Changes are saved automatically</div>
+      </footer>
+
+    </div>
+  </body>
+</rml>

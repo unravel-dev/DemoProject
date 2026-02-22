@@ -1,0 +1,64 @@
+{
+ "material": {
+  "polymorphic_id": 2147483649,
+  "polymorphic_name": "pbr_material",
+  "ptr_wrapper": {
+   "id": 2147483649,
+   "data": {
+    "base_type": {
+     "cull_type": 2
+    },
+    "base_color": {
+     "r": 1.0,
+     "g": 1.0,
+     "b": 1.0,
+     "a": 1.0
+    },
+    "subsurface_color": {
+     "r": 0.0,
+     "g": 0.0,
+     "b": 0.0,
+     "a": 0.800000011920929
+    },
+    "emissive_color": {
+     "r": 0.0,
+     "g": 0.0,
+     "b": 0.0,
+     "a": 1.0
+    },
+    "surface_data": {
+     "x": 1.0,
+     "y": 1.0,
+     "z": 1.0,
+     "w": 0.25
+    },
+    "tiling": {
+     "x": 1.0,
+     "y": 1.0
+    },
+    "dither_threshold": {
+     "x": 0.5,
+     "y": 0.0
+    },
+    "color_map": {
+     "uid": "e7f57158-1795-f345-a3e6-fa4041ec2950"
+    },
+    "normal_map": {
+     "uid": "9484a241-fb3c-6b49-8f5b-b853a4b6c2a8"
+    },
+    "roughness_map": {
+     "uid": "8218cfd6-c00e-d84a-a080-22052563f8d9"
+    },
+    "metalness_map": {
+     "uid": "8218cfd6-c00e-d84a-a080-22052563f8d9"
+    },
+    "emissive_map": {
+     "uid": "00000000-0000-0000-0000-000000000000"
+    },
+    "ao_map": {
+     "uid": "8218cfd6-c00e-d84a-a080-22052563f8d9"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,356 @@
+/* ========================================
+   COMMON MENU STYLES
+   Shared styling for all menu interfaces
+   ======================================== */
+
+/* ---------- Theme Base Styles ---------- */
+body.theme-dark {
+  font-size: 18px;
+  color: #e9eef3;
+  background-color: rgba(15, 20, 26, 200);
+  width: 100%;
+  height: 100%;
+}
+
+body.theme-light {
+  font-size: 18px;
+  color: #2d3748;
+  background-color: #f7fafc;
+}
+
+/* ---------- Unified Container System ---------- */
+.menu-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Container Layout Modifiers */
+.menu-container--centered {
+  justify-content: center;
+}
+
+.menu-container--top {
+  justify-content: flex-start;
+}
+
+.menu-container--scrollable {
+  overflow-y: auto;
+}
+
+/* ---------- Unified Header System ---------- */
+.menu-header {
+  /* was: animation: fade-in-down 1s ease-out; */
+  animation: 1s cubic-out fade-in-down;
+
+}
+
+/* Header Size Modifiers */
+.menu-header--large {
+  margin-bottom: 48px;
+}
+
+.menu-header--medium {
+  margin-bottom: 32px;
+}
+
+/* ---------- Unified Title System ---------- */
+.menu-title {
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  color: #2a73ff;
+  font-effect: shadow(0px 2px #00000080);
+}
+
+body.theme-light .menu-title {
+  color: #3182ce;
+  font-effect: shadow(0px 2px #0000001a);
+}
+
+/* Title Size Modifiers */
+.menu-title--large {
+  font-size: 48px;
+}
+
+.menu-title--medium {
+  font-size: 42px;
+}
+
+/* ---------- Unified Subtitle System ---------- */
+.menu-subtitle {
+  color: #a9bbcc;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+body.theme-light .menu-subtitle {
+  color: #4a5568;
+}
+
+/* Subtitle Size Modifiers */
+.menu-subtitle--large {
+  font-size: 18px;
+}
+
+.menu-subtitle--medium {
+  font-size: 16px;
+}
+
+/* ---------- Menu Navigation Base ---------- */
+.menu-nav {
+  margin-bottom: 48px;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 320px;
+  align-items: center;
+}
+
+/* ---------- Unified Button System ---------- */
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color border-color color transform 0.3s cubic-out;
+  border-width: 2px;
+  border-color: transparent;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+/* Button Size Modifiers */
+.menu-btn--large {
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 18px;
+  min-height: 60px;
+  width: 280px;
+}
+
+.menu-btn--medium {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  min-height: 50px;
+  min-width: 120px;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  font-effect: outline(2px #2a73ff);
+  mask-image: horizontal-gradient(#0000 #000f);
+}
+
+.menu-btn:active,
+.menu-btn.clicked {
+  transform: scale(0.95);
+  decorator: shader("creation");
+
+}
+
+.btn-icon {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-text {
+  display: inline-block;
+}
+
+/* Button Content Size Modifiers */
+.menu-btn--large .btn-icon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.menu-btn--large .btn-text {
+  font-size: 18px;
+}
+
+.menu-btn--medium .btn-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.menu-btn--medium .btn-text {
+  font-size: 16px;
+}
+
+/* ---------- Button Variants ---------- */
+
+/* Primary Button (Blue) */
+.menu-btn-primary {
+  background-color: #2a73ff;
+  color: #ffffff;
+  border-color: #2a73ff;
+  box-shadow: 0 4px 12px #2a73ff4d;
+}
+
+.menu-btn-primary:hover {
+  background-color: #1e5ce6;
+  box-shadow: 0 6px 20px #2a73ff66;
+}
+
+.menu-btn-primary:active,
+.menu-btn-primary.clicked {
+  background-color: #1a52d9;
+  box-shadow: 0 2px 8px #2a73ff4d;
+}
+
+/* Secondary Button (Gray) */
+.menu-btn-secondary {
+  background-color: #2a3a4d;
+  color: #e9eef3;
+  border-color: #3a4a5d;
+  box-shadow: 0 4px 12px #00000033;
+}
+
+.menu-btn-secondary:hover {
+  background-color: #3a4a5d;
+  border-color: #4a5a6d;
+  box-shadow: 0 6px 20px #0000004d;
+}
+
+.menu-btn-secondary:active,
+.menu-btn-secondary.clicked {
+  background-color: #1f2d3e;
+  box-shadow: 0 2px 8px #00000033;
+}
+
+/* Danger Button (Red) */
+.menu-btn-danger {
+  background-color: #e53e3e;
+  color: #ffffff;
+  border-color: #e53e3e;
+  box-shadow: 0 4px 12px #e53e3e4d;
+}
+
+.menu-btn-danger:hover {
+  background-color: #c53030;
+  box-shadow: 0 6px 20px #e53e3e66;
+}
+
+.menu-btn-danger:active,
+.menu-btn-danger.clicked {
+  background-color: #b91c1c;
+  box-shadow: 0 2px 8px #e53e3e4d;
+}
+
+/* ---------- Light Theme Button Overrides ---------- */
+body.theme-light .menu-btn-secondary {
+  background-color: #ffffff;
+  color: #2d3748;
+  border-color: #cbd5e0;
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+body.theme-light .menu-btn-secondary:hover {
+  background-color: #f7fafc;
+  border-color: #a0aec0;
+  box-shadow: 0 6px 20px #00000026;
+}
+
+/* ---------- Menu Footer ---------- */
+.menu-footer {
+  color: #6b7280;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.7;
+  /* was: animation: fade-in-up 1s ease-out 0.5s both; */
+  animation: 1s 0.5s cubic-out fade-in-up;
+}
+
+.version-info {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+body.theme-light .menu-footer {
+  color: #4a5568;
+}
+
+/* ---------- Common Animations ---------- */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Common Button Entrance Animations ---------- */
+.menu-btn:nth-child(1) { 
+    /* was: animation: fade-in-left 0.6s cubic-out 0.2s both; */
+  animation: 0.6s 0.2s cubic-out fade-in-left;
+}
+.menu-btn:nth-child(2) { 
+  animation: 0.6s 0.4s cubic-out fade-in-left;
+}
+.menu-btn:nth-child(3) { 
+  animation: 0.6s 0.6s cubic-out fade-in-left;
+}
+
+/* ---------- Responsive Design Base ---------- */
+.menu-container {
+  max-width: 100%;
+}
+
+.menu-buttons {
+  max-width: 90vw;
+}
+
+.menu-btn {
+  max-width: 100%;
+}
+
+.menu-btn--large {
+  min-width: 200px;
+}
+
+.menu-btn--medium {
+  min-width: 100px;
+}

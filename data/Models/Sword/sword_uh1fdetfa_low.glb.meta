@@ -1,0 +1,33 @@
+{
+ "meta": {
+  "type": ".glb",
+  "uid": "43ddf644-be49-3244-a401-943912bb3006",
+  "importer": {
+   "polymorphic_id": 2147483649,
+   "polymorphic_name": "mesh_importer_meta",
+   "ptr_wrapper": {
+    "id": 2147483649,
+    "data": {
+     "base_type": {},
+     "model": {
+      "weld_vertices": true,
+      "optimize_meshes": true,
+      "split_large_meshes": true,
+      "find_degenerates": true,
+      "find_invalid_data": true,
+      "generate_lods": true,
+      "lod_target_error": 0.009999999776482582
+     },
+     "rig": {},
+     "animations": {
+      "import_animations": true
+     },
+     "materials": {
+      "import_materials": true,
+      "remove_redundant_materials": true
+     }
+    }
+   }
+  }
+ }
+}

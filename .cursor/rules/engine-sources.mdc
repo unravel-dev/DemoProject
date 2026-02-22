@@ -1,0 +1,16 @@
+---
+alwaysApply: true
+---
+
+The engine source files are located in the parent data folder of the engine-script.dll specified in the .csproj file.
+You can use any public function and class defined there.
+Try to use and find the provided utilities from the engine like math, random, physics etc.
+Enitiy is a struct and cannot be compared to null. Either use IsValid() or castable to bool operator. if(entity) or if(!entity)
+
+Do not create or modify real assets like prefabs and meta files.
+
+When writing or modifyign rcss files do not use soild keyword.
+Only use RmlUi supported properties described in https://mikke89.github.io/RmlUiDoc/pages/rcss/property_index.html and https://mikke89.github.io/RmlUiDoc/pages/rcss/font_effects.html and https://mikke89.github.io/RmlUiDoc/pages/rcss/filters.html
+
+Ahe alpha value of colors in rcss is not 0-1 but 0-255.
+In .rcss files always use dp (density-independent pixels) instead of px.

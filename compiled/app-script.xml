@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>app-script</name>
+    </assembly>
+    <members>
+        <member name="T:MainMenu">
+             <summary>
+             Main Menu script that handles the primary navigation buttons.
+             Uses LobbyUI for centralized navigation instead of direct menu manipulation.
+             Now inherits from BaseMenuController to eliminate code duplication.
+             </summary>
+            </member>
+        <member name="M:MainMenu.OnPlayButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Play button click - starts the game.
+             </summary>
+            </member>
+        <member name="M:MainMenu.OnSettingsButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Settings button click - opens settings menu.
+             </summary>
+            </member>
+        <member name="M:MainMenu.OnExitButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Exit button click - quits the application.
+             </summary>
+            </member>
+        <member name="M:Arrow.OnCreate">
+             <summary>
+             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+             It only gets called once on each script, and only after other objects are initialised.
+             This means that it is safe to create references to other game objects and components in OnCreate.
+             </summary>
+            </member>
+        <member name="M:Arrow.OnStart">
+             <summary>
+             Start is called once, before any Update methods and after OnCreate.
+             It works in much the same way as OnCreate, with a few key differences.
+             Unlike OnCreate, Start will not be called if the script is disabled.
+             </summary>
+            </member>
+        <member name="M:CharacterController.ProcessFootIK(Unravel.Core.Entity,System.Single@,System.Single,Vector3@,System.Single@,System.Single@)">
+             <summary>
+             Processes IK for an individual foot:
+             - Updates the foot IK blend value based on whether the character is grounded.
+             - Computes an effective blend factoring in a height blend (to fade out IK when the foot is raised).
+             - Raycasts from above the animated foot position to find the ground.
+             - If a hit is found, computes the target position and applies IK with the appropriate blend.
+             Returns true if a valid IK target was found.
+             </summary>
+             <param name="foot">The foot Entity to process IK for.</param>
+             <param name="footIKBlend">A reference to that foot’s blend value.</param>
+             <param name="dt">Delta time for the update.</param>
+             <param name="ikTarget">The computed IK target in world space.</param>
+             <param name="effectiveBlend">The effective IK blend (weight) after factoring in height differences.</param>
+             <param name="footOffset">The vertical offset computed for hip adjustment.</param>
+             <returns>True if the raycast hit (and thus IK is applied), false otherwise.</returns>
+            </member>
+        <member name="M:CharacterController.ApplyFeetIK(System.Single)">
+             <summary>
+             Calls ProcessFootIK for each foot and then computes a Hips offset from the results.
+             </summary>
+            </member>
+        <member name="M:CharacterController.ApplySpineIK(System.Single)">
+             <summary>
+             (Optional) Adjusts the Spine orientation when the character is aiming.
+             This mimics the Python callback that aligns the Spine to the camera forward.
+             </summary>
+            </member>
+        <member name="M:JumpPlatform.OnCreate">
+             <summary>
+             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+             It only gets called once on each script, and only after other objects are initialised.
+             This means that it is safe to create references to other game objects and components in OnCreate.
+             </summary>
+            </member>
+        <member name="M:JumpPlatform.OnStart">
+             <summary>
+             Start is called once, before any Update methods and after OnCreate.
+             It works in much the same way as OnCreate, with a few key differences.
+             Unlike OnCreate, Start will not be called if the script is disabled.
+             </summary>
+            </member>
+        <member name="M:TextTest.OnCreate">
+             <summary>
+             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+             It only gets called once on each script, and only after other objects are initialised.
+             This means that it is safe to create references to other game objects and components in OnCreate.
+             </summary>
+            </member>
+        <member name="M:TextTest.OnStart">
+             <summary>
+             Start is called once, before any Update methods and after OnCreate.
+             It works in much the same way as OnCreate, with a few key differences.
+             Unlike OnCreate, Start will not be called if the script is disabled.
+             </summary>
+            </member>
+        <member name="T:BaseMenu">
+             <summary>
+             Base class for all menu controllers that eliminates code duplication.
+             Handles common UI setup, button event registration, and audio callbacks.
+             Child classes only need to implement their specific button actions.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.CacheUIElements">
+             <summary>
+             Cache UI elements. Override in child classes to cache specific elements.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.CountValidElements">
+             <summary>
+             Count valid cached elements for logging. Override in child classes.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.SetupInitialUI">
+             <summary>
+             Set up initial UI state. Override in child classes for specific setup.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.RegisterEventHandlers">
+             <summary>
+             Register event handlers. Override in child classes to register specific buttons.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.GetTitleElementId">
+             <summary>
+             Get the ID of the title element for this menu. Override in child classes.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.RegisterButtonEvents(Unravel.Core.UIElement,System.String,System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent})">
+             <summary>
+             Register all standard button events for a button element.
+             </summary>
+             <param name="button">The button element to register events for</param>
+             <param name="buttonName">Name for logging purposes</param>
+             <param name="onDown">Mouse down handler</param>
+             <param name="onClick">Click handler</param>
+             <param name="onHover">Mouse hover handler</param>
+             <param name="onLeave">Mouse leave handler</param>
+             <param name="onRelease">Mouse release handler</param>
+            </member>
+        <member name="M:BaseMenu.OnButtonDown(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
+             <summary>
+             Standard button down handler with audio feedback.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.OnButtonHover(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
+             <summary>
+             Standard button hover handler with audio feedback.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.OnButtonLeave(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
+             <summary>
+             Standard button leave handler.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.OnButtonRelease(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
+             <summary>
+             Standard button release handler.
+             </summary>
+            </member>
+        <member name="M:BaseMenu.PlayButtonClickSound(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent)">
+             <summary>
+             Plays a button click sound effect.
+             Common callback used by all button click handlers.
+             </summary>
+             <param name="buttonElement">The button element that was clicked</param>
+             <param name="ev">The pointer event containing click information</param>
+            </member>
+        <member name="M:BaseMenu.PlayButtonHoverSound(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent)">
+             <summary>
+             Plays a button hover sound effect.
+             Common callback used by all button hover handlers.
+             </summary>
+             <param name="buttonElement">The button element that was hovered</param>
+             <param name="ev">The pointer event containing hover information</param>
+            </member>
+        <member name="T:AudioPaths">
+             <summary>
+             Audio file path constants to avoid duplication and make changes easier.
+             </summary>
+            </member>
+        <member name="T:GameMenu">
+             <summary>
+             Game Menu script that handles in-game navigation buttons.
+             Uses GameUI for centralized navigation instead of direct menu manipulation.
+             Now inherits from BaseMenuController to eliminate code duplication.
+             </summary>
+            </member>
+        <member name="M:GameMenu.OnResumeButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Resume button click - resumes the game via GameUI.
+             </summary>
+            </member>
+        <member name="M:GameMenu.OnSettingsButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Settings button click - opens settings menu via GameUI.
+             </summary>
+            </member>
+        <member name="M:GameMenu.OnQuitButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Quit button click - returns to main menu via GameUI.
+             </summary>
+            </member>
+        <member name="T:GameUI">
+             <summary>
+             Game UI controller that handles in-game UI and menu functionality.
+             Manages ESC key input, game menu, and in-game UI elements.
+             Focused specifically on gameplay scene functionality.
+             </summary>
+            </member>
+        <member name="M:GameUI.OnCreate">
+             <summary>
+             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+             It only gets called once on each script, and only after other objects are initialised.
+             This means that it is safe to create references to other game objects and components in OnCreate.
+             </summary>
+            </member>
+        <member name="M:GameUI.OnStart">
+             <summary>
+             Start is called once, before any Update methods and after OnCreate.
+             It works in much the same way as OnCreate, with a few key differences.
+             Unlike OnCreate, Start will not be called if the script is disabled.
+             </summary>
+            </member>
+        <member name="M:GameUI.FindMenuReferences">
+             <summary>
+             Automatically find menu entity references if not manually assigned.
+             </summary>
+            </member>
+        <member name="M:GameUI.ValidateReferences">
+             <summary>
+             Validate that required references are set.
+             </summary>
+            </member>
+        <member name="M:GameUI.ToggleGameMenu">
+             <summary>
+             Toggle the game menu on/off and handle pause state.
+             </summary>
+            </member>
+        <member name="M:GameUI.OpenGameMenu">
+             <summary>
+             Open the game menu and pause the game.
+             </summary>
+            </member>
+        <member name="M:GameUI.CloseGameMenu">
+             <summary>
+             Close the game menu and resume the game.
+             </summary>
+            </member>
+        <member name="M:GameUI.GoToMainMenu">
+             <summary>
+             Navigate to the main menu (used by quit buttons).
+             </summary>
+            </member>
+        <member name="M:GameUI.ResumeGame">
+             <summary>
+             Resume the game (used by resume button).
+             </summary>
+            </member>
+        <member name="M:GameUI.OpenSettings">
+             <summary>
+             Open settings menu from game menu.
+             </summary>
+            </member>
+        <member name="M:GameUI.CloseSettings">
+             <summary>
+             Close settings and return to game menu.
+             </summary>
+            </member>
+        <member name="M:GameUI.QuitApplication">
+             <summary>
+             Quit the application (used by exit buttons).
+             </summary>
+            </member>
+        <member name="M:GameUI.ShowMenu(Unravel.Core.Entity,Unravel.Core.Entity)">
+             <summary>
+             Show a specific menu and hide others (internal helper method).
+             </summary>
+             <param name="menuToShow">The menu entity to show</param>
+             <param name="menuToHide">The menu entity to hide</param>
+            </member>
+        <member name="M:GameUI.FindInScene">
+             <summary>
+             Static helper method to find the GameUI controller in the current scene.
+             Can be used by menus to find the game controller.
+             </summary>
+            </member>
+        <member name="T:LobbyUI">
+             <summary>
+             Lobby UI controller that handles main menu navigation and scene transitions.
+             Manages the main menu, settings menu, and transitions to the game scene.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.OnCreate">
+             <summary>
+             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+             It only gets called once on each script, and only after other objects are initialised.
+             This means that it is safe to create references to other game objects and components in OnCreate.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.OnStart">
+             <summary>
+             Start is called once, before any Update methods and after OnCreate.
+             It works in much the same way as OnCreate, with a few key differences.
+             Unlike OnCreate, Start will not be called if the script is disabled.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.FindMenuReferences">
+             <summary>
+             Automatically find menu entity references if not manually assigned.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.ValidateReferences">
+             <summary>
+             Validate that required references are set.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.StartGame">
+             <summary>
+             Start the game (used by play button).
+             </summary>
+            </member>
+        <member name="M:LobbyUI.OpenSettings">
+             <summary>
+             Open settings menu from main menu.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.CloseSettings">
+             <summary>
+             Close settings and return to main menu.
+             </summary>
+            </member>
+        <member name="M:LobbyUI.QuitApplication">
+             <summary>
+             Quit the application (used by exit button).
+             </summary>
+            </member>
+        <member name="M:LobbyUI.ShowMenu(Unravel.Core.Entity,Unravel.Core.Entity)">
+             <summary>
+             Show a specific menu and hide others (internal helper method).
+             </summary>
+             <param name="menuToShow">The menu entity to show</param>
+             <param name="menuToHide">The menu entity to hide</param>
+            </member>
+        <member name="M:LobbyUI.FindInScene">
+             <summary>
+             Static helper method to find the LobbyUI controller in the current scene.
+             Can be used by menus to find the lobby controller.
+             </summary>
+            </member>
+        <!--FIXME: Invalid documentation markup was found for member T:SettingsMenu-->
+        <member name="M:SettingsMenu.SetPreviousMenu(Unravel.Core.Entity)">
+             <summary>
+             Set the previous menu for proper back navigation.
+             Called by GameUI when opening settings.
+             </summary>
+             <param name="fromMenu">The menu we came from</param>
+            </member>
+        <member name="M:SettingsMenu.SetGraphicsPresets(SettingsMenu.GraphicsPreset[])">
+             <summary>
+             Set custom graphics presets that will replace the HTML defaults.
+             Call this method before the menu is displayed to populate the dropdown dynamically.
+             </summary>
+             <param name="presets">Array of graphics presets to display</param>
+            </member>
+        <member name="M:SettingsMenu.GetGraphicsPresets">
+             <summary>
+             Get the current graphics presets (either custom or default HTML ones).
+             </summary>
+             <returns>Array of current graphics presets</returns>
+            </member>
+        <member name="M:SettingsMenu.GetDefaultGraphicsPresets">
+             <summary>
+             Get the default graphics presets that match the HTML options.
+             </summary>
+             <returns>Array of default graphics presets</returns>
+            </member>
+        <member name="M:SettingsMenu.OnVolumeSliderInput(Unravel.Core.UISliderEvent)">
+             <summary>
+             Handles the volume slider input event (real-time updates while dragging).
+             </summary>
+             <param name="ev">Input event containing slider value</param>
+            </member>
+        <member name="M:SettingsMenu.OnVolumeSliderChange(Unravel.Core.UISliderEvent)">
+             <summary>
+             Handles the volume slider change event (final value when released).
+             </summary>
+             <param name="ev">Input event containing final slider value</param>
+            </member>
+        <member name="M:SettingsMenu.OnGraphicsQualityChange(Unravel.Core.UIChangeEvent)">
+             <summary>
+             Handles the graphics quality dropdown change event.
+             </summary>
+             <param name="ev">Change event containing selected value</param>
+            </member>
+        <member name="M:SettingsMenu.OnBackButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Back button click - returns to previous menu.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.OnApplyButtonClick(Unravel.Core.UIPointerEvent)">
+             <summary>
+             Handles the Apply button click - applies all settings.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.PopulateGraphicsDropdown">
+             <summary>
+             Populates the graphics quality dropdown with custom presets, replacing HTML defaults.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.UpdateVolumeLabel">
+             <summary>
+             Updates the volume label to show current volume percentage.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.UpdateGraphicsQualityLabel">
+             <summary>
+             Updates the graphics quality label to show current selection.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.GetGraphicsQualityDisplayName(System.String)">
+             <summary>
+             Gets the display name for a graphics quality value, checking both custom presets and defaults.
+             </summary>
+             <param name="qualityValue">The graphics quality value to get display name for</param>
+             <returns>Display name for the quality value</returns>
+            </member>
+        <member name="M:SettingsMenu.ApplyVolumeSettings">
+             <summary>
+             Applies the current volume setting to the audio system.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.ApplyGraphicsQualitySettings">
+             <summary>
+             Applies the current graphics quality setting to the graphics system.
+             </summary>
+            </member>
+        <member name="M:SettingsMenu.ApplyAllSettings">
+             <summary>
+             Applies all current settings to the game systems.
+             </summary>
+            </member>
+    </members>
+</doc>

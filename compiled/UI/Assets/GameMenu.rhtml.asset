@@ -1,0 +1,46 @@
+<rml>
+  <head>
+    <title>Game Menu</title>
+    <link type="text/rcss" href="engine:/data/ui/rml.rcss" />
+    <link type="text/rcss" href="CommonMenu.rcss" />
+    <link type="text/rcss" href="GameMenu.rcss" />
+  </head>
+
+  <body id="body" class="theme-dark">
+    <div class="menu-container menu-container--centered">
+      
+      <!-- Game Title -->
+      <header class="menu-header menu-header--large">
+        <h1 id="game_title" class="menu-title menu-title--large">Game Paused</h1>
+        <div class="menu-subtitle menu-subtitle--large">Choose your next action</div>
+      </header>
+
+      <!-- Game Menu Buttons -->
+      <nav class="menu-nav">
+        <div class="menu-buttons">
+          <button id="resume_btn" class="menu-btn menu-btn--large menu-btn-primary">
+            <span class="btn-icon"></span>
+            <span class="btn-text">Resume</span>
+          </button>
+          
+          <button id="settings_btn" class="menu-btn menu-btn--large menu-btn-secondary">
+            <span class="btn-icon"></span>
+            <span class="btn-text">Settings</span>
+          </button>
+          
+          <button id="quit_btn" class="menu-btn menu-btn--large menu-btn-danger">
+            <span class="btn-icon"></span>
+            <span class="btn-text">Quit</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Footer Info -->
+      <footer class="menu-footer">
+        <div class="version-info">Game Menu</div>
+        <div class="copyright">Press ESC to resume</div>
+      </footer>
+
+    </div>
+  </body>
+</rml>

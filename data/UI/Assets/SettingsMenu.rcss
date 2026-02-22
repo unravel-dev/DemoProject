@@ -1,0 +1,276 @@
+/* ---------- Settings Menu Specific Styles ---------- */
+/* All common styles are now inherited from CommonMenu.rcss */
+
+/* ---------- Settings Content ---------- */
+.settings-content {
+  flex: 1;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.settings-section {
+  display: block;
+  background-color: rgba(42, 58, 77, 77);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px rgba(58, 74, 93, 128);
+  animation: fade-in-up 0.8s ease-out 0.2s both;
+}
+
+body.theme-light .settings-section {
+  background-color: rgba(255, 255, 255, 204);
+  border: 1px rgba(203, 213, 224, 204);
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a73ff;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+body.theme-light .section-title {
+  color: #3182ce;
+}
+
+/* ---------- Setting Items ---------- */
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.setting-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e9eef3;
+  margin-bottom: 8px;
+}
+
+body.theme-light .setting-label {
+  color: #2d3748;
+}
+
+/* ---------- Slider Styling ---------- */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.volume-slider {
+  width: 100%;
+  height: 8px;
+  background-color: #2a3a4d;
+  border-radius: 4px;
+  border: 0px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Note: Slider thumb styling not supported in RmlUi - will use default styling */
+
+body.theme-light .volume-slider {
+  background-color: #cbd5e0;
+}
+
+/* ---------- Dropdown Styling ---------- */
+.dropdown-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.graphics-dropdown {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #2a3a4d;
+  color: #e9eef3;
+  border: 2px rgba(58, 74, 93, 128);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.graphics-dropdown:hover {
+  background-color: #3a4a5d;
+  border: 2px rgba(74, 90, 109, 128);
+  transition: background-color border-color 0.2s cubic-in;
+
+}
+
+/* Dropdown Options Styling */
+.graphics-dropdown option {
+  background-color: #2a3a4d;
+  color: #e9eef3;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.4;
+  border-top: 1px rgba(58, 74, 93, 64);
+}
+
+/* First option - rounded top corners and no top border */
+.graphics-dropdown option:first-child {
+  border-top: 0px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Last option - rounded bottom corners */
+.graphics-dropdown option:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+/* Single option (when only one exists) - all corners rounded */
+.graphics-dropdown option:only-child {
+  border-radius: 8px;
+}
+
+/* Dropdown list container styling */
+.graphics-dropdown:focus option {
+  background-color: #2a3a4d;
+}
+
+/* When dropdown is open, remove bottom border radius from the select element */
+.graphics-dropdown:focus {
+  font-effect: outline(2px #2a73ff);
+  background-color: #3a4a5d;
+
+}
+
+.graphics-dropdown option:hover {
+  background-color:#578df1;
+  color: #ffffff;
+}
+
+.graphics-dropdown option:selected {
+  background-color: #2a73ff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.graphics-dropdown option:checked {
+  background-color: #2a73ff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+body.theme-light .graphics-dropdown {
+  background-color: #ffffff;
+  color: #2d3748;
+  border: 2px rgba(203, 213, 224, 128);
+}
+
+body.theme-light .graphics-dropdown:hover {
+  background-color: #f7fafc;
+  border: 2px rgba(160, 174, 192, 128);
+}
+
+body.theme-light .graphics-dropdown:focus {
+  font-effect: outline(2px #3182ce);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Light Theme Dropdown Options */
+body.theme-light .graphics-dropdown option {
+  background-color: #ffffff;
+  color: #2d3748;
+  border-top: 1px rgba(203, 213, 224, 128);
+}
+
+body.theme-light .graphics-dropdown option:first-child {
+  border-top: 0px;
+}
+
+body.theme-light .graphics-dropdown option:hover {
+  background-color: #3182ce;
+  color: #ffffff;
+}
+
+body.theme-light .graphics-dropdown option:selected {
+  background-color: #3182ce;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+body.theme-light .graphics-dropdown option:checked {
+  background-color: #3182ce;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* ---------- Placeholder Settings ---------- */
+.setting-placeholder {
+  padding: 12px;
+  background-color: rgba(42, 58, 77, 51);
+  border-radius: 8px;
+  border: 1px rgba(169, 187, 204, 77);
+}
+
+.placeholder-text {
+  font-size: 14px;
+  color: #a9bbcc;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+body.theme-light .setting-placeholder {
+  background-color: rgba(247, 250, 252, 204);
+  border: 1px rgba(160, 174, 192, 128);
+}
+
+body.theme-light .placeholder-text {
+  color: #4a5568;
+}
+
+/* ---------- Settings Navigation ---------- */
+.settings-nav {
+  margin-bottom: 24px;
+}
+
+.settings-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Settings Section Entrance Animations ---------- */
+.settings-section:nth-child(1) { 
+  animation: fade-in-left 0.6s cubic-out 0.2s both; 
+}
+.settings-section:nth-child(2) { 
+  animation: fade-in-left 0.6s cubic-out 0.4s both; 
+}
+
+/* Settings Button Entrance Animations (using unified menu-btn) */
+.settings-buttons .menu-btn:nth-child(1) { 
+  animation: fade-in-up 0.6s cubic-out 0.6s both; 
+}
+.settings-buttons .menu-btn:nth-child(2) { 
+  animation: fade-in-up 0.6s cubic-out 0.8s both; 
+}
+
+/* ---------- Settings Accessibility ---------- */
+
+
+/* ---------- Settings Responsive Design ---------- */
+.settings-content {
+  max-width: 90vw;
+}
+
+.settings-buttons {
+  max-width: 100%;
+  flex-wrap: wrap;
+}

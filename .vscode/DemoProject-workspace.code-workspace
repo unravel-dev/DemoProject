@@ -1,0 +1,74 @@
+{
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "dotnet.preferCSharpExtension": true,
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/*.etex": true,
+            "**/*.png": true,
+            "**/*.jpg": true,
+            "**/*.jpeg": true,
+            "**/*.tga": true,
+            "**/*.dds": true,
+            "**/*.ktx": true,
+            "**/*.pvr": true,
+            "**/*.exr": true,
+            "**/*.hdr": true,
+            "**/*.bmp": true,
+            "**/*.gif": true,
+            "**/*.psd": true,
+            "**/*.mat": true,
+            "**/*.ematerial": true,
+            "**/*.emesh": true,
+            "**/*.gltf": true,
+            "**/*.glb": true,
+            "**/*.obj": true,
+            "**/*.fbx": true,
+            "**/*.FBX": true,
+            "**/*.dae": true,
+            "**/*.blend": true,
+            "**/*.3ds": true,
+            "**/*.anim": true,
+            "**/*.eaudioclip": true,
+            "**/*.ogg": true,
+            "**/*.wav": true,
+            "**/*.flac": true,
+            "**/*.mp3": true,
+            "**/*.ttf": true,
+            "**/*.otf": true,
+            "**/*.pfb": true,
+            "**/*.spfb": true,
+            "**/*.phm": true,
+            "**/*.ephmaterial": true,
+            "**/*.meta": true,
+            "**/*.asset": true,
+            "**/*.manifest": true,
+            "**/*.temp": true
+        }
+    }
+,
+    "extensions": {
+        "recommendations": [
+             "ms-vscode.mono-debug",
+             "ms-dotnettools.csharp"
+        ]
+    }
+,
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Attach to Mono",
+                "request": "attach",
+                "type": "mono",
+                "address": "127.0.0.1",
+                "port": 55555
+            }
+        ]
+    }
+}

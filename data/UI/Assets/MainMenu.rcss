@@ -1,0 +1,14 @@
+/* ---------- Main Menu Specific Styles ---------- */
+/* All common styles are now inherited from CommonMenu.rcss */
+
+/* No additional styles needed - everything is handled by the unified classes:
+ * - .menu-container.menu-container--centered
+ * - .menu-header.menu-header--large  
+ * - .menu-title.menu-title--large
+ * - .menu-subtitle.menu-subtitle--large
+ * - .menu-btn.menu-btn--large
+ * - .menu-footer (from CommonMenu.rcss)
+ */
+ .test {
+  
+ }
