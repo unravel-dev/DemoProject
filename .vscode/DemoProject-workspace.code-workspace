@@ -49,6 +49,10 @@
             "**/*.asset": true,
             "**/*.manifest": true,
             "**/*.temp": true
+        },
+        "files.associations": {
+            "*.rcss": "css",
+            "*.rhtml": "html"
         }
     }
 ,

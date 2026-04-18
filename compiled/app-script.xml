@@ -40,32 +40,92 @@
              Unlike OnCreate, Start will not be called if the script is disabled.
              </summary>
             </member>
-        <member name="M:CharacterController.ProcessFootIK(Unravel.Core.Entity,System.Single@,System.Single,Vector3@,System.Single@,System.Single@)">
+        <member name="T:CharacterAnimator">
              <summary>
-             Processes IK for an individual foot:
-             - Updates the foot IK blend value based on whether the character is grounded.
-             - Computes an effective blend factoring in a height blend (to fade out IK when the foot is raised).
-             - Raycasts from above the animated foot position to find the ground.
-             - If a hit is found, computes the target position and applies IK with the appropriate blend.
-             Returns true if a valid IK target was found.
+             Drives the animation component from the <see cref="T:CharacterController" />'s
+             runtime state. Designed to produce smooth, non-ping-ponging transitions even when
+             the player spams move input or oscillates around threshold speeds.
+            
+             Key ideas:
+               - The animator is a small state machine. A single cached <see cref="T:CharacterAnimator.LocoState" />
+                 is compared against the desired state every frame, and <see cref="M:Unravel.Core.AnimationComponent.Blend(Unravel.Core.AnimationClip,System.Single,System.Boolean,System.Boolean)" />
+                 is only invoked when the state actually changes. This eliminates the previous
+                 behaviour of re-issuing Blend every frame and is the root fix for most pops.
+               - Idle &lt;-&gt; locomotion is INTENT-DRIVEN: we use
+                 <see cref="P:CharacterController.IsMoving" /> (which reflects forward/back input)
+                 as the authoritative signal. Speed is used only for tier selection and a short
+                 optional decel tail. This is critical when root motion is enabled: if we gated
+                 idle on <see cref="P:CharacterController.CurrentSpeed" /> alone, any residual
+                 logical velocity (axis smoothing, a frame where <see cref="P:CharacterController.IsGrounded" />
+                 flickers and PreserveAirMomentum skips decel, etc.) would pin the animator in
+                 a locomotion clip, whose root motion keeps sliding the character forever.
+               - Walk / jog / run tiers use both a speed hysteresis band and an optional time
+                 debounce (<see cref="F:CharacterAnimator.TierDebounce" />) so micro speed wobbles don't switch clips.
+               - Jump vs Fall is decided by vertical velocity instead of "any time I'm airborne
+                 I'm jumping", so the correct clip plays on the way down.
+               - Blend times are chosen per transition class (idle&lt;-&gt;move, within-locomotion,
+                 jump, fall, land, turn, dance). Phase-sync is only enabled between states that
+                 share a stride phase (walk/jog/run/backwards) so entering a locomotion clip
+                 from idle/air/turn doesn't snap to a mid-stride pose.
              </summary>
-             <param name="foot">The foot Entity to process IK for.</param>
-             <param name="footIKBlend">A reference to that foot’s blend value.</param>
-             <param name="dt">Delta time for the update.</param>
-             <param name="ikTarget">The computed IK target in world space.</param>
-             <param name="effectiveBlend">The effective IK blend (weight) after factoring in height differences.</param>
-             <param name="footOffset">The vertical offset computed for hip adjustment.</param>
-             <returns>True if the raycast hit (and thus IK is applied), false otherwise.</returns>
             </member>
-        <member name="M:CharacterController.ApplyFeetIK(System.Single)">
+        <member name="T:CharacterController">
              <summary>
-             Calls ProcessFootIK for each foot and then computes a Hips offset from the results.
+             Production-grade third-person character controller.
+            
+             Uses the built-in <see cref="T:Unravel.Core.CharacterControllerComponent" /> for capsule-based
+             sweep movement, gravity and collisions (no manual rigidbody integration), and
+             layers on top:
+               - Acceleration / deceleration toward target speed (walk / run / sprint)
+               - Coyote time + jump buffering for forgiving jump feel
+               - Rotation toward movement direction with in-place turning
+               - Turn damping (speed scaling when changing direction sharply)
+               - Foot IK with hips dipping to match uneven ground
+               - Spine look-at IK + two-handed aim IK driven by the cursor
+            
+             Shooting/ability logic lives in the separate <c>CharacterShooter</c> component
+             so movement can be reused across non-combat characters (NPCs, cutscene actors).
+            
+             The script auto-resolves common bone names (Mixamo rig by default). Drop this
+             onto any humanoid rig with a <see cref="T:Unravel.Core.CharacterControllerComponent" /> and it
+             will work out of the box; override the bone slots in the inspector for
+             non-Mixamo rigs.
              </summary>
             </member>
-        <member name="M:CharacterController.ApplySpineIK(System.Single)">
+        <member name="M:CharacterController.SteerAirVelocity(Vector3,Vector3,System.Single)">
              <summary>
-             (Optional) Adjusts the Spine orientation when the character is aiming.
-             This mimics the Python callback that aligns the Spine to the camera forward.
+             Blends the current horizontal velocity toward the input target while
+             preserving the larger magnitude of the two. Allows steering in the air
+             without letting the player brake mid-jump by releasing the stick.
+             </summary>
+            </member>
+        <member name="T:CharacterShooter">
+             <summary>
+             Handles aim-based projectile firing and explosion abilities for a character.
+            
+             Independent of the locomotion/IK controller: performs its own mouse raycast
+             to resolve the aim point, and picks which hand to fire from based on the
+             horizontal angle between the character's forward and the aim direction
+             (matches the convention used by the controller's aim IK).
+            
+             Inputs (while right-mouse aim is held):
+               - Left mouse  -&gt; Primary single-shot projectile (tight spread).
+               - E           -&gt; Burst / shotgun-style spread (many projectiles, wide spread).
+               - Q           -&gt; Explosive pulse at the aim hit point (applies impulse to
+                                every physics body in a radius, including projectiles).
+            
+             The projectile prefab is expected to carry its own <see cref="T:Unravel.Core.PhysicsComponent" />;
+             the shooter sets its <see cref="P:Unravel.Core.PhysicsComponent.excludeLayers" /> to the owner's
+             layers so the character never collides with its own shots, and applies an
+             impulse forward. Projectiles are auto-despawned after
+             <see cref="F:CharacterShooter.ProjectileLifetimeSeconds" />.
+             </summary>
+            </member>
+        <member name="M:CharacterShooter.PickLeadingHand(Vector3)">
+             <summary>
+             Picks the hand that is on the same side as the aim target. Mirrors the
+             controller's aim-IK side convention: SignedAngle(forward, look, up) &lt; 0
+             means the target is to the character's right.
              </summary>
             </member>
         <member name="M:JumpPlatform.OnCreate">

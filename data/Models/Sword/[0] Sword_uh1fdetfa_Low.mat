@@ -26,12 +26,11 @@
      "b": 0.0,
      "a": 1.0
     },
-    "surface_data": {
-     "x": 1.0,
-     "y": 1.0,
-     "z": 1.0,
-     "w": 0.25
-    },
+    "emissive_intensity": 1.0,
+    "roughness": 1.0,
+    "metalness": 1.0,
+    "bumpiness": 1.0,
+    "alpha_test_value": 0.25,
     "tiling": {
      "x": 1.0,
      "y": 1.0
@@ -53,10 +52,10 @@
      "uid": "8218cfd6-c00e-d84a-a080-22052563f8d9"
     },
     "emissive_map": {
-     "uid": "00000000-0000-0000-0000-000000000000"
+     "uid": "nil"
     },
     "ao_map": {
-     "uid": "8218cfd6-c00e-d84a-a080-22052563f8d9"
+     "uid": "5061b9a5-cce8-4642-91ba-c6e0ddbc64a6"
     }
    }
   }

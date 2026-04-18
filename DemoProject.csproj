@@ -23,6 +23,7 @@
     <Compile Include="data\Scripts\Arrow.cs" />
     <Compile Include="data\Scripts\CharacterAnimator.cs" />
     <Compile Include="data\Scripts\CharacterController.cs" />
+    <Compile Include="data\Scripts\CharacterShooter.cs" />
     <Compile Include="data\Scripts\HitEffect.cs" />
     <Compile Include="data\Scripts\JumpPlatform.cs" />
     <Compile Include="data\Scripts\TextTest.cs" />
