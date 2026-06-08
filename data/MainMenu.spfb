@@ -2,8 +2,12 @@
  "entities_count": 5,
  "entities": [
   {
-   "id": 1048578,
+   "uid": "b349b202-ed21-d647-bb33-5c3489c871e9",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "b349b202-ed21-d647-bb33-5c3489c871e9"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Main Camera",
@@ -41,7 +45,7 @@
       }
      },
      "parent": {
-      "id": 4294967295
+      "uid": "nil"
      },
      "children": [],
      "active": true
@@ -73,6 +77,14 @@
       "mask": 0
      }
     },
+    "has_tonemapping_component": true,
+    "tonemapping_component": {
+     "enabled": true,
+     "settings": {
+      "exposure": 1.0,
+      "method": 6
+     }
+    },
     "has_assao_component": true,
     "assao_component": {
      "enabled": true,
@@ -94,14 +106,6 @@
       "generate_normals": false
      }
     },
-    "has_tonemapping_component": true,
-    "tonemapping_component": {
-     "enabled": true,
-     "settings": {
-      "exposure": 1.0,
-      "method": 6
-     }
-    },
     "has_fxaa_component": true,
     "fxaa_component": {
      "enabled": true
@@ -119,7 +123,7 @@
        "roughness_depth_tolerance": 1.0,
        "fade_in_start": 0.10000000149011612,
        "fade_in_end": 0.20000000298023225,
-       "enable_half_res": false,
+       "resolution": 1,
        "enable_cone_tracing": false,
        "cone_tracing": {
         "cone_angle_bias": 0.05000000074505806,
@@ -134,6 +138,13 @@
         "motion_scale_pixels": 120.0,
         "normal_dot_threshold": 0.949999988079071,
         "max_accum_frames": 8
+       },
+       "enable_spatial_denoise": false,
+       "spatial_denoise": {
+        "depth_sigma": 0.019999999552965165,
+        "normal_power": 64.0,
+        "luma_sigma": 1.0,
+        "passes": 3
        }
       }
      }
@@ -146,8 +157,12 @@
  "version": "1.0.0",
  "entities": [
   {
-   "id": 1048580,
+   "uid": "9a0d7081-0ade-ab44-a67c-5900cee5dc5c",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "9a0d7081-0ade-ab44-a67c-5900cee5dc5c"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Sky & Directional Light",
@@ -168,10 +183,10 @@
        "z": 0.0
       },
       "rotation": {
-       "x": 0.10938166826963425,
-       "y": 0.8754260540008545,
-       "z": -0.4082179069519043,
-       "w": 0.2345697283744812
+       "x": 0.10938168317079544,
+       "y": 0.875426173210144,
+       "z": -0.40821796655654909,
+       "w": 0.2345697581768036
       },
       "scale": {
        "x": 1.0,
@@ -185,7 +200,7 @@
       }
      },
      "parent": {
-      "id": 4294967295
+      "uid": "nil"
      },
      "children": [],
      "active": true
@@ -195,7 +210,6 @@
      "light": {
       "type": 2,
       "intensity": 2.5,
-      "ambient_intensity": 0.05000000074505806,
       "color": {
        "r": 1.0,
        "g": 0.9568628072738648,
@@ -215,6 +229,14 @@
        "pcf_x_offset": 1.0,
        "pcf_y_offset": 1.0
       },
+      "contact_shadow": {
+       "enabled": false,
+       "ray_length": 0.20000000298023225,
+       "thickness": 0.15000000596046449,
+       "n_dot_l_fade_start": 0.0,
+       "n_dot_l_fade_end": 0.4749999940395355,
+       "normal_facing_reject": -1.0
+      },
       "directional_data": {},
       "directional_shadow_params": {
        "num_splits": 4,
@@ -226,13 +248,34 @@
     "has_skylight_component": true,
     "skylight_component": {
      "mode": 1,
+     "sky_brightness": 1.0,
      "turbidity": 1.899999976158142,
+     "cloud_mode": 2,
      "cloud_coverage": 0.44999998807907107,
-     "cloud_altitude": 3000.0,
+     "cloud_base_altitude": 27500.0,
+     "cloud_top_altitude": 45000.0,
      "cloud_speed": 1.0,
      "cloud_density": 1.0,
+     "cloud_absorption": 0.07999999821186066,
+     "cloud_light_absorption": 0.10000000149011612,
+     "cloud_vol_uv_scale": 0.00007999999797903001,
+     "cloud_vol_edge_width": 0.20000000298023225,
+     "cloud_vol_shape_power": 1.1200000047683716,
+     "cloud_vol_detail_erode": 0.47999998927116396,
+     "cloud_vol_macro_strength": 0.36000001430511477,
+     "cloud_vol_coarse_scale": 0.3799999952316284,
+     "cloud_vol_base_mix": 0.44999998807907107,
+     "cloud_vol_sun_intensity": 24.0,
+     "irradiance_intensity": 0.05000000074505806,
+     "irradiance_tint": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "irradiance_quality": 1,
      "cubemap": {
-      "uid": "00000000-0000-0000-0000-000000000000"
+      "uid": "nil"
      }
     }
    }
@@ -241,8 +284,12 @@
  "version": "1.0.0",
  "entities": [
   {
-   "id": 1048582,
+   "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "f15679d5-b867-5743-ae1d-a9803b783ab5"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "LobbyUI",
@@ -313,17 +360,17 @@
       }
      },
      "parent": {
-      "id": 4294967295
+      "uid": "nil"
      },
      "children": [
       {
-       "id": 1048583
+       "uid": "07690b95-7160-7e46-936b-1d0c3fe614f0"
       },
       {
-       "id": 1048584
+       "uid": "42fcceac-0804-f747-9729-99d554c70b81"
       },
       {
-       "id": 1048585
+       "uid": "3344d860-969d-7046-9e92-f1c144f29ad0"
       }
      ],
      "active": true
@@ -335,18 +382,18 @@
        "type": "LobbyUI",
        "MainMenu": {
         "flags": 2,
-        "id": 4294967295
+        "uid": "nil"
        },
        "SettingsMenu": {
         "flags": 2,
-        "id": 4294967295
+        "uid": "nil"
        },
        "GameScene": {
         "uid": "1da1116f-307c-fd49-8002-81a794aa83d9"
        },
        "BackgroundAudioSource": {
         "flags": 2,
-        "id": 4294967295
+        "uid": "nil"
        }
       }
      ]
@@ -354,8 +401,12 @@
    }
   },
   {
-   "id": 1048583,
+   "uid": "07690b95-7160-7e46-936b-1d0c3fe614f0",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "07690b95-7160-7e46-936b-1d0c3fe614f0"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "MainMenu",
@@ -397,7 +448,7 @@
       }
      },
      "parent": {
-      "id": 1048582
+      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
      },
      "children": [],
      "active": true
@@ -426,8 +477,12 @@
    }
   },
   {
-   "id": 1048584,
+   "uid": "42fcceac-0804-f747-9729-99d554c70b81",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "42fcceac-0804-f747-9729-99d554c70b81"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "SettingsMenu",
@@ -469,7 +524,7 @@
       }
      },
      "parent": {
-      "id": 1048582
+      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
      },
      "children": [],
      "active": false
@@ -498,8 +553,12 @@
    }
   },
   {
-   "id": 1048585,
+   "uid": "3344d860-969d-7046-9e92-f1c144f29ad0",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "3344d860-969d-7046-9e92-f1c144f29ad0"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "BackgroundAudioSource",
@@ -541,7 +600,7 @@
       }
      },
      "parent": {
-      "id": 1048582
+      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
      },
      "children": [],
      "active": false
@@ -567,8 +626,12 @@
  "version": "1.0.0",
  "entities": [
   {
-   "id": 1048587,
+   "uid": "d1982e72-e1b0-ae4e-a8a7-dba56e8967b3",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "d1982e72-e1b0-ae4e-a8a7-dba56e8967b3"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "eww",
@@ -618,7 +681,7 @@
       }
      },
      "parent": {
-      "id": 4294967295
+      "uid": "nil"
      },
      "children": [],
      "active": true
@@ -748,6 +811,7 @@
       "z": 1.0
      },
      "opacity": 1.0,
+     "color_intensity": 1.0,
      "color_gradient": {
       "points": [
        {
@@ -803,6 +867,7 @@
      },
      "texture_mode": 0,
      "render_mode": 0,
+     "blend_mode": 0,
      "texture_sheet_tiles": {
       "x": 1.0,
       "y": 1.0
@@ -825,8 +890,12 @@
  "version": "1.0.0",
  "entities": [
   {
-   "id": 1048589,
+   "uid": "cb6034cc-0e5b-1846-82c5-78ea3c39ace9",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "cb6034cc-0e5b-1846-82c5-78ea3c39ace9"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Post Process Volume",
@@ -864,7 +933,7 @@
       }
      },
      "parent": {
-      "id": 4294967295
+      "uid": "nil"
      },
      "children": [],
      "active": true
@@ -879,6 +948,14 @@
       "x": 1.0,
       "y": 1.0,
       "z": 1.0
+     }
+    },
+    "has_tonemapping_component": true,
+    "tonemapping_component": {
+     "enabled": true,
+     "settings": {
+      "exposure": 1.0,
+      "method": 7
      }
     },
     "has_assao_component": true,
@@ -902,14 +979,6 @@
       "generate_normals": false
      }
     },
-    "has_tonemapping_component": true,
-    "tonemapping_component": {
-     "enabled": true,
-     "settings": {
-      "exposure": 1.0,
-      "method": 7
-     }
-    },
     "has_fxaa_component": true,
     "fxaa_component": {
      "enabled": true
@@ -927,7 +996,7 @@
        "roughness_depth_tolerance": 1.0,
        "fade_in_start": 0.10000000149011612,
        "fade_in_end": 0.20000000298023225,
-       "enable_half_res": false,
+       "resolution": 1,
        "enable_cone_tracing": false,
        "cone_tracing": {
         "cone_angle_bias": 0.05000000074505806,
@@ -942,6 +1011,13 @@
         "motion_scale_pixels": 120.0,
         "normal_dot_threshold": 0.949999988079071,
         "max_accum_frames": 8
+       },
+       "enable_spatial_denoise": false,
+       "spatial_denoise": {
+        "depth_sigma": 0.019999999552965165,
+        "normal_power": 64.0,
+        "luma_sigma": 1.0,
+        "passes": 3
        }
       }
      }
