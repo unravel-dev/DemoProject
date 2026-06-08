@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/PhysicsMaterials/Fric.phm",
- "source_sha": "463520b7e09ff2fd0c2ec0aaf12ce2e67157ea57",
- "source_timestamp": {
-  "count": -5051058808709551616
- },
- "format_version": 1
+ "source_fingerprint": "60d4ab9ee1e330650b905ff9f8927c8d",
+ "format_version": 1,
+ "fingerprint_version": 1
 }

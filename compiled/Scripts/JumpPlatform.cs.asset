@@ -37,6 +37,13 @@ class JumpPlatform : ScriptComponent
 
 		}
 		
+		var controller = c.entity.GetComponent<CharacterControllerComponent>();
+		if (controller != null)
+		{
+			controller.ApplyImpulse(Vector3.up * JumpForce);
+
+		}
+		
 	
 
     }

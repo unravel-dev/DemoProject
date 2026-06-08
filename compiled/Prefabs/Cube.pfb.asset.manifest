@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/Prefabs/Cube.pfb",
- "source_sha": "dd58743c61c1abf218b404c516f52a09070aae9b",
- "source_timestamp": {
-  "count": -5041486445793366016
- },
- "format_version": 0
+ "source_fingerprint": "ca3ae905af3e73484894b72c600425f4",
+ "format_version": 0,
+ "fingerprint_version": 1
 }

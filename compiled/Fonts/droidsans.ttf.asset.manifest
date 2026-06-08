@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/Fonts/droidsans.ttf",
- "source_sha": "da5b3c7758a2c8fbc4775beb69d7150493c7d312",
- "source_timestamp": {
-  "count": -5057440217709551616
- },
- "format_version": 0
+ "source_fingerprint": "4885edd539f66c703b473b9354e2dccb",
+ "format_version": 0,
+ "fingerprint_version": 1
 }

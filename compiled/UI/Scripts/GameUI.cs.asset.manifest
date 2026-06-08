@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/UI/Scripts/GameUI.cs",
- "source_sha": "9bb9efef31748d89e2f7e7f6ddb40127dbb78f25",
- "source_timestamp": {
-  "count": -5038330043437495816
- },
- "format_version": 0
+ "source_fingerprint": "29ca52f00fbcaf858d6016ee22c2cf05",
+ "format_version": 0,
+ "fingerprint_version": 1
 }

@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/Textures/Particles/Transparent_part_1/14.png",
- "source_sha": "5fef70f05f396e13c16d189cde1608d34a033796",
- "source_timestamp": {
-  "count": -5038330056880739216
- },
- "format_version": 0
+ "source_fingerprint": "4ae3cbae14e35ced0d9e24073566ce75",
+ "format_version": 1,
+ "fingerprint_version": 1
 }

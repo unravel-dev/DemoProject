@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/UI/GameUI.pfb",
- "source_sha": "caf1546e4be552a9414b5d5731abb9476191987e",
- "source_timestamp": {
-  "count": -5042324492200311316
- },
- "format_version": 0
+ "source_fingerprint": "4334ab1c495f268d2ba5be1d05666851",
+ "format_version": 0,
+ "fingerprint_version": 1
 }

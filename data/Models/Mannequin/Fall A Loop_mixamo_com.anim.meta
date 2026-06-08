@@ -12,8 +12,8 @@
      "root_motion": {
       "keep_position_y": true,
       "keep_position_xz": false,
-      "keep_rotation": true,
-      "keep_in_place": true
+      "keep_rotation": false,
+      "keep_in_place": false
      }
     }
    }

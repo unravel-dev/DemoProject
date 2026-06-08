@@ -2,8 +2,12 @@
  "entities": [
   {
    "prefab_uid": "50011467-0fdc-9849-9586-0218049419ea",
-   "id": 3,
+   "uid": "ef96b6bd-ae9a-d245-a619-b7e2e13a94e0",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "ef96b6bd-ae9a-d245-a619-b7e2e13a94e0"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Cube",
@@ -45,8 +49,8 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [],
      "active": true
@@ -65,79 +69,16 @@
       ],
       "materials": [
        {
-        "uid": "dd11cda0-190d-fd52-84dd-3a6f67d09813"
+        "uid": "46c03219-444d-0e41-bc03-3d4d2887d314"
        }
       ],
-      "material_instances": [
-       {
-        "polymorphic_id": 2147483649,
-        "polymorphic_name": "pbr_material",
-        "ptr_wrapper": {
-         "id": 2147483649,
-         "data": {
-          "base_type": {
-           "cull_type": 2
-          },
-          "base_color": {
-           "r": 1.0,
-           "g": 0.0,
-           "b": 0.0,
-           "a": 1.0
-          },
-          "subsurface_color": {
-           "r": 0.0,
-           "g": 0.0,
-           "b": 0.0,
-           "a": 0.800000011920929
-          },
-          "emissive_color": {
-           "r": 0.0,
-           "g": 0.0,
-           "b": 0.0,
-           "a": 0.0
-          },
-          "surface_data": {
-           "x": 0.3499999940395355,
-           "y": 0.0,
-           "z": 1.0,
-           "w": 0.25
-          },
-          "tiling": {
-           "x": 1.0,
-           "y": 1.0
-          },
-          "dither_threshold": {
-           "x": 0.5,
-           "y": 0.0
-          },
-          "color_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
-          },
-          "normal_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
-          },
-          "roughness_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
-          },
-          "metalness_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
-          },
-          "emissive_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
-          },
-          "ao_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
-          }
-         }
-        }
-       }
-      ],
-      "lod_limits": [
-       {
-        "min": 0,
-        "max": 100
-       }
-      ]
+      "material_instances": [],
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
      }
     },
     "has_physics_component": true,

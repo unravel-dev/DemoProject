@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/Models/Mannequin/Slow Run_mixamo_com.anim",
- "source_sha": "6a99a3ee561bf72eee94f63338e4a7d542f32d71",
- "source_timestamp": {
-  "count": -5057276592709551616
- },
- "format_version": 1
+ "source_fingerprint": "59f46a483c8fec1d10d4fd55a52ebfb7",
+ "format_version": 1,
+ "fingerprint_version": 1
 }

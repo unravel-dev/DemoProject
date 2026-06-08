@@ -1,8 +1,5 @@
 {
- "source_key": "C:/Workspace/github/UnravelEngine/DemoProject/data/UI/Sounds/button-hover.mp3",
- "source_sha": "632fc44cdee3ef31df24435d4ca6b9ab66058edb",
- "source_timestamp": {
-  "count": -5042570169099576816
- },
- "format_version": 1
+ "source_fingerprint": "5212d9c91540899ab67d63ae975d8e8a",
+ "format_version": 1,
+ "fingerprint_version": 1
 }

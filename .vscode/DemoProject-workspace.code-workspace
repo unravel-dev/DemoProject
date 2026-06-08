@@ -16,6 +16,7 @@
             "**/*.tga": true,
             "**/*.dds": true,
             "**/*.ktx": true,
+            "**/*.ktx2": true,
             "**/*.pvr": true,
             "**/*.exr": true,
             "**/*.hdr": true,
