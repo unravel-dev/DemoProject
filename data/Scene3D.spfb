@@ -55,7 +55,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -191,7 +190,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -338,7 +336,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -4360,85 +4357,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0
      ]
     }
@@ -4496,85 +4414,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
       1
      ]
     }
@@ -4726,7 +4565,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -4822,7 +4660,7 @@
       "position": {
        "x": 0.0,
        "y": 2.7999987602233888,
-       "z": 29.493404388427736
+       "z": 29.493396759033204
       },
       "rotation": {
        "x": 0.7071066498756409,
@@ -4832,11 +4670,11 @@
       },
       "scale": {
        "x": 60.000064849853519,
-       "y": 0.9999960660934448,
-       "z": 5.999958515167236
+       "y": 0.9999959468841553,
+       "z": 5.999958038330078
       },
       "skew": {
-       "x": -7.450450993928826e-7,
+       "x": -7.450449857060448e-7,
        "y": 0.0,
        "z": 0.0
       }
@@ -4852,7 +4690,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": true,
      "model": {
       "lods": [
        {
@@ -5040,7 +4877,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": true,
      "model": {
       "lods": [
        {
@@ -5173,7 +5009,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -5437,11 +5272,11 @@
        "y": 0
       },
       "viewport_size": {
-       "width": 813,
-       "height": 812
+       "width": 1920,
+       "height": 1080
       },
       "orthographic_size": 5.0,
-      "aspect_ratio": 1.0012315511703492,
+      "aspect_ratio": 1.7777777910232545,
       "aspect_locked": false,
       "frustum_locked": false
      },
@@ -9388,19 +9223,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0
      ]
     }
@@ -9458,19 +9280,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
       1
      ]
     }
@@ -9632,7 +9441,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -13654,85 +13462,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0
      ]
     }
@@ -13790,85 +13519,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
       1
      ]
     }
@@ -14027,7 +13677,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -18049,85 +17698,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
       0
      ]
     }
@@ -18185,85 +17755,6 @@
     "has_submesh_component": true,
     "submesh_component": {
      "submeshes": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
       1
      ]
     }
@@ -18419,7 +17910,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -18552,7 +18042,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -18632,7 +18121,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": true,
      "model": {
       "lods": [
        {
@@ -18819,7 +18307,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": true,
      "model": {
       "lods": [
        {
@@ -19006,7 +18493,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": true,
      "model": {
       "lods": [
        {
@@ -19193,7 +18679,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -19289,12 +18774,12 @@
       "position": {
        "x": -7.626561641693115,
        "y": 1.2060306072235108,
-       "z": 16.036884307861329
+       "z": 16.03688621520996
       },
       "rotation": {
-       "x": 0.000004653524683817523,
+       "x": 0.0000046535133151337508,
        "y": 0.7071028351783752,
-       "z": 0.000005909451829211321,
+       "z": 0.000005909463652642444,
        "w": 0.7071108222007752
       },
       "scale": {
@@ -19303,9 +18788,9 @@
        "z": 19.39765739440918
       },
       "skew": {
-       "x": -0.000005958712335996097,
-       "y": 0.000009426436918147374,
-       "z": 0.000005870586846867809
+       "x": -0.00000595874462305801,
+       "y": 0.000009426464202988427,
+       "z": 0.000005870463155588368
       }
      },
      "parent": {
@@ -19319,7 +18804,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -19449,7 +18933,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -19582,7 +19065,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -19662,7 +19144,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -19800,7 +19281,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -20505,6 +19985,7 @@
       "a": 1.0
      },
      "irradiance_quality": 1,
+     "irradiance_use_sky": true,
      "cubemap": {
       "uid": "nil"
      }
@@ -20571,7 +20052,10 @@
      "update_mode": 1,
      "update_interval": 0.0,
      "faces_per_frame": 1,
-     "apply_prefilter": false
+     "apply_prefilter": true,
+     "resolution": 4,
+     "capture_sky": true,
+     "capture_shadows": true
     }
    }
   },
@@ -20640,7 +20124,10 @@
      "update_mode": 1,
      "update_interval": 0.0,
      "faces_per_frame": 1,
-     "apply_prefilter": false
+     "apply_prefilter": true,
+     "resolution": 4,
+     "capture_sky": true,
+     "capture_shadows": true
     }
    }
   },
@@ -20808,7 +20295,7 @@
       "spatial_denoise": {
        "depth_sigma": 0.019999999552965165,
        "normal_power": 64.0,
-       "luma_sigma": 16.0,
+       "luma_sigma": 4.0,
        "passes": 4,
        "full_res_passes": 0,
        "max_step": 16
@@ -20849,7 +20336,7 @@
      "local_transform": {
       "position": {
        "x": -19.44361114501953,
-       "y": 6.479232311248779,
+       "y": 4.024423599243164,
        "z": -4.3238205909729
       },
       "rotation": {
