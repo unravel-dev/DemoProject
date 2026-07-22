@@ -1,38 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
-    <ProjectGuid>{81A4EC2D-B6DE-CF5F-9D85-9D0804B3DD0F}</ProjectGuid>
+    <TargetFramework>net9.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>DemoProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <BaseDirectory>.</BaseDirectory>
-    <OutputPath>temp\bin\Debug</OutputPath>
-    <IntermediateOutputPath>temp\obj\Debug</IntermediateOutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <BaseOutputPath>temp/bin</BaseOutputPath>
+    <BaseIntermediateOutputPath>temp/obj</BaseIntermediateOutputPath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="data\Scripts\Arrow.cs" />
-    <Compile Include="data\Scripts\CharacterAnimator.cs" />
-    <Compile Include="data\Scripts\CharacterController.cs" />
-    <Compile Include="data\Scripts\CharacterShooter.cs" />
-    <Compile Include="data\Scripts\HitEffect.cs" />
-    <Compile Include="data\Scripts\JumpPlatform.cs" />
-    <Compile Include="data\Scripts\TextTest.cs" />
-    <Compile Include="data\UI\Scripts\BaseMenu.cs" />
-    <Compile Include="data\UI\Scripts\GameMenu.cs" />
-    <Compile Include="data\UI\Scripts\GameUI.cs" />
-    <Compile Include="data\UI\Scripts\LobbyUI.cs" />
-    <Compile Include="data\UI\Scripts\MainMenu.cs" />
-    <Compile Include="data\UI\Scripts\SettingsMenu.cs" />
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\Arrow.cs">
+      <Link>Scripts\Arrow.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\CharacterAnimator.cs">
+      <Link>Scripts\CharacterAnimator.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\CharacterController.cs">
+      <Link>Scripts\CharacterController.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\CharacterShooter.cs">
+      <Link>Scripts\CharacterShooter.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\HitEffect.cs">
+      <Link>Scripts\HitEffect.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\JumpPlatform.cs">
+      <Link>Scripts\JumpPlatform.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\Scripts\TextTest.cs">
+      <Link>Scripts\TextTest.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\UI\Scripts\BaseMenu.cs">
+      <Link>UI\Scripts\BaseMenu.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\UI\Scripts\GameMenu.cs">
+      <Link>UI\Scripts\GameMenu.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\UI\Scripts\GameUI.cs">
+      <Link>UI\Scripts\GameUI.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\UI\Scripts\LobbyUI.cs">
+      <Link>UI\Scripts\LobbyUI.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\UI\Scripts\MainMenu.cs">
+      <Link>UI\Scripts\MainMenu.cs</Link>
+    </Compile>
+    <Compile Include="C:\Workspace\github\UnravelEngine\DemoProject\data\UI\Scripts\SettingsMenu.cs">
+      <Link>UI\Scripts\SettingsMenu.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="engine-script.dll">
@@ -40,13 +59,4 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

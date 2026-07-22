@@ -5,502 +5,502 @@
     </assembly>
     <members>
         <member name="T:MainMenu">
-             <summary>
-             Main Menu script that handles the primary navigation buttons.
-             Uses LobbyUI for centralized navigation instead of direct menu manipulation.
-             Now inherits from BaseMenuController to eliminate code duplication.
-             </summary>
-            </member>
+            <summary>
+            Main Menu script that handles the primary navigation buttons.
+            Uses LobbyUI for centralized navigation instead of direct menu manipulation.
+            Now inherits from BaseMenuController to eliminate code duplication.
+            </summary>
+        </member>
         <member name="M:MainMenu.OnPlayButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Play button click - starts the game.
-             </summary>
-            </member>
+            <summary>
+            Handles the Play button click - starts the game.
+            </summary>
+        </member>
         <member name="M:MainMenu.OnSettingsButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Settings button click - opens settings menu.
-             </summary>
-            </member>
+            <summary>
+            Handles the Settings button click - opens settings menu.
+            </summary>
+        </member>
         <member name="M:MainMenu.OnExitButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Exit button click - quits the application.
-             </summary>
-            </member>
+            <summary>
+            Handles the Exit button click - quits the application.
+            </summary>
+        </member>
         <member name="M:Arrow.OnCreate">
-             <summary>
-             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
-             It only gets called once on each script, and only after other objects are initialised.
-             This means that it is safe to create references to other game objects and components in OnCreate.
-             </summary>
-            </member>
+            <summary>
+            OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+            It only gets called once on each script, and only after other objects are initialised.
+            This means that it is safe to create references to other game objects and components in OnCreate.
+            </summary>
+        </member>
         <member name="M:Arrow.OnStart">
-             <summary>
-             Start is called once, before any Update methods and after OnCreate.
-             It works in much the same way as OnCreate, with a few key differences.
-             Unlike OnCreate, Start will not be called if the script is disabled.
-             </summary>
-            </member>
+            <summary>
+            Start is called once, before any Update methods and after OnCreate.
+            It works in much the same way as OnCreate, with a few key differences.
+            Unlike OnCreate, Start will not be called if the script is disabled.
+            </summary>
+        </member>
         <member name="T:CharacterAnimator">
-             <summary>
-             Drives the animation component from the <see cref="T:CharacterController" />'s
-             runtime state. Designed to produce smooth, non-ping-ponging transitions even when
-             the player spams move input or oscillates around threshold speeds.
-            
-             Key ideas:
-               - The animator is a small state machine. A single cached <see cref="T:CharacterAnimator.LocoState" />
-                 is compared against the desired state every frame, and <see cref="M:Unravel.Core.AnimationComponent.Blend(Unravel.Core.AnimationClip,System.Single,System.Boolean,System.Boolean)" />
-                 is only invoked when the state actually changes. This eliminates the previous
-                 behaviour of re-issuing Blend every frame and is the root fix for most pops.
-               - Idle &lt;-&gt; locomotion is INTENT-DRIVEN: we use
-                 <see cref="P:CharacterController.IsMoving" /> (which reflects forward/back input)
-                 as the authoritative signal. Speed is used only for tier selection and a short
-                 optional decel tail. This is critical when root motion is enabled: if we gated
-                 idle on <see cref="P:CharacterController.CurrentSpeed" /> alone, any residual
-                 logical velocity (axis smoothing, a frame where <see cref="P:CharacterController.IsGrounded" />
-                 flickers and PreserveAirMomentum skips decel, etc.) would pin the animator in
-                 a locomotion clip, whose root motion keeps sliding the character forever.
-               - Walk / jog / run tiers use both a speed hysteresis band and an optional time
-                 debounce (<see cref="F:CharacterAnimator.TierDebounce" />) so micro speed wobbles don't switch clips.
-               - Jump vs Fall is decided by vertical velocity instead of "any time I'm airborne
-                 I'm jumping", so the correct clip plays on the way down.
-               - Blend times are chosen per transition class (idle&lt;-&gt;move, within-locomotion,
-                 jump, fall, land, turn, dance). Phase-sync is only enabled between states that
-                 share a stride phase (walk/jog/run/backwards) so entering a locomotion clip
-                 from idle/air/turn doesn't snap to a mid-stride pose.
-             </summary>
-            </member>
+             <summary>
+             Drives the animation component from the <see cref="T:CharacterController"/>'s
+             runtime state. Designed to produce smooth, non-ping-ponging transitions even when
+             the player spams move input or oscillates around threshold speeds.
+            
+             Key ideas:
+               - The animator is a small state machine. A single cached <see cref="T:CharacterAnimator.LocoState"/>
+                 is compared against the desired state every frame, and <see cref="M:Unravel.Core.AnimationComponent.Blend(Unravel.Core.AnimationClip,System.Single,System.Boolean,System.Boolean)"/>
+                 is only invoked when the state actually changes. This eliminates the previous
+                 behaviour of re-issuing Blend every frame and is the root fix for most pops.
+               - Idle &lt;-&gt; locomotion is INTENT-DRIVEN: we use
+                 <see cref="P:CharacterController.IsMoving"/> (which reflects forward/back input)
+                 as the authoritative signal. Speed is used only for tier selection and a short
+                 optional decel tail. This is critical when root motion is enabled: if we gated
+                 idle on <see cref="P:CharacterController.CurrentSpeed"/> alone, any residual
+                 logical velocity (axis smoothing, a frame where <see cref="P:CharacterController.IsGrounded"/>
+                 flickers and PreserveAirMomentum skips decel, etc.) would pin the animator in
+                 a locomotion clip, whose root motion keeps sliding the character forever.
+               - Walk / jog / run tiers use both a speed hysteresis band and an optional time
+                 debounce (<see cref="F:CharacterAnimator.TierDebounce"/>) so micro speed wobbles don't switch clips.
+               - Jump vs Fall is decided by vertical velocity instead of "any time I'm airborne
+                 I'm jumping", so the correct clip plays on the way down.
+               - Blend times are chosen per transition class (idle&lt;-&gt;move, within-locomotion,
+                 jump, fall, land, turn, dance). Phase-sync is only enabled between states that
+                 share a stride phase (walk/jog/run/backwards) so entering a locomotion clip
+                 from idle/air/turn doesn't snap to a mid-stride pose.
+             </summary>
+        </member>
         <member name="T:CharacterController">
-             <summary>
-             Production-grade third-person character controller.
-            
-             Uses the built-in <see cref="T:Unravel.Core.CharacterControllerComponent" /> for capsule-based
-             sweep movement, gravity and collisions (no manual rigidbody integration), and
-             layers on top:
-               - Acceleration / deceleration toward target speed (walk / run / sprint)
-               - Coyote time + jump buffering for forgiving jump feel
-               - Rotation toward movement direction with in-place turning
-               - Turn damping (speed scaling when changing direction sharply)
-               - Foot IK with hips dipping to match uneven ground
-               - Spine look-at IK + two-handed aim IK driven by the cursor
-            
-             Shooting/ability logic lives in the separate <c>CharacterShooter</c> component
-             so movement can be reused across non-combat characters (NPCs, cutscene actors).
-            
-             The script auto-resolves common bone names (Mixamo rig by default). Drop this
-             onto any humanoid rig with a <see cref="T:Unravel.Core.CharacterControllerComponent" /> and it
-             will work out of the box; override the bone slots in the inspector for
-             non-Mixamo rigs.
-             </summary>
-            </member>
+             <summary>
+             Production-grade third-person character controller.
+            
+             Uses the built-in <see cref="T:Unravel.Core.CharacterControllerComponent"/> for capsule-based
+             sweep movement, gravity and collisions (no manual rigidbody integration), and
+             layers on top:
+               - Acceleration / deceleration toward target speed (walk / run / sprint)
+               - Coyote time + jump buffering for forgiving jump feel
+               - Rotation toward movement direction with in-place turning
+               - Turn damping (speed scaling when changing direction sharply)
+               - Foot IK with hips dipping to match uneven ground
+               - Spine look-at IK + two-handed aim IK driven by the cursor
+            
+             Shooting/ability logic lives in the separate <c>CharacterShooter</c> component
+             so movement can be reused across non-combat characters (NPCs, cutscene actors).
+            
+             The script auto-resolves common bone names (Mixamo rig by default). Drop this
+             onto any humanoid rig with a <see cref="T:Unravel.Core.CharacterControllerComponent"/> and it
+             will work out of the box; override the bone slots in the inspector for
+             non-Mixamo rigs.
+             </summary>
+        </member>
         <member name="M:CharacterController.SteerAirVelocity(Vector3,Vector3,System.Single)">
-             <summary>
-             Blends the current horizontal velocity toward the input target while
-             preserving the larger magnitude of the two. Allows steering in the air
-             without letting the player brake mid-jump by releasing the stick.
-             </summary>
-            </member>
+            <summary>
+            Blends the current horizontal velocity toward the input target while
+            preserving the larger magnitude of the two. Allows steering in the air
+            without letting the player brake mid-jump by releasing the stick.
+            </summary>
+        </member>
         <member name="T:CharacterShooter">
-             <summary>
-             Handles aim-based projectile firing and explosion abilities for a character.
-            
-             Independent of the locomotion/IK controller: performs its own mouse raycast
-             to resolve the aim point, and picks which hand to fire from based on the
-             horizontal angle between the character's forward and the aim direction
-             (matches the convention used by the controller's aim IK).
-            
-             Inputs (while right-mouse aim is held):
-               - Left mouse  -&gt; Primary single-shot projectile (tight spread).
-               - E           -&gt; Burst / shotgun-style spread (many projectiles, wide spread).
-               - Q           -&gt; Explosive pulse at the aim hit point (applies impulse to
-                                every physics body in a radius, including projectiles).
-            
-             The projectile prefab is expected to carry its own <see cref="T:Unravel.Core.PhysicsComponent" />;
-             the shooter sets its <see cref="P:Unravel.Core.PhysicsComponent.excludeLayers" /> to the owner's
-             layers so the character never collides with its own shots, and applies an
-             impulse forward. Projectiles are auto-despawned after
-             <see cref="F:CharacterShooter.ProjectileLifetimeSeconds" />.
-             </summary>
-            </member>
+             <summary>
+             Handles aim-based projectile firing and explosion abilities for a character.
+            
+             Independent of the locomotion/IK controller: performs its own mouse raycast
+             to resolve the aim point, and picks which hand to fire from based on the
+             horizontal angle between the character's forward and the aim direction
+             (matches the convention used by the controller's aim IK).
+            
+             Inputs (while right-mouse aim is held):
+               - Left mouse  -> Primary single-shot projectile (tight spread).
+               - E           -> Burst / shotgun-style spread (many projectiles, wide spread).
+               - Q           -> Explosive pulse at the aim hit point (applies impulse to
+                                every physics body in a radius, including projectiles).
+            
+             The projectile prefab is expected to carry its own <see cref="T:Unravel.Core.PhysicsComponent"/>;
+             the shooter sets its <see cref="P:Unravel.Core.PhysicsComponent.excludeLayers"/> to the owner's
+             layers so the character never collides with its own shots, and applies an
+             impulse forward. Projectiles are auto-despawned after
+             <see cref="F:CharacterShooter.ProjectileLifetimeSeconds"/>.
+             </summary>
+        </member>
         <member name="M:CharacterShooter.PickLeadingHand(Vector3)">
-             <summary>
-             Picks the hand that is on the same side as the aim target. Mirrors the
-             controller's aim-IK side convention: SignedAngle(forward, look, up) &lt; 0
-             means the target is to the character's right.
-             </summary>
-            </member>
+            <summary>
+            Picks the hand that is on the same side as the aim target. Mirrors the
+            controller's aim-IK side convention: SignedAngle(forward, look, up) &lt; 0
+            means the target is to the character's right.
+            </summary>
+        </member>
         <member name="M:JumpPlatform.OnCreate">
-             <summary>
-             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
-             It only gets called once on each script, and only after other objects are initialised.
-             This means that it is safe to create references to other game objects and components in OnCreate.
-             </summary>
-            </member>
+            <summary>
+            OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+            It only gets called once on each script, and only after other objects are initialised.
+            This means that it is safe to create references to other game objects and components in OnCreate.
+            </summary>
+        </member>
         <member name="M:JumpPlatform.OnStart">
-             <summary>
-             Start is called once, before any Update methods and after OnCreate.
-             It works in much the same way as OnCreate, with a few key differences.
-             Unlike OnCreate, Start will not be called if the script is disabled.
-             </summary>
-            </member>
+            <summary>
+            Start is called once, before any Update methods and after OnCreate.
+            It works in much the same way as OnCreate, with a few key differences.
+            Unlike OnCreate, Start will not be called if the script is disabled.
+            </summary>
+        </member>
         <member name="M:TextTest.OnCreate">
-             <summary>
-             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
-             It only gets called once on each script, and only after other objects are initialised.
-             This means that it is safe to create references to other game objects and components in OnCreate.
-             </summary>
-            </member>
+            <summary>
+            OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+            It only gets called once on each script, and only after other objects are initialised.
+            This means that it is safe to create references to other game objects and components in OnCreate.
+            </summary>
+        </member>
         <member name="M:TextTest.OnStart">
-             <summary>
-             Start is called once, before any Update methods and after OnCreate.
-             It works in much the same way as OnCreate, with a few key differences.
-             Unlike OnCreate, Start will not be called if the script is disabled.
-             </summary>
-            </member>
+            <summary>
+            Start is called once, before any Update methods and after OnCreate.
+            It works in much the same way as OnCreate, with a few key differences.
+            Unlike OnCreate, Start will not be called if the script is disabled.
+            </summary>
+        </member>
         <member name="T:BaseMenu">
-             <summary>
-             Base class for all menu controllers that eliminates code duplication.
-             Handles common UI setup, button event registration, and audio callbacks.
-             Child classes only need to implement their specific button actions.
-             </summary>
-            </member>
+            <summary>
+            Base class for all menu controllers that eliminates code duplication.
+            Handles common UI setup, button event registration, and audio callbacks.
+            Child classes only need to implement their specific button actions.
+            </summary>
+        </member>
         <member name="M:BaseMenu.CacheUIElements">
-             <summary>
-             Cache UI elements. Override in child classes to cache specific elements.
-             </summary>
-            </member>
+            <summary>
+            Cache UI elements. Override in child classes to cache specific elements.
+            </summary>
+        </member>
         <member name="M:BaseMenu.CountValidElements">
-             <summary>
-             Count valid cached elements for logging. Override in child classes.
-             </summary>
-            </member>
+            <summary>
+            Count valid cached elements for logging. Override in child classes.
+            </summary>
+        </member>
         <member name="M:BaseMenu.SetupInitialUI">
-             <summary>
-             Set up initial UI state. Override in child classes for specific setup.
-             </summary>
-            </member>
+            <summary>
+            Set up initial UI state. Override in child classes for specific setup.
+            </summary>
+        </member>
         <member name="M:BaseMenu.RegisterEventHandlers">
-             <summary>
-             Register event handlers. Override in child classes to register specific buttons.
-             </summary>
-            </member>
+            <summary>
+            Register event handlers. Override in child classes to register specific buttons.
+            </summary>
+        </member>
         <member name="M:BaseMenu.GetTitleElementId">
-             <summary>
-             Get the ID of the title element for this menu. Override in child classes.
-             </summary>
-            </member>
+            <summary>
+            Get the ID of the title element for this menu. Override in child classes.
+            </summary>
+        </member>
         <member name="M:BaseMenu.RegisterButtonEvents(Unravel.Core.UIElement,System.String,System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent},System.Action{Unravel.Core.UIPointerEvent})">
-             <summary>
-             Register all standard button events for a button element.
-             </summary>
-             <param name="button">The button element to register events for</param>
-             <param name="buttonName">Name for logging purposes</param>
-             <param name="onDown">Mouse down handler</param>
-             <param name="onClick">Click handler</param>
-             <param name="onHover">Mouse hover handler</param>
-             <param name="onLeave">Mouse leave handler</param>
-             <param name="onRelease">Mouse release handler</param>
-            </member>
+            <summary>
+            Register all standard button events for a button element.
+            </summary>
+            <param name="button">The button element to register events for</param>
+            <param name="buttonName">Name for logging purposes</param>
+            <param name="onDown">Mouse down handler</param>
+            <param name="onClick">Click handler</param>
+            <param name="onHover">Mouse hover handler</param>
+            <param name="onLeave">Mouse leave handler</param>
+            <param name="onRelease">Mouse release handler</param>
+        </member>
         <member name="M:BaseMenu.OnButtonDown(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
-             <summary>
-             Standard button down handler with audio feedback.
-             </summary>
-            </member>
+            <summary>
+            Standard button down handler with audio feedback.
+            </summary>
+        </member>
         <member name="M:BaseMenu.OnButtonHover(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
-             <summary>
-             Standard button hover handler with audio feedback.
-             </summary>
-            </member>
+            <summary>
+            Standard button hover handler with audio feedback.
+            </summary>
+        </member>
         <member name="M:BaseMenu.OnButtonLeave(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
-             <summary>
-             Standard button leave handler.
-             </summary>
-            </member>
+            <summary>
+            Standard button leave handler.
+            </summary>
+        </member>
         <member name="M:BaseMenu.OnButtonRelease(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent,System.String)">
-             <summary>
-             Standard button release handler.
-             </summary>
-            </member>
+            <summary>
+            Standard button release handler.
+            </summary>
+        </member>
         <member name="M:BaseMenu.PlayButtonClickSound(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent)">
-             <summary>
-             Plays a button click sound effect.
-             Common callback used by all button click handlers.
-             </summary>
-             <param name="buttonElement">The button element that was clicked</param>
-             <param name="ev">The pointer event containing click information</param>
-            </member>
+            <summary>
+            Plays a button click sound effect.
+            Common callback used by all button click handlers.
+            </summary>
+            <param name="buttonElement">The button element that was clicked</param>
+            <param name="ev">The pointer event containing click information</param>
+        </member>
         <member name="M:BaseMenu.PlayButtonHoverSound(Unravel.Core.UIElement,Unravel.Core.UIPointerEvent)">
-             <summary>
-             Plays a button hover sound effect.
-             Common callback used by all button hover handlers.
-             </summary>
-             <param name="buttonElement">The button element that was hovered</param>
-             <param name="ev">The pointer event containing hover information</param>
-            </member>
+            <summary>
+            Plays a button hover sound effect.
+            Common callback used by all button hover handlers.
+            </summary>
+            <param name="buttonElement">The button element that was hovered</param>
+            <param name="ev">The pointer event containing hover information</param>
+        </member>
         <member name="T:AudioPaths">
-             <summary>
-             Audio file path constants to avoid duplication and make changes easier.
-             </summary>
-            </member>
+            <summary>
+            Audio file path constants to avoid duplication and make changes easier.
+            </summary>
+        </member>
         <member name="T:GameMenu">
-             <summary>
-             Game Menu script that handles in-game navigation buttons.
-             Uses GameUI for centralized navigation instead of direct menu manipulation.
-             Now inherits from BaseMenuController to eliminate code duplication.
-             </summary>
-            </member>
+            <summary>
+            Game Menu script that handles in-game navigation buttons.
+            Uses GameUI for centralized navigation instead of direct menu manipulation.
+            Now inherits from BaseMenuController to eliminate code duplication.
+            </summary>
+        </member>
         <member name="M:GameMenu.OnResumeButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Resume button click - resumes the game via GameUI.
-             </summary>
-            </member>
+            <summary>
+            Handles the Resume button click - resumes the game via GameUI.
+            </summary>
+        </member>
         <member name="M:GameMenu.OnSettingsButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Settings button click - opens settings menu via GameUI.
-             </summary>
-            </member>
+            <summary>
+            Handles the Settings button click - opens settings menu via GameUI.
+            </summary>
+        </member>
         <member name="M:GameMenu.OnQuitButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Quit button click - returns to main menu via GameUI.
-             </summary>
-            </member>
+            <summary>
+            Handles the Quit button click - returns to main menu via GameUI.
+            </summary>
+        </member>
         <member name="T:GameUI">
-             <summary>
-             Game UI controller that handles in-game UI and menu functionality.
-             Manages ESC key input, game menu, and in-game UI elements.
-             Focused specifically on gameplay scene functionality.
-             </summary>
-            </member>
+            <summary>
+            Game UI controller that handles in-game UI and menu functionality.
+            Manages ESC key input, game menu, and in-game UI elements.
+            Focused specifically on gameplay scene functionality.
+            </summary>
+        </member>
         <member name="M:GameUI.OnCreate">
-             <summary>
-             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
-             It only gets called once on each script, and only after other objects are initialised.
-             This means that it is safe to create references to other game objects and components in OnCreate.
-             </summary>
-            </member>
+            <summary>
+            OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+            It only gets called once on each script, and only after other objects are initialised.
+            This means that it is safe to create references to other game objects and components in OnCreate.
+            </summary>
+        </member>
         <member name="M:GameUI.OnStart">
-             <summary>
-             Start is called once, before any Update methods and after OnCreate.
-             It works in much the same way as OnCreate, with a few key differences.
-             Unlike OnCreate, Start will not be called if the script is disabled.
-             </summary>
-            </member>
+            <summary>
+            Start is called once, before any Update methods and after OnCreate.
+            It works in much the same way as OnCreate, with a few key differences.
+            Unlike OnCreate, Start will not be called if the script is disabled.
+            </summary>
+        </member>
         <member name="M:GameUI.FindMenuReferences">
-             <summary>
-             Automatically find menu entity references if not manually assigned.
-             </summary>
-            </member>
+            <summary>
+            Automatically find menu entity references if not manually assigned.
+            </summary>
+        </member>
         <member name="M:GameUI.ValidateReferences">
-             <summary>
-             Validate that required references are set.
-             </summary>
-            </member>
+            <summary>
+            Validate that required references are set.
+            </summary>
+        </member>
         <member name="M:GameUI.ToggleGameMenu">
-             <summary>
-             Toggle the game menu on/off and handle pause state.
-             </summary>
-            </member>
+            <summary>
+            Toggle the game menu on/off and handle pause state.
+            </summary>
+        </member>
         <member name="M:GameUI.OpenGameMenu">
-             <summary>
-             Open the game menu and pause the game.
-             </summary>
-            </member>
+            <summary>
+            Open the game menu and pause the game.
+            </summary>
+        </member>
         <member name="M:GameUI.CloseGameMenu">
-             <summary>
-             Close the game menu and resume the game.
-             </summary>
-            </member>
+            <summary>
+            Close the game menu and resume the game.
+            </summary>
+        </member>
         <member name="M:GameUI.GoToMainMenu">
-             <summary>
-             Navigate to the main menu (used by quit buttons).
-             </summary>
-            </member>
+            <summary>
+            Navigate to the main menu (used by quit buttons).
+            </summary>
+        </member>
         <member name="M:GameUI.ResumeGame">
-             <summary>
-             Resume the game (used by resume button).
-             </summary>
-            </member>
+            <summary>
+            Resume the game (used by resume button).
+            </summary>
+        </member>
         <member name="M:GameUI.OpenSettings">
-             <summary>
-             Open settings menu from game menu.
-             </summary>
-            </member>
+            <summary>
+            Open settings menu from game menu.
+            </summary>
+        </member>
         <member name="M:GameUI.CloseSettings">
-             <summary>
-             Close settings and return to game menu.
-             </summary>
-            </member>
+            <summary>
+            Close settings and return to game menu.
+            </summary>
+        </member>
         <member name="M:GameUI.QuitApplication">
-             <summary>
-             Quit the application (used by exit buttons).
-             </summary>
-            </member>
+            <summary>
+            Quit the application (used by exit buttons).
+            </summary>
+        </member>
         <member name="M:GameUI.ShowMenu(Unravel.Core.Entity,Unravel.Core.Entity)">
-             <summary>
-             Show a specific menu and hide others (internal helper method).
-             </summary>
-             <param name="menuToShow">The menu entity to show</param>
-             <param name="menuToHide">The menu entity to hide</param>
-            </member>
+            <summary>
+            Show a specific menu and hide others (internal helper method).
+            </summary>
+            <param name="menuToShow">The menu entity to show</param>
+            <param name="menuToHide">The menu entity to hide</param>
+        </member>
         <member name="M:GameUI.FindInScene">
-             <summary>
-             Static helper method to find the GameUI controller in the current scene.
-             Can be used by menus to find the game controller.
-             </summary>
-            </member>
+            <summary>
+            Static helper method to find the GameUI controller in the current scene.
+            Can be used by menus to find the game controller.
+            </summary>
+        </member>
         <member name="T:LobbyUI">
-             <summary>
-             Lobby UI controller that handles main menu navigation and scene transitions.
-             Manages the main menu, settings menu, and transitions to the game scene.
-             </summary>
-            </member>
+            <summary>
+            Lobby UI controller that handles main menu navigation and scene transitions.
+            Manages the main menu, settings menu, and transitions to the game scene.
+            </summary>
+        </member>
         <member name="M:LobbyUI.OnCreate">
-             <summary>
-             OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
-             It only gets called once on each script, and only after other objects are initialised.
-             This means that it is safe to create references to other game objects and components in OnCreate.
-             </summary>
-            </member>
+            <summary>
+            OnCreate is called when the script is first loaded, or when an object it is attached to is instantiated
+            It only gets called once on each script, and only after other objects are initialised.
+            This means that it is safe to create references to other game objects and components in OnCreate.
+            </summary>
+        </member>
         <member name="M:LobbyUI.OnStart">
-             <summary>
-             Start is called once, before any Update methods and after OnCreate.
-             It works in much the same way as OnCreate, with a few key differences.
-             Unlike OnCreate, Start will not be called if the script is disabled.
-             </summary>
-            </member>
+            <summary>
+            Start is called once, before any Update methods and after OnCreate.
+            It works in much the same way as OnCreate, with a few key differences.
+            Unlike OnCreate, Start will not be called if the script is disabled.
+            </summary>
+        </member>
         <member name="M:LobbyUI.FindMenuReferences">
-             <summary>
-             Automatically find menu entity references if not manually assigned.
-             </summary>
-            </member>
+            <summary>
+            Automatically find menu entity references if not manually assigned.
+            </summary>
+        </member>
         <member name="M:LobbyUI.ValidateReferences">
-             <summary>
-             Validate that required references are set.
-             </summary>
-            </member>
+            <summary>
+            Validate that required references are set.
+            </summary>
+        </member>
         <member name="M:LobbyUI.StartGame">
-             <summary>
-             Start the game (used by play button).
-             </summary>
-            </member>
+            <summary>
+            Start the game (used by play button).
+            </summary>
+        </member>
         <member name="M:LobbyUI.OpenSettings">
-             <summary>
-             Open settings menu from main menu.
-             </summary>
-            </member>
+            <summary>
+            Open settings menu from main menu.
+            </summary>
+        </member>
         <member name="M:LobbyUI.CloseSettings">
-             <summary>
-             Close settings and return to main menu.
-             </summary>
-            </member>
+            <summary>
+            Close settings and return to main menu.
+            </summary>
+        </member>
         <member name="M:LobbyUI.QuitApplication">
-             <summary>
-             Quit the application (used by exit button).
-             </summary>
-            </member>
+            <summary>
+            Quit the application (used by exit button).
+            </summary>
+        </member>
         <member name="M:LobbyUI.ShowMenu(Unravel.Core.Entity,Unravel.Core.Entity)">
-             <summary>
-             Show a specific menu and hide others (internal helper method).
-             </summary>
-             <param name="menuToShow">The menu entity to show</param>
-             <param name="menuToHide">The menu entity to hide</param>
-            </member>
+            <summary>
+            Show a specific menu and hide others (internal helper method).
+            </summary>
+            <param name="menuToShow">The menu entity to show</param>
+            <param name="menuToHide">The menu entity to hide</param>
+        </member>
         <member name="M:LobbyUI.FindInScene">
-             <summary>
-             Static helper method to find the LobbyUI controller in the current scene.
-             Can be used by menus to find the lobby controller.
-             </summary>
-            </member>
-        <!--FIXME: Invalid documentation markup was found for member T:SettingsMenu-->
+            <summary>
+            Static helper method to find the LobbyUI controller in the current scene.
+            Can be used by menus to find the lobby controller.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SettingsMenu" -->
         <member name="M:SettingsMenu.SetPreviousMenu(Unravel.Core.Entity)">
-             <summary>
-             Set the previous menu for proper back navigation.
-             Called by GameUI when opening settings.
-             </summary>
-             <param name="fromMenu">The menu we came from</param>
-            </member>
+            <summary>
+            Set the previous menu for proper back navigation.
+            Called by GameUI when opening settings.
+            </summary>
+            <param name="fromMenu">The menu we came from</param>
+        </member>
         <member name="M:SettingsMenu.SetGraphicsPresets(SettingsMenu.GraphicsPreset[])">
-             <summary>
-             Set custom graphics presets that will replace the HTML defaults.
-             Call this method before the menu is displayed to populate the dropdown dynamically.
-             </summary>
-             <param name="presets">Array of graphics presets to display</param>
-            </member>
+            <summary>
+            Set custom graphics presets that will replace the HTML defaults.
+            Call this method before the menu is displayed to populate the dropdown dynamically.
+            </summary>
+            <param name="presets">Array of graphics presets to display</param>
+        </member>
         <member name="M:SettingsMenu.GetGraphicsPresets">
-             <summary>
-             Get the current graphics presets (either custom or default HTML ones).
-             </summary>
-             <returns>Array of current graphics presets</returns>
-            </member>
+            <summary>
+            Get the current graphics presets (either custom or default HTML ones).
+            </summary>
+            <returns>Array of current graphics presets</returns>
+        </member>
         <member name="M:SettingsMenu.GetDefaultGraphicsPresets">
-             <summary>
-             Get the default graphics presets that match the HTML options.
-             </summary>
-             <returns>Array of default graphics presets</returns>
-            </member>
+            <summary>
+            Get the default graphics presets that match the HTML options.
+            </summary>
+            <returns>Array of default graphics presets</returns>
+        </member>
         <member name="M:SettingsMenu.OnVolumeSliderInput(Unravel.Core.UISliderEvent)">
-             <summary>
-             Handles the volume slider input event (real-time updates while dragging).
-             </summary>
-             <param name="ev">Input event containing slider value</param>
-            </member>
+            <summary>
+            Handles the volume slider input event (real-time updates while dragging).
+            </summary>
+            <param name="ev">Input event containing slider value</param>
+        </member>
         <member name="M:SettingsMenu.OnVolumeSliderChange(Unravel.Core.UISliderEvent)">
-             <summary>
-             Handles the volume slider change event (final value when released).
-             </summary>
-             <param name="ev">Input event containing final slider value</param>
-            </member>
+            <summary>
+            Handles the volume slider change event (final value when released).
+            </summary>
+            <param name="ev">Input event containing final slider value</param>
+        </member>
         <member name="M:SettingsMenu.OnGraphicsQualityChange(Unravel.Core.UIChangeEvent)">
-             <summary>
-             Handles the graphics quality dropdown change event.
-             </summary>
-             <param name="ev">Change event containing selected value</param>
-            </member>
+            <summary>
+            Handles the graphics quality dropdown change event.
+            </summary>
+            <param name="ev">Change event containing selected value</param>
+        </member>
         <member name="M:SettingsMenu.OnBackButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Back button click - returns to previous menu.
-             </summary>
-            </member>
+            <summary>
+            Handles the Back button click - returns to previous menu.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.OnApplyButtonClick(Unravel.Core.UIPointerEvent)">
-             <summary>
-             Handles the Apply button click - applies all settings.
-             </summary>
-            </member>
+            <summary>
+            Handles the Apply button click - applies all settings.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.PopulateGraphicsDropdown">
-             <summary>
-             Populates the graphics quality dropdown with custom presets, replacing HTML defaults.
-             </summary>
-            </member>
+            <summary>
+            Populates the graphics quality dropdown with custom presets, replacing HTML defaults.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.UpdateVolumeLabel">
-             <summary>
-             Updates the volume label to show current volume percentage.
-             </summary>
-            </member>
+            <summary>
+            Updates the volume label to show current volume percentage.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.UpdateGraphicsQualityLabel">
-             <summary>
-             Updates the graphics quality label to show current selection.
-             </summary>
-            </member>
+            <summary>
+            Updates the graphics quality label to show current selection.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.GetGraphicsQualityDisplayName(System.String)">
-             <summary>
-             Gets the display name for a graphics quality value, checking both custom presets and defaults.
-             </summary>
-             <param name="qualityValue">The graphics quality value to get display name for</param>
-             <returns>Display name for the quality value</returns>
-            </member>
+            <summary>
+            Gets the display name for a graphics quality value, checking both custom presets and defaults.
+            </summary>
+            <param name="qualityValue">The graphics quality value to get display name for</param>
+            <returns>Display name for the quality value</returns>
+        </member>
         <member name="M:SettingsMenu.ApplyVolumeSettings">
-             <summary>
-             Applies the current volume setting to the audio system.
-             </summary>
-            </member>
+            <summary>
+            Applies the current volume setting to the audio system.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.ApplyGraphicsQualitySettings">
-             <summary>
-             Applies the current graphics quality setting to the graphics system.
-             </summary>
-            </member>
+            <summary>
+            Applies the current graphics quality setting to the graphics system.
+            </summary>
+        </member>
         <member name="M:SettingsMenu.ApplyAllSettings">
-             <summary>
-             Applies all current settings to the game systems.
-             </summary>
-            </member>
+            <summary>
+            Applies all current settings to the game systems.
+            </summary>
+        </member>
     </members>
 </doc>

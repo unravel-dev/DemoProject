@@ -59,7 +59,6 @@
 ,
     "extensions": {
         "recommendations": [
-             "ms-vscode.mono-debug",
              "ms-dotnettools.csharp"
         ]
     }
@@ -68,11 +67,15 @@
         "version": "0.2.0",
         "configurations": [
             {
-                "name": "Attach to Mono",
-                "request": "attach",
-                "type": "mono",
-                "address": "127.0.0.1",
-                "port": 55555
+                "name": "Attach to UnravelEditor",
+                "type": "coreclr",
+                "request": "attach"
+                "processName": "UnravelEditor"
+            },
+            {
+                "name": ".NET Core Attach",
+                "type": "coreclr",
+                "request": "attach"
             }
         ]
     }
