@@ -18,6 +18,16 @@
       "generate_lods": true,
       "lod_target_error": 0.009999999776482582
      },
+     "sdf": {
+      "generate_sdf": true,
+      "resolution": 64,
+      "min_voxel_size": 0.009999999776482582,
+      "max_voxel_size": 1.0,
+      "max_total_voxels": 262144,
+      "lod_index": 2,
+      "two_sided": false,
+      "two_sided_thickness": 0.05000000074505806
+     },
      "rig": {},
      "animations": {
       "import_animations": true

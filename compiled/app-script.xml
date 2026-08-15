@@ -92,6 +92,19 @@
              non-Mixamo rigs.
              </summary>
         </member>
+        <member name="T:CharacterController.FootGoal">
+            <summary>
+            A resolved ground contact for one foot: where to put it, how to orient it,
+            and how strongly to apply both.
+            </summary>
+        </member>
+        <member name="M:CharacterController.SmoothingAlpha(System.Single,System.Single)">
+            <summary>
+            Frame-rate independent equivalent of a fixed Lerp factor. A raw
+            Lerp(a, b, k) converges k per FRAME, so the hips dip is visibly stiffer
+            at 144Hz than at 60Hz; this converts k into the same rate per second.
+            </summary>
+        </member>
         <member name="M:CharacterController.SteerAirVelocity(Vector3,Vector3,System.Single)">
             <summary>
             Blends the current horizontal velocity toward the input target while
