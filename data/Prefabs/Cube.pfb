@@ -2,11 +2,11 @@
  "entities": [
   {
    "prefab_uid": "50011467-0fdc-9849-9586-0218049419ea",
-   "uid": "ef96b6bd-ae9a-d245-a619-b7e2e13a94e0",
+   "uid": "c5d58b62-14b4-3d42-8e42-6dc4bec70b42",
    "components": {
     "has_id_component": true,
     "id_component": {
-     "id": "ef96b6bd-ae9a-d245-a619-b7e2e13a94e0"
+     "id": "c5d58b62-14b4-3d42-8e42-6dc4bec70b42"
     },
     "has_tag_component": true,
     "tag_component": {
@@ -31,11 +31,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.5,
@@ -60,7 +59,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -84,9 +82,13 @@
     "has_physics_component": true,
     "physics_component": {
      "is_using_gravity": true,
-     "is_kinematic": false,
+     "body_type": 2,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1

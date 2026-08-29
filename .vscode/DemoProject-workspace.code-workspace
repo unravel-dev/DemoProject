@@ -67,10 +67,10 @@
         "version": "0.2.0",
         "configurations": [
             {
-                "name": "Attach to UnravelEditor",
+                "name": "Attach to unravel-editor",
                 "type": "coreclr",
                 "request": "attach"
-                "processName": "UnravelEditor"
+                "processName": "unravel-editor"
             },
             {
                 "name": ".NET Core Attach",

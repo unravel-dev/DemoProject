@@ -80,6 +80,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -218,6 +222,10 @@
      "body_type": 0,
      "is_sensor": true,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -373,6 +381,10 @@
      "body_type": 1,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -4534,6 +4546,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -4721,6 +4737,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -4845,6 +4865,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -5086,6 +5110,10 @@
        "FootRaycastOffset": 0.5,
        "FootRaycastDistance": 1.0,
        "FootTargetYOffset": 0.10000000149011612,
+       "FootDropStart": 0.15000000596046449,
+       "FootDropMax": 0.30000001192092898,
+       "MaxHipsDrop": 0.30000001192092898,
+       "KneePoleOutwardBias": 0.15000000596046449,
        "HipsSmoothing": 0.15000000596046449,
        "ApplyAimIK": true,
        "AimWithRightMouse": true,
@@ -5096,6 +5124,12 @@
        "HandSwitchEndAngle": 30.0,
        "MaxAimForwardAngle": 110.0,
        "HandChainLength": 2,
+       "AutoResolveSpineAimAxis": true,
+       "SpineAimAxis": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+       },
        "Hips": {
         "flags": 2,
         "uid": "nil"
@@ -5221,11 +5255,11 @@
        "y": 0
       },
       "viewport_size": {
-       "width": 1920,
-       "height": 1080
+       "width": 722,
+       "height": 849
       },
       "orthographic_size": 5.0,
-      "aspect_ratio": 1.7777777910232545,
+      "aspect_ratio": 0.8504122495651245,
       "aspect_locked": false,
       "frustum_locked": false
      },
@@ -9376,6 +9410,10 @@
      "body_type": 1,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -13558,6 +13596,10 @@
      "body_type": 1,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -17723,6 +17765,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -17994,6 +18040,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -18180,6 +18230,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -18366,6 +18420,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -18490,6 +18548,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -18614,6 +18676,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -18742,6 +18808,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -18955,6 +19025,10 @@
      "body_type": 0,
      "is_sensor": true,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -19087,6 +19161,10 @@
      "body_type": 0,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -19155,18 +19233,30 @@
      "source": {
       "uid": "6e59541b-a348-6248-9685-aba84bc78076"
      },
-     "property_overrides": [
-      {
-       "entity_uuid": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
-       "component_path": "transform_component/active",
-       "pretty_component_path": "Transform/Active"
-      }
-     ],
-     "removed_entities": []
+     "instance_id": "nil",
+     "instance_document": "nil",
+     "from_document": {
+      "overrides": [],
+      "removed_entities": [],
+      "removed_instances": []
+     },
+     "local": {
+      "overrides": [
+       {
+        "instance_path": [],
+        "entity_uuid": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
+        "component_path": "transform_component/active",
+        "pretty_component_path": "Transform/Active"
+       }
+      ],
+      "removed_entities": [],
+      "removed_instances": []
+     }
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337"
+     "id": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -19254,7 +19344,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "466422c5-14ca-1e45-a119-ddc36d49af40"
+     "id": "466422c5-14ca-1e45-a119-ddc36d49af40",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -19329,7 +19420,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "531932bf-4358-1449-85fe-2d2ea88a54b6"
+     "id": "531932bf-4358-1449-85fe-2d2ea88a54b6",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -19404,7 +19496,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "153132be-843d-fa4e-b15c-c0077f1bac98"
+     "id": "153132be-843d-fa4e-b15c-c0077f1bac98",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -19713,8 +19806,9 @@
        "type": 2,
        "depth": 0,
        "resolution": 3,
-       "bias": 0.001019999966956675,
-       "normal_bias": 0.014999999664723874,
+       "depth_bias_texels": 0.5,
+       "slope_bias_texels": 0.5,
+       "normal_bias_texels": 0.5,
        "near_plane": 0.20000000298023225,
        "far_plane": 550.0,
        "show_coverage": false,
@@ -19724,10 +19818,9 @@
       "contact_shadow": {
        "enabled": false,
        "ray_length": 0.20000000298023225,
-       "thickness": 0.15000000596046449,
-       "n_dot_l_fade_start": 0.0,
-       "n_dot_l_fade_end": 0.4749999940395355,
-       "normal_facing_reject": -1.0
+       "occluder_thickness": 0.029999999329447748,
+       "max_distance": 50.0,
+       "opacity": 1.0
       },
       "directional_data": {},
       "directional_shadow_params": {
@@ -19740,24 +19833,24 @@
     "has_skylight_component": true,
     "skylight_component": {
      "mode": 1,
-     "sky_brightness": 1.5,
+     "sky_brightness": 1.0,
      "turbidity": 1.899999976158142,
      "cloud_mode": 2,
-     "cloud_coverage": 0.5199999809265137,
+     "cloud_coverage": 0.4000000059604645,
+     "cloud_macro_variation": 1.5,
      "cloud_base_altitude": 27500.0,
-     "cloud_top_altitude": 45000.0,
-     "cloud_speed": 0.0,
+     "cloud_thickness": 40000.0,
+     "cloud_size": 20000.0,
      "cloud_density": 1.5,
-     "cloud_absorption": 0.07999999821186066,
-     "cloud_light_absorption": 0.10000000149011612,
-     "cloud_vol_uv_scale": 0.00005999999848427251,
-     "cloud_vol_edge_width": 0.20000000298023225,
-     "cloud_vol_shape_power": 1.1200000047683716,
-     "cloud_vol_detail_erode": 0.47999998927116396,
-     "cloud_vol_macro_strength": 0.36000001430511477,
-     "cloud_vol_coarse_scale": 0.3919999897480011,
-     "cloud_vol_base_mix": 0.44999998807907107,
-     "cloud_vol_sun_intensity": 24.0,
+     "cloud_shadow_strength": 0.10000000149011612,
+     "cloud_brightness": 1.0,
+     "cloud_world_space_altitude": true,
+     "cloud_shadows": false,
+     "cloud_shadow_opacity": 1.0,
+     "cloud_softness": 0.800000011920929,
+     "cloud_detail_erode": 0.699999988079071,
+     "cloud_speed": 15.0,
+     "cloud_wind_direction": 35.0,
      "irradiance_intensity": 0.05000000074505806,
      "irradiance_tint": {
       "r": 1.0,
@@ -19885,7 +19978,7 @@
       "uid": "c482d4d5-803d-0540-b3ec-751eff3908cc"
      },
      "children": [],
-     "active": true
+     "active": false
     },
     "has_reflection_probe_component": true,
     "reflection_probe_component": {
@@ -20122,8 +20215,7 @@
        "brightness": 1.0,
        "facing_reflections_fading": 0.10000000149011612,
        "roughness_depth_tolerance": 1.0,
-       "fade_in_start": 0.10000000149011612,
-       "fade_in_end": 0.20000000298023225,
+       "screen_edge_fade": 0.10000000149011612,
        "resolution": 2,
        "enable_cone_tracing": false,
        "cone_tracing": {
@@ -20183,25 +20275,29 @@
     },
     "has_gi_component": true,
     "gi_component": {
-     "enabled": false,
+     "enabled": true,
      "settings": {
       "resolve": {
        "intensity": 1.0,
        "resolution": 2,
-       "probe_spacing": 16,
+       "probe_spacing": 32,
        "enable_screen_trace": true,
+       "probe_visibility_variance_gate": 0.15000000596046449,
        "adaptive_probes": true,
+       "adaptive_rays": false,
        "enable_reflections": true,
        "reflection_temporal_frames": 8,
+       "denoise_converged_early_out": true,
        "enable_temporal": true,
-       "max_accum_frames": 24.0,
-       "reprojection_tolerance": 0.25,
+       "temporal_slow_frames": 96.0,
+       "reprojection_tolerance": 0.10000000149011612,
        "enable_spatial_denoise": true,
        "denoise_passes": 3,
        "denoise_normal_power": 32.0,
        "denoise_luma_phi": 32.0,
        "denoise_plane_tolerance": 0.019999999552965165,
        "denoise_low_count_boost": 16.0,
+       "denoise_luma_floor": 0.07999999821186066,
        "enable_bilateral_upsample": true,
        "upsample_normal_power": 32.0,
        "upsample_plane_tolerance": 0.019999999552965165
