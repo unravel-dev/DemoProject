@@ -1,9 +1,18 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
-   "id": 1048579,
+   "uid": "38df772a-8df4-9b44-a96e-f1575bc4bbce",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "38df772a-8df4-9b44-a96e-f1575bc4bbce"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "LobbyUI",
@@ -17,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5100a106-231b-8840-b67e-df42df315363"
+     "id": "5100a106-231b-8840-b67e-df42df315363",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -27,11 +37,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -45,21 +54,21 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [
       {
        "prefab_uid": "af8efd56-6ba6-c946-aefb-45bbcc79cff5",
-       "id": 1048580
+       "uid": "e43e58b6-df31-7e42-a515-f373173c1f39"
       },
       {
        "prefab_uid": "f0be3f9a-2578-484e-9862-596215a6c9a9",
-       "id": 1048581
+       "uid": "705a387f-456d-5f4e-9efc-c134820e806c"
       },
       {
        "prefab_uid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
-       "id": 1048582
+       "uid": "121a0def-7a24-7849-8897-bf5c84fcf838"
       }
      ],
      "active": true
@@ -71,16 +80,21 @@
        "type": "LobbyUI",
        "MainMenu": {
         "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
+        "prefab_uid": "nil",
+        "uid": "nil"
        },
        "SettingsMenu": {
         "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
+        "prefab_uid": "nil",
+        "uid": "nil"
        },
        "GameScene": {
         "uid": "1da1116f-307c-fd49-8002-81a794aa83d9"
+       },
+       "BackgroundAudioSource": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
        }
       }
      ]
@@ -89,8 +103,12 @@
   },
   {
    "prefab_uid": "af8efd56-6ba6-c946-aefb-45bbcc79cff5",
-   "id": 1048580,
+   "uid": "e43e58b6-df31-7e42-a515-f373173c1f39",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "e43e58b6-df31-7e42-a515-f373173c1f39"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "MainMenu",
@@ -104,7 +122,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "af8efd56-6ba6-c946-aefb-45bbcc79cff5"
+     "id": "af8efd56-6ba6-c946-aefb-45bbcc79cff5",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -114,11 +133,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -133,10 +151,23 @@
      },
      "parent": {
       "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
-      "id": 1048579
+      "uid": "38df772a-8df4-9b44-a96e-f1575bc4bbce"
      },
      "children": [],
      "active": true
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "d3f75e99-1d69-4e47-96d8-9da797deda18"
+     },
+     "render_mode": 0,
+     "size": {
+      "width": 512,
+      "height": 512
+     },
+     "pixels_per_world_unit": 100.0
     },
     "has_script_component": true,
     "script_component": {
@@ -145,20 +176,17 @@
        "type": "MainMenu"
       }
      ]
-    },
-    "has_ui_document_component": true,
-    "ui_document_component": {
-     "enabled": true,
-     "asset": {
-      "uid": "d3f75e99-1d69-4e47-96d8-9da797deda18"
-     }
     }
    }
   },
   {
    "prefab_uid": "f0be3f9a-2578-484e-9862-596215a6c9a9",
-   "id": 1048581,
+   "uid": "705a387f-456d-5f4e-9efc-c134820e806c",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "705a387f-456d-5f4e-9efc-c134820e806c"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "SettingsMenu",
@@ -172,7 +200,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "f0be3f9a-2578-484e-9862-596215a6c9a9"
+     "id": "f0be3f9a-2578-484e-9862-596215a6c9a9",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -182,11 +211,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -201,10 +229,23 @@
      },
      "parent": {
       "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
-      "id": 1048579
+      "uid": "38df772a-8df4-9b44-a96e-f1575bc4bbce"
      },
      "children": [],
      "active": false
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
+     },
+     "render_mode": 0,
+     "size": {
+      "width": 512,
+      "height": 512
+     },
+     "pixels_per_world_unit": 100.0
     },
     "has_script_component": true,
     "script_component": {
@@ -213,20 +254,17 @@
        "type": "SettingsMenu"
       }
      ]
-    },
-    "has_ui_document_component": true,
-    "ui_document_component": {
-     "enabled": true,
-     "asset": {
-      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
-     }
     }
    }
   },
   {
    "prefab_uid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
-   "id": 1048582,
+   "uid": "121a0def-7a24-7849-8897-bf5c84fcf838",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "121a0def-7a24-7849-8897-bf5c84fcf838"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "BackgroundMusicSource",
@@ -240,7 +278,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d"
+     "id": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -250,11 +289,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -269,7 +307,7 @@
      },
      "parent": {
       "prefab_uid": "5100a106-231b-8840-b67e-df42df315363",
-      "id": 1048579
+      "uid": "38df772a-8df4-9b44-a96e-f1575bc4bbce"
      },
      "children": [],
      "active": true
@@ -278,6 +316,10 @@
     "audio_source_component": {
      "auto_play": true,
      "loop": true,
+     "mute": false,
+     "spatial": false,
+     "bus": 0,
+     "priority": 0,
      "volume": 0.37299999594688418,
      "pitch": 1.0,
      "volume_rolloff": 0.0,

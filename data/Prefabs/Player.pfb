@@ -1,9 +1,18 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "4a0751b3-90c2-1b44-b6aa-71261628308a",
-   "id": 1048579,
+   "uid": "c8b8c00c-8ec2-f949-92b5-a116f8674ce1",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "c8b8c00c-8ec2-f949-92b5-a116f8674ce1"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Player",
@@ -17,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "4a0751b3-90c2-1b44-b6aa-71261628308a"
+     "id": "4a0751b3-90c2-1b44-b6aa-71261628308a",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -27,11 +37,10 @@
        "y": 0.0,
        "z": -4.278913974761963
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -45,17 +54,17 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [
       {
        "prefab_uid": "8183af62-541e-2c45-bc86-7efc5a614f40",
-       "id": 4
+       "uid": "cc25dc84-9569-ba45-ac27-93da7d47c361"
       },
       {
        "prefab_uid": "20294aaa-e839-d548-81a2-593d0ef1eb60",
-       "id": 5
+       "uid": "5e65b27d-a368-0d41-9bbc-f94e2f7bd492"
       }
      ],
      "active": true
@@ -65,7 +74,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -81,30 +89,35 @@
        }
       ],
       "material_instances": [],
-      "lod_limits": [
-       {
-        "min": 0,
-        "max": 100
-       }
-      ]
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
      }
     },
     "has_animation_component": true,
     "animation_component": {
      "animation": {
-      "uid": "00000000-0000-0000-0000-000000000000"
+      "uid": "nil"
      },
      "auto_play": true,
      "culling_mode": 0,
      "apply_root_motion": true,
-     "speed": 1.0
+     "speed": 1.0,
+     "retargeting_mode": 0
     },
     "has_physics_component": true,
     "physics_component": {
      "is_using_gravity": true,
-     "is_kinematic": false,
+     "body_type": 2,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -123,7 +136,7 @@
       "z": true
      },
      "material": {
-      "uid": "00000000-0000-0000-0000-000000000000"
+      "uid": "nil"
      },
      "shapes": [
       {
@@ -147,65 +160,91 @@
      "script_components": [
       {
        "type": "CharacterController",
-       "LeftFoot": {
-        "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
-       },
-       "RightFoot": {
-        "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
-       },
-       "Hips": {
-        "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
-       },
-       "Spine": {
-        "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
-       },
-       "LeftHand": {
-        "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
-       },
-       "RightHand": {
-        "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
-       },
-       "Projectice": {
-        "uid": "21500ecd-9926-3e42-96e6-7e2a39ae603a"
-       },
-       "ApplyIK": true,
+       "WalkSpeed": 2.0,
+       "RunSpeed": 5.0,
+       "SprintSpeed": 7.5,
+       "Acceleration": 8.0,
+       "Deceleration": 20.0,
+       "AirControl": 0.3499999940395355,
+       "PreserveAirMomentum": true,
+       "RunSmoothing": 2.5,
+       "RotateSpeed": 1.0,
+       "RunRotateSpeed": 2.0,
+       "InPlaceTurnSpeed": 120.0,
+       "InPlaceTurnThreshold": 0.20000000298023225,
+       "EnableTurnDamping": true,
+       "TurnDampStartAngle": 30.0,
+       "TurnDampEndAngle": 150.0,
+       "MinTurnSpeedScale": 0.4000000059604645,
+       "JumpSpeed": 2.0,
+       "CoyoteTime": 0.15000000596046449,
+       "JumpBuffer": 0.10000000149011612,
+       "ApplyFootIK": true,
+       "FootChainLength": 2,
        "FootHeightMin": 0.14000000059604646,
        "FootHeightMax": 0.2199999988079071,
        "FootRaycastOffset": 0.5,
+       "FootRaycastDistance": 1.0,
        "FootTargetYOffset": 0.10000000149011612,
+       "FootDropStart": 0.15000000596046449,
+       "FootDropMax": 0.30000001192092898,
+       "MaxHipsDrop": 0.30000001192092898,
+       "KneePoleOutwardBias": 0.15000000596046449,
+       "HipsSmoothing": 0.15000000596046449,
+       "ApplyAimIK": true,
+       "AimWithRightMouse": true,
+       "AimMaxDistance": 500.0,
        "SpineIKSpeed": 5.0,
        "HandIKSpeed": 5.0,
-       "HandSideSpeed": 15.0,
        "HandSwitchStartAngle": 20.0,
        "HandSwitchEndAngle": 30.0,
-       "ForwardAngle": 110.0,
-       "WalkSpeed": 2.0,
-       "RunSpeed": 5.0,
-       "Acceleration": 8.0,
-       "DeAcceleration": 8.0,
-       "RotateSpeed": 1.0,
-       "RunRotateSpeed": 2.0,
-       "JumpForce": 5.0,
-       "SphereCastRadius": 0.20000000298023225,
-       "GroundCheckDistance": 0.5,
-       "SlopeLimitAngle": 60.0,
-       "UseManualGravity": false,
-       "GravityMagnitude": 9.8100004196167,
-       "MaxFallSpeed": 20.0,
-       "CoyoteTimeDuration": 0.20000000298023225,
-       "JumpBufferDuration": 0.10000000149011612
+       "MaxAimForwardAngle": 110.0,
+       "HandChainLength": 2,
+       "AutoResolveSpineAimAxis": true,
+       "SpineAimAxis": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+       },
+       "Hips": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "Spine": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "LeftFoot": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "RightFoot": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "LeftHand": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "RightHand": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "CurrentSpeed": 0.0,
+       "CurrentRotateSpeed": 0.0,
+       "IsGrounded": true,
+       "IsMoving": false,
+       "IsBackwards": false,
+       "IsRunning": false,
+       "IsRotatingInPlace": false,
+       "IsAiming": false,
+       "TurningInPlaceDirection": 0.0
       },
       {
        "type": "CharacterAnimator",
@@ -234,12 +273,27 @@
         "uid": "83a177fa-bddb-df4a-a59b-c793119af96c"
        },
        "leftTurnClip": {
-        "uid": "00000000-0000-0000-0000-000000000000"
+        "uid": "nil"
        },
        "rightTurnClip": {
-        "uid": "00000000-0000-0000-0000-000000000000"
+        "uid": "nil"
        },
-       "phaseSync": true
+       "MoveStartSpeed": 0.6000000238418579,
+       "MoveReleaseTail": 0.0,
+       "TierHysteresis": 0.30000001192092898,
+       "BlendIdleToMove": 0.20000000298023225,
+       "BlendMoveToIdle": 0.25,
+       "BlendWithinLocomotion": 0.25,
+       "BlendToJump": 0.10000000149011612,
+       "BlendJumpToFall": 0.20000000298023225,
+       "BlendLand": 0.15000000596046449,
+       "BlendToTurn": 0.18000000715255738,
+       "BlendToDance": 0.25,
+       "BlendBackwards": 0.25,
+       "FallThreshold": -0.5,
+       "TierDebounce": 0.07999999821186066,
+       "phaseSync": true,
+       "LogTransitions": false
       }
      ]
     }
@@ -247,8 +301,12 @@
   },
   {
    "prefab_uid": "8183af62-541e-2c45-bc86-7efc5a614f40",
-   "id": 4,
+   "uid": "cc25dc84-9569-ba45-ac27-93da7d47c361",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "cc25dc84-9569-ba45-ac27-93da7d47c361"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "RootNode",
@@ -262,7 +320,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "8183af62-541e-2c45-bc86-7efc5a614f40"
+     "id": "8183af62-541e-2c45-bc86-7efc5a614f40",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -272,11 +331,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -291,20 +349,20 @@
      },
      "parent": {
       "prefab_uid": "4a0751b3-90c2-1b44-b6aa-71261628308a",
-      "id": 1048579
+      "uid": "c8b8c00c-8ec2-f949-92b5-a116f8674ce1"
      },
      "children": [
       {
        "prefab_uid": "395bf393-3838-e44f-861b-f4a81f986640",
-       "id": 6
+       "uid": "75b43f72-61b3-d149-8373-988204579ccb"
       },
       {
        "prefab_uid": "0bff7468-adcf-8943-a005-2185a052e02f",
-       "id": 7
+       "uid": "65cf5308-4340-de46-92a2-a278f09ce3a9"
       },
       {
        "prefab_uid": "4e50fdc4-cc46-544b-8053-897ab2520517",
-       "id": 8
+       "uid": "d9169c25-cd1c-4742-bdd0-48f22cd02745"
       }
      ],
      "active": true
@@ -313,8 +371,12 @@
   },
   {
    "prefab_uid": "395bf393-3838-e44f-861b-f4a81f986640",
-   "id": 6,
+   "uid": "75b43f72-61b3-d149-8373-988204579ccb",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "75b43f72-61b3-d149-8373-988204579ccb"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:Hips",
@@ -328,7 +390,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "395bf393-3838-e44f-861b-f4a81f986640"
+     "id": "395bf393-3838-e44f-861b-f4a81f986640",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -338,11 +401,10 @@
        "y": 1.0427486896514893,
        "z": 0.015543158166110516
       },
-      "rotation": {
-       "x": 0.006458547431975603,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 0.9999791383743286
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -357,20 +419,20 @@
      },
      "parent": {
       "prefab_uid": "8183af62-541e-2c45-bc86-7efc5a614f40",
-      "id": 4
+      "uid": "cc25dc84-9569-ba45-ac27-93da7d47c361"
      },
      "children": [
       {
        "prefab_uid": "81185db2-0249-4144-bc30-c269cf66e927",
-       "id": 9
+       "uid": "420ae653-0271-1648-8a62-19cd59593871"
       },
       {
        "prefab_uid": "b1a6b3a1-8e84-b94f-93bc-101be95d8845",
-       "id": 10
+       "uid": "049bc73c-d216-574a-ad35-dc38a4916cab"
       },
       {
        "prefab_uid": "5b0002fe-c7c5-554d-a764-1af8a2b053e6",
-       "id": 11
+       "uid": "387c874f-7cd8-5744-9875-226b6f8ee6ff"
       }
      ],
      "active": true
@@ -383,8 +445,12 @@
   },
   {
    "prefab_uid": "81185db2-0249-4144-bc30-c269cf66e927",
-   "id": 9,
+   "uid": "420ae653-0271-1648-8a62-19cd59593871",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "420ae653-0271-1648-8a62-19cd59593871"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:Spine",
@@ -398,7 +464,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "81185db2-0249-4144-bc30-c269cf66e927"
+     "id": "81185db2-0249-4144-bc30-c269cf66e927",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -408,11 +475,10 @@
        "y": 0.10182436555624008,
        "z": -3.969047167451147e-17
       },
-      "rotation": {
-       "x": -0.08015572279691696,
-       "y": 1.982009933954032e-8,
-       "z": -2.4647428631396908e-7,
-       "w": 0.9967823624610901
+      "rotation_euler": {
+       "x": -9.19503402709961,
+       "y": -0.0,
+       "z": -0.00002833504549926147
       },
       "scale": {
        "x": 1.0,
@@ -427,12 +493,12 @@
      },
      "parent": {
       "prefab_uid": "395bf393-3838-e44f-861b-f4a81f986640",
-      "id": 6
+      "uid": "75b43f72-61b3-d149-8373-988204579ccb"
      },
      "children": [
       {
        "prefab_uid": "87c4f3df-bdbd-eb41-a537-fb9feedf9ae7",
-       "id": 12
+       "uid": "aa64a26d-49b3-574a-8f6f-83c4b9c7d139"
       }
      ],
      "active": true
@@ -445,8 +511,12 @@
   },
   {
    "prefab_uid": "87c4f3df-bdbd-eb41-a537-fb9feedf9ae7",
-   "id": 12,
+   "uid": "aa64a26d-49b3-574a-8f6f-83c4b9c7d139",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "aa64a26d-49b3-574a-8f6f-83c4b9c7d139"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:Spine1",
@@ -460,7 +530,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "87c4f3df-bdbd-eb41-a537-fb9feedf9ae7"
+     "id": "87c4f3df-bdbd-eb41-a537-fb9feedf9ae7",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -470,11 +541,10 @@
        "y": 0.10002674907445908,
        "z": 5.83387986720989e-18
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -489,12 +559,12 @@
      },
      "parent": {
       "prefab_uid": "81185db2-0249-4144-bc30-c269cf66e927",
-      "id": 9
+      "uid": "420ae653-0271-1648-8a62-19cd59593871"
      },
      "children": [
       {
        "prefab_uid": "5fa4c095-8edb-d547-8000-e3e385dcc460",
-       "id": 13
+       "uid": "f63b290d-af26-c24b-92f7-6391098aa2a6"
       }
      ],
      "active": true
@@ -507,8 +577,12 @@
   },
   {
    "prefab_uid": "5fa4c095-8edb-d547-8000-e3e385dcc460",
-   "id": 13,
+   "uid": "f63b290d-af26-c24b-92f7-6391098aa2a6",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "f63b290d-af26-c24b-92f7-6391098aa2a6"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:Spine2",
@@ -522,7 +596,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5fa4c095-8edb-d547-8000-e3e385dcc460"
+     "id": "5fa4c095-8edb-d547-8000-e3e385dcc460",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -532,11 +607,10 @@
        "y": 0.09322091192007065,
        "z": 2.8236810667436886e-9
       },
-      "rotation": {
-       "x": 0.012885620817542076,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 0.9999169707298279
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -551,20 +625,20 @@
      },
      "parent": {
       "prefab_uid": "87c4f3df-bdbd-eb41-a537-fb9feedf9ae7",
-      "id": 12
+      "uid": "aa64a26d-49b3-574a-8f6f-83c4b9c7d139"
      },
      "children": [
       {
        "prefab_uid": "1cd69d36-204b-6e46-aff7-f7e22416dc31",
-       "id": 14
+       "uid": "5606a8ae-609d-de42-a053-121260b94e6e"
       },
       {
        "prefab_uid": "5ff85491-f56f-7045-9bab-3e7046e2f075",
-       "id": 15
+       "uid": "3f7d16f7-8cf3-884a-ad99-97ce435e4be7"
       },
       {
        "prefab_uid": "67b29957-a996-5747-b9be-57e29a93641c",
-       "id": 16
+       "uid": "9e052cef-ee9a-264c-a561-40517af344ba"
       }
      ],
      "active": true
@@ -577,8 +651,12 @@
   },
   {
    "prefab_uid": "1cd69d36-204b-6e46-aff7-f7e22416dc31",
-   "id": 14,
+   "uid": "5606a8ae-609d-de42-a053-121260b94e6e",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "5606a8ae-609d-de42-a053-121260b94e6e"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:Neck",
@@ -592,7 +670,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "1cd69d36-204b-6e46-aff7-f7e22416dc31"
+     "id": "1cd69d36-204b-6e46-aff7-f7e22416dc31",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -602,11 +681,10 @@
        "y": 0.1686532199382782,
        "z": 5.768638477936607e-16
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -621,12 +699,12 @@
      },
      "parent": {
       "prefab_uid": "5fa4c095-8edb-d547-8000-e3e385dcc460",
-      "id": 13
+      "uid": "f63b290d-af26-c24b-92f7-6391098aa2a6"
      },
      "children": [
       {
        "prefab_uid": "fa284cb7-966a-0d40-b191-1e6e140ba1d0",
-       "id": 17
+       "uid": "a80667cf-f919-0d47-8fda-7360b2619aa8"
       }
      ],
      "active": true
@@ -639,8 +717,12 @@
   },
   {
    "prefab_uid": "fa284cb7-966a-0d40-b191-1e6e140ba1d0",
-   "id": 17,
+   "uid": "a80667cf-f919-0d47-8fda-7360b2619aa8",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "a80667cf-f919-0d47-8fda-7360b2619aa8"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:Head",
@@ -654,7 +736,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "fa284cb7-966a-0d40-b191-1e6e140ba1d0"
+     "id": "fa284cb7-966a-0d40-b191-1e6e140ba1d0",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -664,11 +747,10 @@
        "y": 0.09341923147439957,
        "z": 0.0284104086458683
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -683,12 +765,12 @@
      },
      "parent": {
       "prefab_uid": "1cd69d36-204b-6e46-aff7-f7e22416dc31",
-      "id": 14
+      "uid": "5606a8ae-609d-de42-a053-121260b94e6e"
      },
      "children": [
       {
        "prefab_uid": "073673b0-6771-d246-b7c1-746b7c68877e",
-       "id": 18
+       "uid": "220a10f6-c390-9c46-9902-148b881ac78d"
       }
      ],
      "active": true
@@ -701,8 +783,12 @@
   },
   {
    "prefab_uid": "073673b0-6771-d246-b7c1-746b7c68877e",
-   "id": 18,
+   "uid": "220a10f6-c390-9c46-9902-148b881ac78d",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "220a10f6-c390-9c46-9902-148b881ac78d"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:HeadTop_End",
@@ -716,7 +802,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "073673b0-6771-d246-b7c1-746b7c68877e"
+     "id": "073673b0-6771-d246-b7c1-746b7c68877e",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -726,11 +813,10 @@
        "y": 0.20962780714035035,
        "z": 0.10122934728860855
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -745,7 +831,7 @@
      },
      "parent": {
       "prefab_uid": "fa284cb7-966a-0d40-b191-1e6e140ba1d0",
-      "id": 17
+      "uid": "a80667cf-f919-0d47-8fda-7360b2619aa8"
      },
      "children": [],
      "active": true
@@ -758,8 +844,12 @@
   },
   {
    "prefab_uid": "5ff85491-f56f-7045-9bab-3e7046e2f075",
-   "id": 15,
+   "uid": "3f7d16f7-8cf3-884a-ad99-97ce435e4be7",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "3f7d16f7-8cf3-884a-ad99-97ce435e4be7"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightShoulder",
@@ -773,7 +863,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5ff85491-f56f-7045-9bab-3e7046e2f075"
+     "id": "5ff85491-f56f-7045-9bab-3e7046e2f075",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -783,11 +874,10 @@
        "y": 0.11195844411849976,
        "z": -0.00806631799787283
       },
-      "rotation": {
-       "x": -0.4844306707382202,
-       "y": 0.5709636807441711,
-       "z": -0.5261636972427368,
-       "w": -0.40308716893196108
+      "rotation_euler": {
+       "x": -119.98474884033203,
+       "y": -75.94804382324219,
+       "z": -147.90550231933595
       },
       "scale": {
        "x": 1.0000001192092896,
@@ -802,12 +892,12 @@
      },
      "parent": {
       "prefab_uid": "5fa4c095-8edb-d547-8000-e3e385dcc460",
-      "id": 13
+      "uid": "f63b290d-af26-c24b-92f7-6391098aa2a6"
      },
      "children": [
       {
        "prefab_uid": "5b05e71a-476c-8442-81d2-6cf39d60ca22",
-       "id": 19
+       "uid": "eca4aeeb-3977-2a47-a2e2-1a76d527248f"
       }
      ],
      "active": true
@@ -820,8 +910,12 @@
   },
   {
    "prefab_uid": "5b05e71a-476c-8442-81d2-6cf39d60ca22",
-   "id": 19,
+   "uid": "eca4aeeb-3977-2a47-a2e2-1a76d527248f",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "eca4aeeb-3977-2a47-a2e2-1a76d527248f"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightArm",
@@ -835,7 +929,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5b05e71a-476c-8442-81d2-6cf39d60ca22"
+     "id": "5b05e71a-476c-8442-81d2-6cf39d60ca22",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -845,11 +940,10 @@
        "y": 0.10838175565004349,
        "z": -9.694985258678787e-18
       },
-      "rotation": {
-       "x": -0.024616239592432977,
-       "y": 0.0025622916873544456,
-       "z": -0.1034984216094017,
-       "w": 0.9943217039108276
+      "rotation_euler": {
+       "x": -2.8363425731658937,
+       "y": 5.336085351359543e-8,
+       "z": -11.88497543334961
       },
       "scale": {
        "x": 1.0,
@@ -864,12 +958,12 @@
      },
      "parent": {
       "prefab_uid": "5ff85491-f56f-7045-9bab-3e7046e2f075",
-      "id": 15
+      "uid": "3f7d16f7-8cf3-884a-ad99-97ce435e4be7"
      },
      "children": [
       {
        "prefab_uid": "5bf24e7b-bcd4-9c48-a40b-e960fbf9b913",
-       "id": 20
+       "uid": "5f167c87-d9be-e549-9046-43d7e6670e20"
       }
      ],
      "active": true
@@ -882,8 +976,12 @@
   },
   {
    "prefab_uid": "5bf24e7b-bcd4-9c48-a40b-e960fbf9b913",
-   "id": 20,
+   "uid": "5f167c87-d9be-e549-9046-43d7e6670e20",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "5f167c87-d9be-e549-9046-43d7e6670e20"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightForeArm",
@@ -897,7 +995,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5bf24e7b-bcd4-9c48-a40b-e960fbf9b913"
+     "id": "5bf24e7b-bcd4-9c48-a40b-e960fbf9b913",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -907,11 +1006,10 @@
        "y": 0.27841517329216006,
        "z": 3.5581792118322187e-16
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -926,12 +1024,12 @@
      },
      "parent": {
       "prefab_uid": "5b05e71a-476c-8442-81d2-6cf39d60ca22",
-      "id": 19
+      "uid": "eca4aeeb-3977-2a47-a2e2-1a76d527248f"
      },
      "children": [
       {
        "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-       "id": 21
+       "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
       }
      ],
      "active": true
@@ -944,8 +1042,12 @@
   },
   {
    "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-   "id": 21,
+   "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHand",
@@ -959,7 +1061,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "1a75e847-76cf-0343-962b-c7f4abd92a8b"
+     "id": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -969,11 +1072,10 @@
        "y": 0.2832883894443512,
        "z": 4.4725386061372777e-8
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -988,28 +1090,28 @@
      },
      "parent": {
       "prefab_uid": "5bf24e7b-bcd4-9c48-a40b-e960fbf9b913",
-      "id": 20
+      "uid": "5f167c87-d9be-e549-9046-43d7e6670e20"
      },
      "children": [
       {
        "prefab_uid": "96112e32-ea09-5d4d-9860-e17c8c7f89f1",
-       "id": 22
+       "uid": "3f27912f-7405-994e-afbf-5170ab63602a"
       },
       {
        "prefab_uid": "7dc720e9-5bc7-b044-b63a-667f61335e60",
-       "id": 23
+       "uid": "a914c447-a060-4c49-84c9-a6defa85be6a"
       },
       {
        "prefab_uid": "f9bdcc07-8ea1-fa48-b6fc-c7499ae60618",
-       "id": 24
+       "uid": "8aa8cc54-3794-e942-a1d9-c8e7f5213638"
       },
       {
        "prefab_uid": "c3a4a200-8e54-2649-bf55-c179e15cd33e",
-       "id": 25
+       "uid": "44a78820-1ac8-224b-b276-5dbe7d74187c"
       },
       {
        "prefab_uid": "8c2caf22-8b61-6444-a785-77300bd50531",
-       "id": 26
+       "uid": "47767ce6-719d-3645-b0a6-dd21f2dffe11"
       }
      ],
      "active": true
@@ -1022,8 +1124,12 @@
   },
   {
    "prefab_uid": "96112e32-ea09-5d4d-9860-e17c8c7f89f1",
-   "id": 22,
+   "uid": "3f27912f-7405-994e-afbf-5170ab63602a",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "3f27912f-7405-994e-afbf-5170ab63602a"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandThumb1",
@@ -1037,7 +1143,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "96112e32-ea09-5d4d-9860-e17c8c7f89f1"
+     "id": "96112e32-ea09-5d4d-9860-e17c8c7f89f1",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1047,11 +1154,10 @@
        "y": 0.024648049846291543,
        "z": 0.015739839524030687
       },
-      "rotation": {
-       "x": 0.2532845139503479,
-       "y": 0.061618272215127948,
-       "z": -0.22821027040481568,
-       "w": 0.9380672574043274
+      "rotation_euler": {
+       "x": 27.356340408325197,
+       "y": 13.368229866027832,
+       "z": -24.078895568847658
       },
       "scale": {
        "x": 1.0,
@@ -1066,12 +1172,12 @@
      },
      "parent": {
       "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-      "id": 21
+      "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
      },
      "children": [
       {
        "prefab_uid": "5cc08948-6b7b-5c48-88a6-756368e59bb0",
-       "id": 27
+       "uid": "b74b91fb-218f-594c-a33f-bbd7c692cf02"
       }
      ],
      "active": true
@@ -1084,8 +1190,12 @@
   },
   {
    "prefab_uid": "5cc08948-6b7b-5c48-88a6-756368e59bb0",
-   "id": 27,
+   "uid": "b74b91fb-218f-594c-a33f-bbd7c692cf02",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "b74b91fb-218f-594c-a33f-bbd7c692cf02"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandThumb2",
@@ -1099,7 +1209,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5cc08948-6b7b-5c48-88a6-756368e59bb0"
+     "id": "5cc08948-6b7b-5c48-88a6-756368e59bb0",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1109,11 +1220,10 @@
        "y": 0.04188985377550125,
        "z": -9.679277098846405e-17
       },
-      "rotation": {
-       "x": -0.002315749414265156,
-       "y": -0.0011704490752890707,
-       "z": 0.009300109930336476,
-       "w": 0.9999533891677856
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1128,12 +1238,12 @@
      },
      "parent": {
       "prefab_uid": "96112e32-ea09-5d4d-9860-e17c8c7f89f1",
-      "id": 22
+      "uid": "3f27912f-7405-994e-afbf-5170ab63602a"
      },
      "children": [
       {
        "prefab_uid": "4f3ab219-deec-cd4f-849d-016ccd0fce02",
-       "id": 28
+       "uid": "634efc33-b810-2848-abf2-7bc8c9acc7f5"
       }
      ],
      "active": true
@@ -1146,8 +1256,12 @@
   },
   {
    "prefab_uid": "4f3ab219-deec-cd4f-849d-016ccd0fce02",
-   "id": 28,
+   "uid": "634efc33-b810-2848-abf2-7bc8c9acc7f5",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "634efc33-b810-2848-abf2-7bc8c9acc7f5"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandThumb3",
@@ -1161,7 +1275,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "4f3ab219-deec-cd4f-849d-016ccd0fce02"
+     "id": "4f3ab219-deec-cd4f-849d-016ccd0fce02",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1171,11 +1286,10 @@
        "y": 0.03416271135210991,
        "z": 1.9955813010669579e-16
       },
-      "rotation": {
-       "x": -0.0016647387528792024,
-       "y": -0.0008077812963165343,
-       "z": 0.006919750478118658,
-       "w": 0.9999744296073914
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.9999999403953552,
@@ -1190,12 +1304,12 @@
      },
      "parent": {
       "prefab_uid": "5cc08948-6b7b-5c48-88a6-756368e59bb0",
-      "id": 27
+      "uid": "b74b91fb-218f-594c-a33f-bbd7c692cf02"
      },
      "children": [
       {
        "prefab_uid": "7d73efe4-7a55-b644-913a-4e16eabfc217",
-       "id": 29
+       "uid": "aaa71f0c-4aa1-6244-99bc-05f516c35daf"
       }
      ],
      "active": true
@@ -1208,8 +1322,12 @@
   },
   {
    "prefab_uid": "7d73efe4-7a55-b644-913a-4e16eabfc217",
-   "id": 29,
+   "uid": "aaa71f0c-4aa1-6244-99bc-05f516c35daf",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "aaa71f0c-4aa1-6244-99bc-05f516c35daf"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandThumb4",
@@ -1223,7 +1341,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "7d73efe4-7a55-b644-913a-4e16eabfc217"
+     "id": "7d73efe4-7a55-b644-913a-4e16eabfc217",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1233,11 +1352,10 @@
        "y": 0.025749772787094117,
        "z": -2.66132113964246e-16
       },
-      "rotation": {
-       "x": 0.0057748546823859219,
-       "y": -0.11750920861959458,
-       "z": -0.048743706196546558,
-       "w": 0.9918580055236816
+      "rotation_euler": {
+       "x": 1.3498488664627076,
+       "y": -13.446771621704102,
+       "z": -5.786078929901123
       },
       "scale": {
        "x": 1.0,
@@ -1252,7 +1370,7 @@
      },
      "parent": {
       "prefab_uid": "4f3ab219-deec-cd4f-849d-016ccd0fce02",
-      "id": 28
+      "uid": "634efc33-b810-2848-abf2-7bc8c9acc7f5"
      },
      "children": [],
      "active": true
@@ -1265,8 +1383,12 @@
   },
   {
    "prefab_uid": "7dc720e9-5bc7-b044-b63a-667f61335e60",
-   "id": 23,
+   "uid": "a914c447-a060-4c49-84c9-a6defa85be6a",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "a914c447-a060-4c49-84c9-a6defa85be6a"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandIndex1",
@@ -1280,7 +1402,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "7dc720e9-5bc7-b044-b63a-667f61335e60"
+     "id": "7dc720e9-5bc7-b044-b63a-667f61335e60",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1290,11 +1413,10 @@
        "y": 0.09108282625675202,
        "z": 0.005178621504455805
       },
-      "rotation": {
-       "x": -6.059340194042306e-7,
-       "y": 9.953529667150463e-11,
-       "z": -0.00016426751972176135,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1309,12 +1431,12 @@
      },
      "parent": {
       "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-      "id": 21
+      "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
      },
      "children": [
       {
        "prefab_uid": "db378e36-cc74-5347-8078-cdb9eb15a108",
-       "id": 30
+       "uid": "6d53e89d-6f52-9c4e-814a-e67ad33209cb"
       }
      ],
      "active": true
@@ -1327,8 +1449,12 @@
   },
   {
    "prefab_uid": "db378e36-cc74-5347-8078-cdb9eb15a108",
-   "id": 30,
+   "uid": "6d53e89d-6f52-9c4e-814a-e67ad33209cb",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "6d53e89d-6f52-9c4e-814a-e67ad33209cb"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandIndex2",
@@ -1342,7 +1468,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "db378e36-cc74-5347-8078-cdb9eb15a108"
+     "id": "db378e36-cc74-5347-8078-cdb9eb15a108",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1352,11 +1479,10 @@
        "y": 0.03700000047683716,
        "z": -9.364993464701577e-17
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0002556443214416504,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1371,12 +1497,12 @@
      },
      "parent": {
       "prefab_uid": "7dc720e9-5bc7-b044-b63a-667f61335e60",
-      "id": 23
+      "uid": "a914c447-a060-4c49-84c9-a6defa85be6a"
      },
      "children": [
       {
        "prefab_uid": "a19dd008-4cba-0f47-9494-0c73d0aa0376",
-       "id": 31
+       "uid": "0d553e56-3f27-b745-bc53-05c146ed0e97"
       }
      ],
      "active": true
@@ -1389,8 +1515,12 @@
   },
   {
    "prefab_uid": "a19dd008-4cba-0f47-9494-0c73d0aa0376",
-   "id": 31,
+   "uid": "0d553e56-3f27-b745-bc53-05c146ed0e97",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0d553e56-3f27-b745-bc53-05c146ed0e97"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandIndex3",
@@ -1404,7 +1534,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "a19dd008-4cba-0f47-9494-0c73d0aa0376"
+     "id": "a19dd008-4cba-0f47-9494-0c73d0aa0376",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1414,11 +1545,10 @@
        "y": 0.028499998152256013,
        "z": -8.893045154445556e-12
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": -0.00008792196604190394,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1433,12 +1563,12 @@
      },
      "parent": {
       "prefab_uid": "db378e36-cc74-5347-8078-cdb9eb15a108",
-      "id": 30
+      "uid": "6d53e89d-6f52-9c4e-814a-e67ad33209cb"
      },
      "children": [
       {
        "prefab_uid": "411f3bab-d9ec-274a-9c12-45dcdefd82d5",
-       "id": 32
+       "uid": "78b38bdc-d6b4-7949-8990-8306bb353a89"
       }
      ],
      "active": true
@@ -1451,8 +1581,12 @@
   },
   {
    "prefab_uid": "411f3bab-d9ec-274a-9c12-45dcdefd82d5",
-   "id": 32,
+   "uid": "78b38bdc-d6b4-7949-8990-8306bb353a89",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "78b38bdc-d6b4-7949-8990-8306bb353a89"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandIndex4",
@@ -1466,7 +1600,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "411f3bab-d9ec-274a-9c12-45dcdefd82d5"
+     "id": "411f3bab-d9ec-274a-9c12-45dcdefd82d5",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1476,11 +1611,10 @@
        "y": 0.02772190421819687,
        "z": 5.1144709127537435e-12
       },
-      "rotation": {
-       "x": 8.6598603843413e-8,
-       "y": 0.0010026921518146992,
-       "z": 0.00008705834625288844,
-       "w": 0.9999995827674866
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1495,7 +1629,7 @@
      },
      "parent": {
       "prefab_uid": "a19dd008-4cba-0f47-9494-0c73d0aa0376",
-      "id": 31
+      "uid": "0d553e56-3f27-b745-bc53-05c146ed0e97"
      },
      "children": [],
      "active": true
@@ -1508,8 +1642,12 @@
   },
   {
    "prefab_uid": "f9bdcc07-8ea1-fa48-b6fc-c7499ae60618",
-   "id": 24,
+   "uid": "8aa8cc54-3794-e942-a1d9-c8e7f5213638",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "8aa8cc54-3794-e942-a1d9-c8e7f5213638"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandMiddle1",
@@ -1523,7 +1661,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "f9bdcc07-8ea1-fa48-b6fc-c7499ae60618"
+     "id": "f9bdcc07-8ea1-fa48-b6fc-c7499ae60618",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1533,11 +1672,10 @@
        "y": 0.09532500803470612,
        "z": 3.985568923781102e-7
       },
-      "rotation": {
-       "x": -9.78173943622096e-7,
-       "y": 4.908535244929624e-10,
-       "z": -0.000501805916428566,
-       "w": 0.9999998807907105
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1552,12 +1690,12 @@
      },
      "parent": {
       "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-      "id": 21
+      "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
      },
      "children": [
       {
        "prefab_uid": "d192ff17-d535-094a-8cd6-7659699ad66d",
-       "id": 33
+       "uid": "d6beaf92-046e-ae4a-bf03-4eea4d4a9134"
       }
      ],
      "active": true
@@ -1570,8 +1708,12 @@
   },
   {
    "prefab_uid": "d192ff17-d535-094a-8cd6-7659699ad66d",
-   "id": 33,
+   "uid": "d6beaf92-046e-ae4a-bf03-4eea4d4a9134",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "d6beaf92-046e-ae4a-bf03-4eea4d4a9134"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandMiddle2",
@@ -1585,7 +1727,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "d192ff17-d535-094a-8cd6-7659699ad66d"
+     "id": "d192ff17-d535-094a-8cd6-7659699ad66d",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1595,11 +1738,10 @@
        "y": 0.03700000047683716,
        "z": -2.808432498432607e-16
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0008498714305460453,
-       "w": 0.9999996423721314
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1614,12 +1756,12 @@
      },
      "parent": {
       "prefab_uid": "f9bdcc07-8ea1-fa48-b6fc-c7499ae60618",
-      "id": 24
+      "uid": "8aa8cc54-3794-e942-a1d9-c8e7f5213638"
      },
      "children": [
       {
        "prefab_uid": "2f3921d8-e224-8d4d-8dd8-94acadb2ea77",
-       "id": 34
+       "uid": "7e7f5e02-bf71-c848-9149-38aa8f3d4c80"
       }
      ],
      "active": true
@@ -1632,8 +1774,12 @@
   },
   {
    "prefab_uid": "2f3921d8-e224-8d4d-8dd8-94acadb2ea77",
-   "id": 34,
+   "uid": "7e7f5e02-bf71-c848-9149-38aa8f3d4c80",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "7e7f5e02-bf71-c848-9149-38aa8f3d4c80"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandMiddle3",
@@ -1647,7 +1793,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "2f3921d8-e224-8d4d-8dd8-94acadb2ea77"
+     "id": "2f3921d8-e224-8d4d-8dd8-94acadb2ea77",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1657,11 +1804,10 @@
        "y": 0.029500000178813936,
        "z": -1.5411337483950405e-10
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": -0.0003218420024495572,
-       "w": 0.9999999403953552
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1676,12 +1822,12 @@
      },
      "parent": {
       "prefab_uid": "d192ff17-d535-094a-8cd6-7659699ad66d",
-      "id": 33
+      "uid": "d6beaf92-046e-ae4a-bf03-4eea4d4a9134"
      },
      "children": [
       {
        "prefab_uid": "e940859a-7ec8-bd42-a1f3-59e6040748b6",
-       "id": 35
+       "uid": "c2e308e1-4c97-2745-b2cc-fcfe5ecd0e1e"
       }
      ],
      "active": true
@@ -1694,8 +1840,12 @@
   },
   {
    "prefab_uid": "e940859a-7ec8-bd42-a1f3-59e6040748b6",
-   "id": 35,
+   "uid": "c2e308e1-4c97-2745-b2cc-fcfe5ecd0e1e",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "c2e308e1-4c97-2745-b2cc-fcfe5ecd0e1e"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandMiddle4",
@@ -1709,7 +1859,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "e940859a-7ec8-bd42-a1f3-59e6040748b6"
+     "id": "e940859a-7ec8-bd42-a1f3-59e6040748b6",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1719,11 +1870,10 @@
        "y": 0.029466288164258004,
        "z": 7.205873397975182e-11
       },
-      "rotation": {
-       "x": 1.5498267202929129e-7,
-       "y": 0.0009288142900913954,
-       "z": 0.00016639448585920036,
-       "w": 0.9999996423721314
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1738,7 +1888,7 @@
      },
      "parent": {
       "prefab_uid": "2f3921d8-e224-8d4d-8dd8-94acadb2ea77",
-      "id": 34
+      "uid": "7e7f5e02-bf71-c848-9149-38aa8f3d4c80"
      },
      "children": [],
      "active": true
@@ -1751,8 +1901,12 @@
   },
   {
    "prefab_uid": "c3a4a200-8e54-2649-bf55-c179e15cd33e",
-   "id": 25,
+   "uid": "44a78820-1ac8-224b-b276-5dbe7d74187c",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "44a78820-1ac8-224b-b276-5dbe7d74187c"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandRing1",
@@ -1766,7 +1920,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "c3a4a200-8e54-2649-bf55-c179e15cd33e"
+     "id": "c3a4a200-8e54-2649-bf55-c179e15cd33e",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1776,11 +1931,10 @@
        "y": 0.09103591740131378,
        "z": 0.00043069649836979806
       },
-      "rotation": {
-       "x": 6.963165333218058e-8,
-       "y": 1.0850653708871505e-11,
-       "z": 0.00015582930063828826,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1795,12 +1949,12 @@
      },
      "parent": {
       "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-      "id": 21
+      "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
      },
      "children": [
       {
        "prefab_uid": "57d099ff-37f3-404d-867b-d57b6fa0ca52",
-       "id": 36
+       "uid": "7dcf0658-8003-db4b-96b8-778a8ca0af73"
       }
      ],
      "active": true
@@ -1813,8 +1967,12 @@
   },
   {
    "prefab_uid": "57d099ff-37f3-404d-867b-d57b6fa0ca52",
-   "id": 36,
+   "uid": "7dcf0658-8003-db4b-96b8-778a8ca0af73",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "7dcf0658-8003-db4b-96b8-778a8ca0af73"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandRing2",
@@ -1828,7 +1986,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "57d099ff-37f3-404d-867b-d57b6fa0ca52"
+     "id": "57d099ff-37f3-404d-867b-d57b6fa0ca52",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1838,11 +1997,10 @@
        "y": 0.033792730420827869,
        "z": -2.8370849760602599e-16
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": -0.00022151513257995248,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.9999998807907105,
@@ -1857,12 +2015,12 @@
      },
      "parent": {
       "prefab_uid": "c3a4a200-8e54-2649-bf55-c179e15cd33e",
-      "id": 25
+      "uid": "44a78820-1ac8-224b-b276-5dbe7d74187c"
      },
      "children": [
       {
        "prefab_uid": "edc001cd-86b8-4d4d-a359-29ecd35826e6",
-       "id": 37
+       "uid": "e8d20e73-5673-6f4d-b615-32e56d8a7f24"
       }
      ],
      "active": true
@@ -1875,8 +2033,12 @@
   },
   {
    "prefab_uid": "edc001cd-86b8-4d4d-a359-29ecd35826e6",
-   "id": 37,
+   "uid": "e8d20e73-5673-6f4d-b615-32e56d8a7f24",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "e8d20e73-5673-6f4d-b615-32e56d8a7f24"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandRing3",
@@ -1890,7 +2052,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "edc001cd-86b8-4d4d-a359-29ecd35826e6"
+     "id": "edc001cd-86b8-4d4d-a359-29ecd35826e6",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1900,11 +2063,10 @@
        "y": 0.028896845877170564,
        "z": 8.202332910101085e-12
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": -0.00011280510079814121,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1919,12 +2081,12 @@
      },
      "parent": {
       "prefab_uid": "57d099ff-37f3-404d-867b-d57b6fa0ca52",
-      "id": 36
+      "uid": "7dcf0658-8003-db4b-96b8-778a8ca0af73"
      },
      "children": [
       {
        "prefab_uid": "f585a712-fc7a-8d45-8d43-45efd521dca4",
-       "id": 38
+       "uid": "f86dff24-5199-3943-87a8-fb722ba4f0c0"
       }
      ],
      "active": true
@@ -1937,8 +2099,12 @@
   },
   {
    "prefab_uid": "f585a712-fc7a-8d45-8d43-45efd521dca4",
-   "id": 38,
+   "uid": "f86dff24-5199-3943-87a8-fb722ba4f0c0",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "f86dff24-5199-3943-87a8-fb722ba4f0c0"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandRing4",
@@ -1952,7 +2118,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "f585a712-fc7a-8d45-8d43-45efd521dca4"
+     "id": "f585a712-fc7a-8d45-8d43-45efd521dca4",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -1962,11 +2129,10 @@
        "y": 0.026388155296444894,
        "z": 5.682296213421756e-12
       },
-      "rotation": {
-       "x": -1.3396450526670379e-7,
-       "y": 0.00014607504999730736,
-       "z": -0.000799286353867501,
-       "w": 0.9999997615814209
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -1981,7 +2147,7 @@
      },
      "parent": {
       "prefab_uid": "edc001cd-86b8-4d4d-a359-29ecd35826e6",
-      "id": 37
+      "uid": "e8d20e73-5673-6f4d-b615-32e56d8a7f24"
      },
      "children": [],
      "active": true
@@ -1994,8 +2160,12 @@
   },
   {
    "prefab_uid": "8c2caf22-8b61-6444-a785-77300bd50531",
-   "id": 26,
+   "uid": "47767ce6-719d-3645-b0a6-dd21f2dffe11",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "47767ce6-719d-3645-b0a6-dd21f2dffe11"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandPinky1",
@@ -2009,7 +2179,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "8c2caf22-8b61-6444-a785-77300bd50531"
+     "id": "8c2caf22-8b61-6444-a785-77300bd50531",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2019,11 +2190,10 @@
        "y": 0.08076675981283188,
        "z": 0.004867036826908588
       },
-      "rotation": {
-       "x": 0.000004670719590649242,
-       "y": 2.430469825398518e-9,
-       "z": 0.0005203629261814058,
-       "w": 0.9999998807907105
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2038,12 +2208,12 @@
      },
      "parent": {
       "prefab_uid": "1a75e847-76cf-0343-962b-c7f4abd92a8b",
-      "id": 21
+      "uid": "06ed2c8d-f25e-c24f-a6ab-e80d8c0a1ab7"
      },
      "children": [
       {
        "prefab_uid": "330f1f52-2f95-3441-8a4f-6a383e07984c",
-       "id": 39
+       "uid": "d0185ea1-9bf9-874a-a97a-90c9d50c9bc8"
       }
      ],
      "active": true
@@ -2056,8 +2226,12 @@
   },
   {
    "prefab_uid": "330f1f52-2f95-3441-8a4f-6a383e07984c",
-   "id": 39,
+   "uid": "d0185ea1-9bf9-874a-a97a-90c9d50c9bc8",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "d0185ea1-9bf9-874a-a97a-90c9d50c9bc8"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandPinky2",
@@ -2071,7 +2245,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "330f1f52-2f95-3441-8a4f-6a383e07984c"
+     "id": "330f1f52-2f95-3441-8a4f-6a383e07984c",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2081,11 +2256,10 @@
        "y": 0.035999998450279239,
        "z": -3.087778935178951e-16
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0008462316473014653,
-       "w": 0.9999996423721314
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2100,12 +2274,12 @@
      },
      "parent": {
       "prefab_uid": "8c2caf22-8b61-6444-a785-77300bd50531",
-      "id": 26
+      "uid": "47767ce6-719d-3645-b0a6-dd21f2dffe11"
      },
      "children": [
       {
        "prefab_uid": "99324d67-cb85-0a40-8417-b9b4865d232b",
-       "id": 40
+       "uid": "5bca7d1f-3631-f44b-8abd-0eb9d8e690c4"
       }
      ],
      "active": true
@@ -2118,8 +2292,12 @@
   },
   {
    "prefab_uid": "99324d67-cb85-0a40-8417-b9b4865d232b",
-   "id": 40,
+   "uid": "5bca7d1f-3631-f44b-8abd-0eb9d8e690c4",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "5bca7d1f-3631-f44b-8abd-0eb9d8e690c4"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandPinky3",
@@ -2133,7 +2311,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "99324d67-cb85-0a40-8417-b9b4865d232b"
+     "id": "99324d67-cb85-0a40-8417-b9b4865d232b",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2143,11 +2322,10 @@
        "y": 0.020999997854232789,
        "z": -2.1163895636000519e-10
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": -0.0004967778222635388,
-       "w": 0.9999998807907105
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2162,12 +2340,12 @@
      },
      "parent": {
       "prefab_uid": "330f1f52-2f95-3441-8a4f-6a383e07984c",
-      "id": 39
+      "uid": "d0185ea1-9bf9-874a-a97a-90c9d50c9bc8"
      },
      "children": [
       {
        "prefab_uid": "c80a254b-45cd-6c4f-bcf6-c10944ff4a28",
-       "id": 41
+       "uid": "0eafda9a-1cad-964a-abb0-9fa302d410ee"
       }
      ],
      "active": true
@@ -2180,8 +2358,12 @@
   },
   {
    "prefab_uid": "c80a254b-45cd-6c4f-bcf6-c10944ff4a28",
-   "id": 41,
+   "uid": "0eafda9a-1cad-964a-abb0-9fa302d410ee",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0eafda9a-1cad-964a-abb0-9fa302d410ee"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightHandPinky4",
@@ -2195,7 +2377,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "c80a254b-45cd-6c4f-bcf6-c10944ff4a28"
+     "id": "c80a254b-45cd-6c4f-bcf6-c10944ff4a28",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2205,11 +2388,10 @@
        "y": 0.02115781046450138,
        "z": 1.440735170055163e-10
       },
-      "rotation": {
-       "x": -6.420660980666071e-8,
-       "y": 0.001569481915794313,
-       "z": -0.000041285289626102897,
-       "w": 0.9999988675117493
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.9999998807907105,
@@ -2224,7 +2406,7 @@
      },
      "parent": {
       "prefab_uid": "99324d67-cb85-0a40-8417-b9b4865d232b",
-      "id": 40
+      "uid": "5bca7d1f-3631-f44b-8abd-0eb9d8e690c4"
      },
      "children": [],
      "active": true
@@ -2237,8 +2419,12 @@
   },
   {
    "prefab_uid": "67b29957-a996-5747-b9be-57e29a93641c",
-   "id": 16,
+   "uid": "9e052cef-ee9a-264c-a561-40517af344ba",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "9e052cef-ee9a-264c-a561-40517af344ba"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftShoulder",
@@ -2252,7 +2438,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "67b29957-a996-5747-b9be-57e29a93641c"
+     "id": "67b29957-a996-5747-b9be-57e29a93641c",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2262,11 +2449,10 @@
        "y": 0.11195643991231919,
        "z": -0.008066272363066674
       },
-      "rotation": {
-       "x": 0.4844227731227875,
-       "y": 0.5709704160690308,
-       "z": -0.5261616706848145,
-       "w": 0.4030897319316864
+      "rotation_euler": {
+       "x": -119.98374938964844,
+       "y": 75.94757843017578,
+       "z": 147.90762329101563
       },
       "scale": {
        "x": 1.0,
@@ -2281,12 +2467,12 @@
      },
      "parent": {
       "prefab_uid": "5fa4c095-8edb-d547-8000-e3e385dcc460",
-      "id": 13
+      "uid": "f63b290d-af26-c24b-92f7-6391098aa2a6"
      },
      "children": [
       {
        "prefab_uid": "4f3c351d-81b1-fe44-a73f-ce4a03e44bf3",
-       "id": 42
+       "uid": "2fb89473-5129-5243-bda0-12cbe840abca"
       }
      ],
      "active": true
@@ -2299,8 +2485,12 @@
   },
   {
    "prefab_uid": "4f3c351d-81b1-fe44-a73f-ce4a03e44bf3",
-   "id": 42,
+   "uid": "2fb89473-5129-5243-bda0-12cbe840abca",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "2fb89473-5129-5243-bda0-12cbe840abca"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftArm",
@@ -2314,7 +2504,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "4f3c351d-81b1-fe44-a73f-ce4a03e44bf3"
+     "id": "4f3c351d-81b1-fe44-a73f-ce4a03e44bf3",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2324,11 +2515,10 @@
        "y": 0.10837705433368683,
        "z": -9.237507230642047e-18
       },
-      "rotation": {
-       "x": -0.024606360122561456,
-       "y": -0.0025614150799810888,
-       "z": 0.10350454598665238,
-       "w": 0.994321346282959
+      "rotation_euler": {
+       "x": -2.8352060317993166,
+       "y": 2.6680426756797716e-8,
+       "z": 11.885677337646485
       },
       "scale": {
        "x": 1.0,
@@ -2343,12 +2533,12 @@
      },
      "parent": {
       "prefab_uid": "67b29957-a996-5747-b9be-57e29a93641c",
-      "id": 16
+      "uid": "9e052cef-ee9a-264c-a561-40517af344ba"
      },
      "children": [
       {
        "prefab_uid": "806e91b3-c4f3-d94b-8b95-bdc31436dda4",
-       "id": 43
+       "uid": "bef548b5-38bc-7049-b2d0-92a565886859"
       }
      ],
      "active": true
@@ -2361,8 +2551,12 @@
   },
   {
    "prefab_uid": "806e91b3-c4f3-d94b-8b95-bdc31436dda4",
-   "id": 43,
+   "uid": "bef548b5-38bc-7049-b2d0-92a565886859",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "bef548b5-38bc-7049-b2d0-92a565886859"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftForeArm",
@@ -2376,7 +2570,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "806e91b3-c4f3-d94b-8b95-bdc31436dda4"
+     "id": "806e91b3-c4f3-d94b-8b95-bdc31436dda4",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2386,11 +2581,10 @@
        "y": 0.2784152030944824,
        "z": -4.311933383689078e-17
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2405,12 +2599,12 @@
      },
      "parent": {
       "prefab_uid": "4f3c351d-81b1-fe44-a73f-ce4a03e44bf3",
-      "id": 42
+      "uid": "2fb89473-5129-5243-bda0-12cbe840abca"
      },
      "children": [
       {
        "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-       "id": 44
+       "uid": "0b61236b-5eb3-8844-9857-f9b01392e721"
       }
      ],
      "active": true
@@ -2423,8 +2617,12 @@
   },
   {
    "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-   "id": 44,
+   "uid": "0b61236b-5eb3-8844-9857-f9b01392e721",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0b61236b-5eb3-8844-9857-f9b01392e721"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHand",
@@ -2438,7 +2636,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "35428468-c8f6-dd4f-80b1-6e9b6336a699"
+     "id": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2448,11 +2647,10 @@
        "y": 0.2832883298397064,
        "z": -5.5642486174178888e-9
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2467,28 +2665,28 @@
      },
      "parent": {
       "prefab_uid": "806e91b3-c4f3-d94b-8b95-bdc31436dda4",
-      "id": 43
+      "uid": "bef548b5-38bc-7049-b2d0-92a565886859"
      },
      "children": [
       {
        "prefab_uid": "a6680472-aa88-434a-9e58-6b55aa223ed5",
-       "id": 45
+       "uid": "7e1266ea-e3ad-c945-9fbb-c18f68fbb91f"
       },
       {
        "prefab_uid": "5a4a3886-91c1-bd46-a7c2-094cedae069b",
-       "id": 46
+       "uid": "bfa1dd4d-4b16-2541-b950-c585a375695d"
       },
       {
        "prefab_uid": "5db04f37-48b0-3345-bdcd-916da3bf1a31",
-       "id": 47
+       "uid": "04d55703-53b7-b14c-8146-eb8c7fa7d99d"
       },
       {
        "prefab_uid": "2085ccb2-0e32-404c-903a-fcb1f5721b35",
-       "id": 48
+       "uid": "a69e25d2-1ee6-264f-96c3-37a9988dfbd7"
       },
       {
        "prefab_uid": "39cf4cbd-1ada-5040-aabc-1b8c824b35ba",
-       "id": 49
+       "uid": "5da74445-bb04-d342-b8a1-c0e102d68160"
       }
      ],
      "active": true
@@ -2501,8 +2699,12 @@
   },
   {
    "prefab_uid": "a6680472-aa88-434a-9e58-6b55aa223ed5",
-   "id": 45,
+   "uid": "7e1266ea-e3ad-c945-9fbb-c18f68fbb91f",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "7e1266ea-e3ad-c945-9fbb-c18f68fbb91f"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandThumb1",
@@ -2516,7 +2718,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "a6680472-aa88-434a-9e58-6b55aa223ed5"
+     "id": "a6680472-aa88-434a-9e58-6b55aa223ed5",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2526,11 +2729,10 @@
        "y": 0.02466144785284996,
        "z": 0.015761928632855417
       },
-      "rotation": {
-       "x": 0.25309646129608157,
-       "y": -0.06132323667407036,
-       "z": 0.22735276818275453,
-       "w": 0.9383455514907837
+      "rotation_euler": {
+       "x": 27.35068130493164,
+       "y": -13.30703067779541,
+       "z": 23.987979888916017
       },
       "scale": {
        "x": 1.0,
@@ -2545,12 +2747,12 @@
      },
      "parent": {
       "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-      "id": 44
+      "uid": "0b61236b-5eb3-8844-9857-f9b01392e721"
      },
      "children": [
       {
        "prefab_uid": "e5832f0b-9d70-0f47-8613-ca301f61a9ce",
-       "id": 50
+       "uid": "e93d1f3f-fe7b-dc45-8ede-f0734ada6d0c"
       }
      ],
      "active": true
@@ -2563,8 +2765,12 @@
   },
   {
    "prefab_uid": "e5832f0b-9d70-0f47-8613-ca301f61a9ce",
-   "id": 50,
+   "uid": "e93d1f3f-fe7b-dc45-8ede-f0734ada6d0c",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "e93d1f3f-fe7b-dc45-8ede-f0734ada6d0c"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandThumb2",
@@ -2578,7 +2784,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "e5832f0b-9d70-0f47-8613-ca301f61a9ce"
+     "id": "e5832f0b-9d70-0f47-8613-ca301f61a9ce",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2588,11 +2795,10 @@
        "y": 0.04187094420194626,
        "z": 1.1859406232691986e-16
       },
-      "rotation": {
-       "x": -0.002067032502964139,
-       "y": 0.0010427309898659587,
-       "z": -0.008213409222662449,
-       "w": 0.9999637007713318
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2607,12 +2813,12 @@
      },
      "parent": {
       "prefab_uid": "a6680472-aa88-434a-9e58-6b55aa223ed5",
-      "id": 45
+      "uid": "7e1266ea-e3ad-c945-9fbb-c18f68fbb91f"
      },
      "children": [
       {
        "prefab_uid": "e68153c9-c31e-0949-ac02-bb35afda7b65",
-       "id": 51
+       "uid": "57842b4f-dd9c-b242-86e4-2c567da458a4"
       }
      ],
      "active": true
@@ -2625,8 +2831,12 @@
   },
   {
    "prefab_uid": "e68153c9-c31e-0949-ac02-bb35afda7b65",
-   "id": 51,
+   "uid": "57842b4f-dd9c-b242-86e4-2c567da458a4",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "57842b4f-dd9c-b242-86e4-2c567da458a4"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandThumb3",
@@ -2640,7 +2850,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "e68153c9-c31e-0949-ac02-bb35afda7b65"
+     "id": "e68153c9-c31e-0949-ac02-bb35afda7b65",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2650,11 +2861,10 @@
        "y": 0.03418388217687607,
        "z": 5.503635750058627e-16
       },
-      "rotation": {
-       "x": -0.0015313592739403248,
-       "y": 0.0007452553836628795,
-       "z": -0.006073120981454849,
-       "w": 0.9999802112579346
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2669,12 +2879,12 @@
      },
      "parent": {
       "prefab_uid": "e5832f0b-9d70-0f47-8613-ca301f61a9ce",
-      "id": 50
+      "uid": "e93d1f3f-fe7b-dc45-8ede-f0734ada6d0c"
      },
      "children": [
       {
        "prefab_uid": "b1e1d9ba-de7d-0b46-a719-dfe5c56d9466",
-       "id": 52
+       "uid": "750d5801-2036-9448-9a64-238ba9393f6f"
       }
      ],
      "active": true
@@ -2687,8 +2897,12 @@
   },
   {
    "prefab_uid": "b1e1d9ba-de7d-0b46-a719-dfe5c56d9466",
-   "id": 52,
+   "uid": "750d5801-2036-9448-9a64-238ba9393f6f",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "750d5801-2036-9448-9a64-238ba9393f6f"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandThumb4",
@@ -2702,7 +2916,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "b1e1d9ba-de7d-0b46-a719-dfe5c56d9466"
+     "id": "b1e1d9ba-de7d-0b46-a719-dfe5c56d9466",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2712,11 +2927,10 @@
        "y": 0.025805814191699029,
        "z": 2.6004470654801107e-17
       },
-      "rotation": {
-       "x": 0.005153407342731953,
-       "y": 0.12268277257680893,
-       "z": 0.04165153205394745,
-       "w": 0.9915581345558167
+      "rotation_euler": {
+       "x": 1.2073403596878052,
+       "y": 14.055692672729493,
+       "z": 4.959564685821533
       },
       "scale": {
        "x": 1.0,
@@ -2731,7 +2945,7 @@
      },
      "parent": {
       "prefab_uid": "e68153c9-c31e-0949-ac02-bb35afda7b65",
-      "id": 51
+      "uid": "57842b4f-dd9c-b242-86e4-2c567da458a4"
      },
      "children": [],
      "active": true
@@ -2744,8 +2958,12 @@
   },
   {
    "prefab_uid": "5a4a3886-91c1-bd46-a7c2-094cedae069b",
-   "id": 46,
+   "uid": "bfa1dd4d-4b16-2541-b950-c585a375695d",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "bfa1dd4d-4b16-2541-b950-c585a375695d"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandIndex1",
@@ -2759,7 +2977,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5a4a3886-91c1-bd46-a7c2-094cedae069b"
+     "id": "5a4a3886-91c1-bd46-a7c2-094cedae069b",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2769,11 +2988,10 @@
        "y": 0.09109309315681458,
        "z": 0.0051803430542349819
       },
-      "rotation": {
-       "x": 6.665759997304122e-7,
-       "y": -2.938034884825136e-11,
-       "z": -0.00004407651795190759,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2788,12 +3006,12 @@
      },
      "parent": {
       "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-      "id": 44
+      "uid": "0b61236b-5eb3-8844-9857-f9b01392e721"
      },
      "children": [
       {
        "prefab_uid": "0c974156-f57e-2c44-843e-dc6feac18772",
-       "id": 53
+       "uid": "7263391a-372b-1a4c-9cb3-be5961bf3118"
       }
      ],
      "active": true
@@ -2806,8 +3024,12 @@
   },
   {
    "prefab_uid": "0c974156-f57e-2c44-843e-dc6feac18772",
-   "id": 53,
+   "uid": "7263391a-372b-1a4c-9cb3-be5961bf3118",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "7263391a-372b-1a4c-9cb3-be5961bf3118"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandIndex2",
@@ -2821,7 +3043,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "0c974156-f57e-2c44-843e-dc6feac18772"
+     "id": "0c974156-f57e-2c44-843e-dc6feac18772",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2831,11 +3054,10 @@
        "y": 0.03700000047683716,
        "z": -7.240397928460357e-17
       },
-      "rotation": {
-       "x": 3.4072132848450567e-7,
-       "y": 3.580919241685798e-11,
-       "z": 0.00010509818093851209,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2850,12 +3072,12 @@
      },
      "parent": {
       "prefab_uid": "5a4a3886-91c1-bd46-a7c2-094cedae069b",
-      "id": 46
+      "uid": "bfa1dd4d-4b16-2541-b950-c585a375695d"
      },
      "children": [
       {
        "prefab_uid": "cfb7bc11-909d-3043-b181-c992eb1e8a7d",
-       "id": 54
+       "uid": "6909216a-639d-9d48-a518-77e0e96c0103"
       }
      ],
      "active": true
@@ -2868,8 +3090,12 @@
   },
   {
    "prefab_uid": "cfb7bc11-909d-3043-b181-c992eb1e8a7d",
-   "id": 54,
+   "uid": "6909216a-639d-9d48-a518-77e0e96c0103",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "6909216a-639d-9d48-a518-77e0e96c0103"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandIndex3",
@@ -2883,7 +3109,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "cfb7bc11-909d-3043-b181-c992eb1e8a7d"
+     "id": "cfb7bc11-909d-3043-b181-c992eb1e8a7d",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2893,11 +3120,10 @@
        "y": 0.028499998152256013,
        "z": 3.2100108187258708e-16
       },
-      "rotation": {
-       "x": 3.3475058103249469e-7,
-       "y": -2.2176926961492428e-11,
-       "z": -0.00006624910747632384,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2912,12 +3138,12 @@
      },
      "parent": {
       "prefab_uid": "0c974156-f57e-2c44-843e-dc6feac18772",
-      "id": 53
+      "uid": "7263391a-372b-1a4c-9cb3-be5961bf3118"
      },
      "children": [
       {
        "prefab_uid": "841df520-4c1a-e942-8ce6-d0e1a34145b7",
-       "id": 55
+       "uid": "0211d5a6-b0cf-d745-ab5c-cc6b5287023e"
       }
      ],
      "active": true
@@ -2930,8 +3156,12 @@
   },
   {
    "prefab_uid": "841df520-4c1a-e942-8ce6-d0e1a34145b7",
-   "id": 55,
+   "uid": "0211d5a6-b0cf-d745-ab5c-cc6b5287023e",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0211d5a6-b0cf-d745-ab5c-cc6b5287023e"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandIndex4",
@@ -2945,7 +3175,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "841df520-4c1a-e942-8ce6-d0e1a34145b7"
+     "id": "841df520-4c1a-e942-8ce6-d0e1a34145b7",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -2955,11 +3186,10 @@
        "y": 0.027748655527830125,
        "z": 3.977551312067131e-16
       },
-      "rotation": {
-       "x": -4.934579855842003e-9,
-       "y": -0.0003775632940232754,
-       "z": -0.000013069544365862385,
-       "w": 0.9999999403953552
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -2974,7 +3204,7 @@
      },
      "parent": {
       "prefab_uid": "cfb7bc11-909d-3043-b181-c992eb1e8a7d",
-      "id": 54
+      "uid": "6909216a-639d-9d48-a518-77e0e96c0103"
      },
      "children": [],
      "active": true
@@ -2987,8 +3217,12 @@
   },
   {
    "prefab_uid": "5db04f37-48b0-3345-bdcd-916da3bf1a31",
-   "id": 47,
+   "uid": "04d55703-53b7-b14c-8146-eb8c7fa7d99d",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "04d55703-53b7-b14c-8146-eb8c7fa7d99d"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandMiddle1",
@@ -3002,7 +3236,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5db04f37-48b0-3345-bdcd-916da3bf1a31"
+     "id": "5db04f37-48b0-3345-bdcd-916da3bf1a31",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3012,11 +3247,10 @@
        "y": 0.0953340157866478,
        "z": -3.254047271639138e-7
       },
-      "rotation": {
-       "x": 4.0847359628060078e-7,
-       "y": -1.2926721325301483e-11,
-       "z": -0.00003164640656905249,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3031,12 +3265,12 @@
      },
      "parent": {
       "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-      "id": 44
+      "uid": "0b61236b-5eb3-8844-9857-f9b01392e721"
      },
      "children": [
       {
        "prefab_uid": "5ded2aa3-d31d-f245-addd-4b0a7c958bfc",
-       "id": 56
+       "uid": "c45c34cb-4cd4-d94e-a56e-523172a87ae1"
       }
      ],
      "active": true
@@ -3049,8 +3283,12 @@
   },
   {
    "prefab_uid": "5ded2aa3-d31d-f245-addd-4b0a7c958bfc",
-   "id": 56,
+   "uid": "c45c34cb-4cd4-d94e-a56e-523172a87ae1",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "c45c34cb-4cd4-d94e-a56e-523172a87ae1"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandMiddle2",
@@ -3064,7 +3302,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5ded2aa3-d31d-f245-addd-4b0a7c958bfc"
+     "id": "5ded2aa3-d31d-f245-addd-4b0a7c958bfc",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3074,11 +3313,10 @@
        "y": 0.03700000047683716,
        "z": -4.1078255749248837e-17
       },
-      "rotation": {
-       "x": -1.6358384868908616e-7,
-       "y": -3.4673464186646408e-12,
-       "z": 0.00002119614146067761,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3093,12 +3331,12 @@
      },
      "parent": {
       "prefab_uid": "5db04f37-48b0-3345-bdcd-916da3bf1a31",
-      "id": 47
+      "uid": "04d55703-53b7-b14c-8146-eb8c7fa7d99d"
      },
      "children": [
       {
        "prefab_uid": "f8b72b8e-9a94-4445-a057-eaaa0b3b0d7e",
-       "id": 57
+       "uid": "0cf8a0a0-d615-7041-9128-bb5e33506520"
       }
      ],
      "active": true
@@ -3111,8 +3349,12 @@
   },
   {
    "prefab_uid": "f8b72b8e-9a94-4445-a057-eaaa0b3b0d7e",
-   "id": 57,
+   "uid": "0cf8a0a0-d615-7041-9128-bb5e33506520",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0cf8a0a0-d615-7041-9128-bb5e33506520"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandMiddle3",
@@ -3126,7 +3368,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "f8b72b8e-9a94-4445-a057-eaaa0b3b0d7e"
+     "id": "f8b72b8e-9a94-4445-a057-eaaa0b3b0d7e",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3136,11 +3379,10 @@
        "y": 0.029500000178813936,
        "z": -1.8927174876034976e-16
       },
-      "rotation": {
-       "x": -4.2758992435665279e-7,
-       "y": -8.84662221950494e-12,
-       "z": 0.00002068950198008679,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3155,12 +3397,12 @@
      },
      "parent": {
       "prefab_uid": "5ded2aa3-d31d-f245-addd-4b0a7c958bfc",
-      "id": 56
+      "uid": "c45c34cb-4cd4-d94e-a56e-523172a87ae1"
      },
      "children": [
       {
        "prefab_uid": "216caed3-a2e6-d444-a490-672299f2059c",
-       "id": 58
+       "uid": "c69a8e52-c2f3-ca46-9c8a-aad9e78b6513"
       }
      ],
      "active": true
@@ -3173,8 +3415,12 @@
   },
   {
    "prefab_uid": "216caed3-a2e6-d444-a490-672299f2059c",
-   "id": 58,
+   "uid": "c69a8e52-c2f3-ca46-9c8a-aad9e78b6513",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "c69a8e52-c2f3-ca46-9c8a-aad9e78b6513"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandMiddle4",
@@ -3188,7 +3434,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "216caed3-a2e6-d444-a490-672299f2059c"
+     "id": "216caed3-a2e6-d444-a490-672299f2059c",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3198,11 +3445,10 @@
        "y": 0.029528634622693063,
        "z": -1.3157034767501564e-15
       },
-      "rotation": {
-       "x": 2.8660402051627899e-8,
-       "y": -0.0010241407435387374,
-       "z": 0.000027984815460513347,
-       "w": 0.999999463558197
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3217,7 +3463,7 @@
      },
      "parent": {
       "prefab_uid": "f8b72b8e-9a94-4445-a057-eaaa0b3b0d7e",
-      "id": 57
+      "uid": "0cf8a0a0-d615-7041-9128-bb5e33506520"
      },
      "children": [],
      "active": true
@@ -3230,8 +3476,12 @@
   },
   {
    "prefab_uid": "2085ccb2-0e32-404c-903a-fcb1f5721b35",
-   "id": 48,
+   "uid": "a69e25d2-1ee6-264f-96c3-37a9988dfbd7",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "a69e25d2-1ee6-264f-96c3-37a9988dfbd7"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandRing1",
@@ -3245,7 +3495,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "2085ccb2-0e32-404c-903a-fcb1f5721b35"
+     "id": "2085ccb2-0e32-404c-903a-fcb1f5721b35",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3255,11 +3506,10 @@
        "y": 0.09104528278112412,
        "z": 0.00043028235086239874
       },
-      "rotation": {
-       "x": 6.248995418900449e-7,
-       "y": 3.945164073898555e-12,
-       "z": 0.00000631327748124022,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3274,12 +3524,12 @@
      },
      "parent": {
       "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-      "id": 44
+      "uid": "0b61236b-5eb3-8844-9857-f9b01392e721"
      },
      "children": [
       {
        "prefab_uid": "597e5453-c23e-2c48-9914-6d26ad2b63ae",
-       "id": 59
+       "uid": "dfc29cb1-6993-0b4d-8663-1bd9f5d66a06"
       }
      ],
      "active": true
@@ -3292,8 +3542,12 @@
   },
   {
    "prefab_uid": "597e5453-c23e-2c48-9914-6d26ad2b63ae",
-   "id": 59,
+   "uid": "dfc29cb1-6993-0b4d-8663-1bd9f5d66a06",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "dfc29cb1-6993-0b4d-8663-1bd9f5d66a06"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandRing2",
@@ -3307,7 +3561,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "597e5453-c23e-2c48-9914-6d26ad2b63ae"
+     "id": "597e5453-c23e-2c48-9914-6d26ad2b63ae",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3317,11 +3572,10 @@
        "y": 0.03150000050663948,
        "z": -1.2637011595028996e-16
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3336,12 +3590,12 @@
      },
      "parent": {
       "prefab_uid": "2085ccb2-0e32-404c-903a-fcb1f5721b35",
-      "id": 48
+      "uid": "a69e25d2-1ee6-264f-96c3-37a9988dfbd7"
      },
      "children": [
       {
        "prefab_uid": "1ddd1dd4-0c71-9c4f-a553-367cf2993fb4",
-       "id": 60
+       "uid": "26a65161-a4dc-4a4b-b6c9-237ca7e2a658"
       }
      ],
      "active": true
@@ -3354,8 +3608,12 @@
   },
   {
    "prefab_uid": "1ddd1dd4-0c71-9c4f-a553-367cf2993fb4",
-   "id": 60,
+   "uid": "26a65161-a4dc-4a4b-b6c9-237ca7e2a658",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "26a65161-a4dc-4a4b-b6c9-237ca7e2a658"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandRing3",
@@ -3369,7 +3627,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "1ddd1dd4-0c71-9c4f-a553-367cf2993fb4"
+     "id": "1ddd1dd4-0c71-9c4f-a553-367cf2993fb4",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3379,11 +3638,10 @@
        "y": 0.029500000178813936,
        "z": 5.2098596547978108e-9
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3398,12 +3656,12 @@
      },
      "parent": {
       "prefab_uid": "597e5453-c23e-2c48-9914-6d26ad2b63ae",
-      "id": 59
+      "uid": "dfc29cb1-6993-0b4d-8663-1bd9f5d66a06"
      },
      "children": [
       {
        "prefab_uid": "63f7b62e-3aa3-c548-9760-ca295f0ac0fb",
-       "id": 61
+       "uid": "0605961a-dbcc-0c45-97dc-1c6bbdfabb94"
       }
      ],
      "active": true
@@ -3416,8 +3674,12 @@
   },
   {
    "prefab_uid": "63f7b62e-3aa3-c548-9760-ca295f0ac0fb",
-   "id": 61,
+   "uid": "0605961a-dbcc-0c45-97dc-1c6bbdfabb94",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0605961a-dbcc-0c45-97dc-1c6bbdfabb94"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandRing4",
@@ -3431,7 +3693,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "63f7b62e-3aa3-c548-9760-ca295f0ac0fb"
+     "id": "63f7b62e-3aa3-c548-9760-ca295f0ac0fb",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3441,11 +3704,10 @@
        "y": 0.02644316293299198,
        "z": -1.46075747053942e-8
       },
-      "rotation": {
-       "x": -2.7316932005305718e-7,
-       "y": 0.0004934373428113759,
-       "z": 0.00001604702447366435,
-       "w": 0.9999998807907105
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3460,7 +3722,7 @@
      },
      "parent": {
       "prefab_uid": "1ddd1dd4-0c71-9c4f-a553-367cf2993fb4",
-      "id": 60
+      "uid": "26a65161-a4dc-4a4b-b6c9-237ca7e2a658"
      },
      "children": [],
      "active": true
@@ -3473,8 +3735,12 @@
   },
   {
    "prefab_uid": "39cf4cbd-1ada-5040-aabc-1b8c824b35ba",
-   "id": 49,
+   "uid": "5da74445-bb04-d342-b8a1-c0e102d68160",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "5da74445-bb04-d342-b8a1-c0e102d68160"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandPinky1",
@@ -3488,7 +3754,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "39cf4cbd-1ada-5040-aabc-1b8c824b35ba"
+     "id": "39cf4cbd-1ada-5040-aabc-1b8c824b35ba",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3498,11 +3765,10 @@
        "y": 0.08077778667211533,
        "z": 0.004868770018219948
       },
-      "rotation": {
-       "x": -0.0000049754967221815608,
-       "y": -1.0173929254619907e-8,
-       "z": 0.0020448025315999986,
-       "w": 0.9999979138374329
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3517,12 +3783,12 @@
      },
      "parent": {
       "prefab_uid": "35428468-c8f6-dd4f-80b1-6e9b6336a699",
-      "id": 44
+      "uid": "0b61236b-5eb3-8844-9857-f9b01392e721"
      },
      "children": [
       {
        "prefab_uid": "3c18152e-2074-df4c-ab33-20d1710ab2a6",
-       "id": 62
+       "uid": "99077659-ce7e-7b4a-b60e-3cd4db453e99"
       }
      ],
      "active": true
@@ -3535,8 +3801,12 @@
   },
   {
    "prefab_uid": "3c18152e-2074-df4c-ab33-20d1710ab2a6",
-   "id": 62,
+   "uid": "99077659-ce7e-7b4a-b60e-3cd4db453e99",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "99077659-ce7e-7b4a-b60e-3cd4db453e99"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandPinky2",
@@ -3550,7 +3820,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "3c18152e-2074-df4c-ab33-20d1710ab2a6"
+     "id": "3c18152e-2074-df4c-ab33-20d1710ab2a6",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3560,11 +3831,10 @@
        "y": 0.035999998450279239,
        "z": 2.54098925687535e-16
       },
-      "rotation": {
-       "x": 6.285466724875732e-7,
-       "y": -1.3240963880889468e-10,
-       "z": -0.00021066000044811517,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3579,12 +3849,12 @@
      },
      "parent": {
       "prefab_uid": "39cf4cbd-1ada-5040-aabc-1b8c824b35ba",
-      "id": 49
+      "uid": "5da74445-bb04-d342-b8a1-c0e102d68160"
      },
      "children": [
       {
        "prefab_uid": "3ff37bdc-3413-4343-bd49-def226fea87b",
-       "id": 63
+       "uid": "8060c6a2-d6fa-4a47-9290-c7d8c95ee28c"
       }
      ],
      "active": true
@@ -3597,8 +3867,12 @@
   },
   {
    "prefab_uid": "3ff37bdc-3413-4343-bd49-def226fea87b",
-   "id": 63,
+   "uid": "8060c6a2-d6fa-4a47-9290-c7d8c95ee28c",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "8060c6a2-d6fa-4a47-9290-c7d8c95ee28c"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandPinky3",
@@ -3612,7 +3886,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "3ff37bdc-3413-4343-bd49-def226fea87b"
+     "id": "3ff37bdc-3413-4343-bd49-def226fea87b",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3622,11 +3897,10 @@
        "y": 0.021000001579523088,
        "z": 3.338164256667486e-16
       },
-      "rotation": {
-       "x": 1.0560541596760231e-7,
-       "y": -7.084234240894993e-12,
-       "z": -0.00006708211003569886,
-       "w": 1.0
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3641,12 +3915,12 @@
      },
      "parent": {
       "prefab_uid": "3c18152e-2074-df4c-ab33-20d1710ab2a6",
-      "id": 62
+      "uid": "99077659-ce7e-7b4a-b60e-3cd4db453e99"
      },
      "children": [
       {
        "prefab_uid": "0810bf32-47aa-1d4a-ba7e-ce22eb2b3b7c",
-       "id": 64
+       "uid": "1967374a-a9c0-0b4e-9453-39185bd7bfb7"
       }
      ],
      "active": true
@@ -3659,8 +3933,12 @@
   },
   {
    "prefab_uid": "0810bf32-47aa-1d4a-ba7e-ce22eb2b3b7c",
-   "id": 64,
+   "uid": "1967374a-a9c0-0b4e-9453-39185bd7bfb7",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "1967374a-a9c0-0b4e-9453-39185bd7bfb7"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftHandPinky4",
@@ -3674,7 +3952,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "0810bf32-47aa-1d4a-ba7e-ce22eb2b3b7c"
+     "id": "0810bf32-47aa-1d4a-ba7e-ce22eb2b3b7c",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3684,11 +3963,10 @@
        "y": 0.021255314350128175,
        "z": -4.760809560535879e-17
       },
-      "rotation": {
-       "x": 2.2034716096186458e-7,
-       "y": -0.0007833990966901183,
-       "z": -0.0002953856310341507,
-       "w": 0.9999997615814209
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.9999998807907105,
@@ -3703,7 +3981,7 @@
      },
      "parent": {
       "prefab_uid": "3ff37bdc-3413-4343-bd49-def226fea87b",
-      "id": 63
+      "uid": "8060c6a2-d6fa-4a47-9290-c7d8c95ee28c"
      },
      "children": [],
      "active": true
@@ -3716,8 +3994,12 @@
   },
   {
    "prefab_uid": "b1a6b3a1-8e84-b94f-93bc-101be95d8845",
-   "id": 10,
+   "uid": "049bc73c-d216-574a-ad35-dc38a4916cab",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "049bc73c-d216-574a-ad35-dc38a4916cab"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightUpLeg",
@@ -3731,7 +4013,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "b1a6b3a1-8e84-b94f-93bc-101be95d8845"
+     "id": "b1a6b3a1-8e84-b94f-93bc-101be95d8845",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3741,11 +4024,10 @@
        "y": -0.06771764159202576,
        "z": -0.0151221863925457
       },
-      "rotation": {
-       "x": 3.251069191634315e-9,
-       "y": 0.01035647839307785,
-       "z": 0.9999464750289917,
-       "w": 3.1389973287332398e-7
+      "rotation_euler": {
+       "x": 1.1867860555648804,
+       "y": 7.633331494021414e-14,
+       "z": 179.99996948242188
       },
       "scale": {
        "x": 0.9999998807907105,
@@ -3760,12 +4042,12 @@
      },
      "parent": {
       "prefab_uid": "395bf393-3838-e44f-861b-f4a81f986640",
-      "id": 6
+      "uid": "75b43f72-61b3-d149-8373-988204579ccb"
      },
      "children": [
       {
        "prefab_uid": "31c7d3c7-8a8e-5a48-ba84-bb98bf80de7b",
-       "id": 65
+       "uid": "58be1189-9bb9-5242-990f-aa0ee4d93558"
       }
      ],
      "active": true
@@ -3778,8 +4060,12 @@
   },
   {
    "prefab_uid": "31c7d3c7-8a8e-5a48-ba84-bb98bf80de7b",
-   "id": 65,
+   "uid": "58be1189-9bb9-5242-990f-aa0ee4d93558",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "58be1189-9bb9-5242-990f-aa0ee4d93558"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightLeg",
@@ -3793,7 +4079,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "31c7d3c7-8a8e-5a48-ba84-bb98bf80de7b"
+     "id": "31c7d3c7-8a8e-5a48-ba84-bb98bf80de7b",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3803,11 +4090,10 @@
        "y": 0.44371461868286135,
        "z": -1.6627694035360936e-15
       },
-      "rotation": {
-       "x": -0.038091372698545459,
+      "rotation_euler": {
+       "x": -4.366005897521973,
        "y": 0.0,
-       "z": 0.0,
-       "w": 0.9992742538452148
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -3822,12 +4108,12 @@
      },
      "parent": {
       "prefab_uid": "b1a6b3a1-8e84-b94f-93bc-101be95d8845",
-      "id": 10
+      "uid": "049bc73c-d216-574a-ad35-dc38a4916cab"
      },
      "children": [
       {
        "prefab_uid": "10665478-176a-f147-a5e0-d8f690b0eea7",
-       "id": 66
+       "uid": "48f50588-b96b-fc41-a4bf-348d371d6e1f"
       }
      ],
      "active": true
@@ -3840,8 +4126,12 @@
   },
   {
    "prefab_uid": "10665478-176a-f147-a5e0-d8f690b0eea7",
-   "id": 66,
+   "uid": "48f50588-b96b-fc41-a4bf-348d371d6e1f",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "48f50588-b96b-fc41-a4bf-348d371d6e1f"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightFoot",
@@ -3855,7 +4145,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "10665478-176a-f147-a5e0-d8f690b0eea7"
+     "id": "10665478-176a-f147-a5e0-d8f690b0eea7",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3865,11 +4156,10 @@
        "y": 0.4452781081199646,
        "z": 1.867063374260227e-16
       },
-      "rotation": {
-       "x": 0.4597400724887848,
-       "y": -5.0760057490606417e-8,
-       "z": -9.805030032339346e-8,
-       "w": 0.8880535364151001
+      "rotation_euler": {
+       "x": 54.74067306518555,
+       "y": 4.071110039794573e-13,
+       "z": -0.000012652093573706225
       },
       "scale": {
        "x": 1.0,
@@ -3884,12 +4174,12 @@
      },
      "parent": {
       "prefab_uid": "31c7d3c7-8a8e-5a48-ba84-bb98bf80de7b",
-      "id": 65
+      "uid": "58be1189-9bb9-5242-990f-aa0ee4d93558"
      },
      "children": [
       {
        "prefab_uid": "1b9b904c-e34b-094e-ba6c-0ad0994be1a2",
-       "id": 67
+       "uid": "8d580e45-2c1b-7449-895e-031e7d693d35"
       }
      ],
      "active": true
@@ -3902,8 +4192,12 @@
   },
   {
    "prefab_uid": "1b9b904c-e34b-094e-ba6c-0ad0994be1a2",
-   "id": 67,
+   "uid": "8d580e45-2c1b-7449-895e-031e7d693d35",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "8d580e45-2c1b-7449-895e-031e7d693d35"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightToeBase",
@@ -3917,7 +4211,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "1b9b904c-e34b-094e-ba6c-0ad0994be1a2"
+     "id": "1b9b904c-e34b-094e-ba6c-0ad0994be1a2",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3927,11 +4222,10 @@
        "y": 0.13816866278648377,
        "z": 4.8857846396918209e-17
       },
-      "rotation": {
-       "x": 0.33524152636528017,
-       "y": -3.515347657412349e-8,
-       "z": -9.879212825580908e-8,
-       "w": 0.9421322345733643
+      "rotation_euler": {
+       "x": 39.1744499206543,
+       "y": -0.0,
+       "z": -0.000012016088476229925
       },
       "scale": {
        "x": 1.0,
@@ -3946,12 +4240,12 @@
      },
      "parent": {
       "prefab_uid": "10665478-176a-f147-a5e0-d8f690b0eea7",
-      "id": 66
+      "uid": "48f50588-b96b-fc41-a4bf-348d371d6e1f"
      },
      "children": [
       {
        "prefab_uid": "35a98fb9-c782-d44a-b54c-358d0efbf481",
-       "id": 68
+       "uid": "bfd85bde-4818-2342-84de-e8bfff72440e"
       }
      ],
      "active": true
@@ -3964,8 +4258,12 @@
   },
   {
    "prefab_uid": "35a98fb9-c782-d44a-b54c-358d0efbf481",
-   "id": 68,
+   "uid": "bfd85bde-4818-2342-84de-e8bfff72440e",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "bfd85bde-4818-2342-84de-e8bfff72440e"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:RightToe_End",
@@ -3979,7 +4277,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "35a98fb9-c782-d44a-b54c-358d0efbf481"
+     "id": "35a98fb9-c782-d44a-b54c-358d0efbf481",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -3989,11 +4288,10 @@
        "y": 0.09278120845556259,
        "z": 4.289019818976869e-17
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.011608066968619824,
-       "z": 0.0,
-       "w": 0.9999326467514038
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -4008,7 +4306,7 @@
      },
      "parent": {
       "prefab_uid": "1b9b904c-e34b-094e-ba6c-0ad0994be1a2",
-      "id": 67
+      "uid": "8d580e45-2c1b-7449-895e-031e7d693d35"
      },
      "children": [],
      "active": true
@@ -4021,8 +4319,12 @@
   },
   {
    "prefab_uid": "5b0002fe-c7c5-554d-a764-1af8a2b053e6",
-   "id": 11,
+   "uid": "387c874f-7cd8-5744-9875-226b6f8ee6ff",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "387c874f-7cd8-5744-9875-226b6f8ee6ff"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftUpLeg",
@@ -4036,7 +4338,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "5b0002fe-c7c5-554d-a764-1af8a2b053e6"
+     "id": "5b0002fe-c7c5-554d-a764-1af8a2b053e6",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4046,11 +4349,10 @@
        "y": -0.0677180290222168,
        "z": -0.01512213796377182
       },
-      "rotation": {
-       "x": 3.254673863750668e-9,
-       "y": 0.01036796160042286,
-       "z": 0.9999463558197022,
-       "w": 3.1389964760819569e-7
+      "rotation_euler": {
+       "x": 1.1881020069122315,
+       "y": 5.0888875497432168e-14,
+       "z": 179.99996948242188
       },
       "scale": {
        "x": 0.9999998807907105,
@@ -4065,12 +4367,12 @@
      },
      "parent": {
       "prefab_uid": "395bf393-3838-e44f-861b-f4a81f986640",
-      "id": 6
+      "uid": "75b43f72-61b3-d149-8373-988204579ccb"
      },
      "children": [
       {
        "prefab_uid": "da6ef5a2-91c5-3647-a986-581ba0bda965",
-       "id": 69
+       "uid": "58d8dd63-5097-904b-8125-66729d8648db"
       }
      ],
      "active": true
@@ -4083,8 +4385,12 @@
   },
   {
    "prefab_uid": "da6ef5a2-91c5-3647-a986-581ba0bda965",
-   "id": 69,
+   "uid": "58d8dd63-5097-904b-8125-66729d8648db",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "58d8dd63-5097-904b-8125-66729d8648db"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftLeg",
@@ -4098,7 +4404,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "da6ef5a2-91c5-3647-a986-581ba0bda965"
+     "id": "da6ef5a2-91c5-3647-a986-581ba0bda965",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4108,11 +4415,10 @@
        "y": 0.443713903427124,
        "z": 3.7506208622836595e-16
       },
-      "rotation": {
-       "x": -0.03811245039105415,
+      "rotation_euler": {
+       "x": -4.368422985076904,
        "y": 0.0,
-       "z": 0.0,
-       "w": 0.9992734789848328
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -4127,12 +4433,12 @@
      },
      "parent": {
       "prefab_uid": "5b0002fe-c7c5-554d-a764-1af8a2b053e6",
-      "id": 11
+      "uid": "387c874f-7cd8-5744-9875-226b6f8ee6ff"
      },
      "children": [
       {
        "prefab_uid": "ef04c7b5-cfaa-f34f-baf0-98ac0a625060",
-       "id": 70
+       "uid": "682abb3a-70a9-7a43-967b-f2dc3fe59b31"
       }
      ],
      "active": true
@@ -4145,8 +4451,12 @@
   },
   {
    "prefab_uid": "ef04c7b5-cfaa-f34f-baf0-98ac0a625060",
-   "id": 70,
+   "uid": "682abb3a-70a9-7a43-967b-f2dc3fe59b31",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "682abb3a-70a9-7a43-967b-f2dc3fe59b31"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftFoot",
@@ -4160,7 +4470,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "ef04c7b5-cfaa-f34f-baf0-98ac0a625060"
+     "id": "ef04c7b5-cfaa-f34f-baf0-98ac0a625060",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4170,11 +4481,10 @@
        "y": 0.44527846574783327,
        "z": -2.2030601686123266e-16
       },
-      "rotation": {
-       "x": 0.45974859595298769,
-       "y": -4.764014249758475e-8,
-       "z": -9.202157258414445e-8,
-       "w": 0.8880491256713867
+      "rotation_euler": {
+       "x": 54.74177169799805,
+       "y": -0.0,
+       "z": -0.000011874225492647384
       },
       "scale": {
        "x": 1.0,
@@ -4189,12 +4499,12 @@
      },
      "parent": {
       "prefab_uid": "da6ef5a2-91c5-3647-a986-581ba0bda965",
-      "id": 69
+      "uid": "58d8dd63-5097-904b-8125-66729d8648db"
      },
      "children": [
       {
        "prefab_uid": "38827656-aea5-bb4c-9c85-f0d2b85471b3",
-       "id": 71
+       "uid": "aff699ea-94bb-3e49-a8fe-302437f1201c"
       }
      ],
      "active": true
@@ -4207,8 +4517,12 @@
   },
   {
    "prefab_uid": "38827656-aea5-bb4c-9c85-f0d2b85471b3",
-   "id": 71,
+   "uid": "aff699ea-94bb-3e49-a8fe-302437f1201c",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "aff699ea-94bb-3e49-a8fe-302437f1201c"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftToeBase",
@@ -4222,7 +4536,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "38827656-aea5-bb4c-9c85-f0d2b85471b3"
+     "id": "38827656-aea5-bb4c-9c85-f0d2b85471b3",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4232,11 +4547,10 @@
        "y": 0.13816864788532258,
        "z": -3.431525353079488e-17
       },
-      "rotation": {
-       "x": 0.33524149656295779,
-       "y": -3.6170455075534849e-8,
-       "z": -1.01650165618139e-7,
-       "w": 0.9421323537826538
+      "rotation_euler": {
+       "x": 39.17444610595703,
+       "y": -4.071110039794573e-13,
+       "z": -0.000012363710993668065
       },
       "scale": {
        "x": 1.0,
@@ -4251,12 +4565,12 @@
      },
      "parent": {
       "prefab_uid": "ef04c7b5-cfaa-f34f-baf0-98ac0a625060",
-      "id": 70
+      "uid": "682abb3a-70a9-7a43-967b-f2dc3fe59b31"
      },
      "children": [
       {
        "prefab_uid": "d92a53ab-625a-4f42-9868-c7eef2525a1e",
-       "id": 72
+       "uid": "fccc5282-c3ac-fb48-8504-d134204bb154"
       }
      ],
      "active": true
@@ -4269,8 +4583,12 @@
   },
   {
    "prefab_uid": "d92a53ab-625a-4f42-9868-c7eef2525a1e",
-   "id": 72,
+   "uid": "fccc5282-c3ac-fb48-8504-d134204bb154",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "fccc5282-c3ac-fb48-8504-d134204bb154"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "mixamorig:LeftToe_End",
@@ -4284,7 +4602,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "d92a53ab-625a-4f42-9868-c7eef2525a1e"
+     "id": "d92a53ab-625a-4f42-9868-c7eef2525a1e",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4294,11 +4613,10 @@
        "y": 0.09278137236833573,
        "z": -1.3126545684216248e-17
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": -0.011869166046380997,
-       "z": 0.0,
-       "w": 0.9999295473098755
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -4313,7 +4631,7 @@
      },
      "parent": {
       "prefab_uid": "38827656-aea5-bb4c-9c85-f0d2b85471b3",
-      "id": 71
+      "uid": "aff699ea-94bb-3e49-a8fe-302437f1201c"
      },
      "children": [],
      "active": true
@@ -4326,8 +4644,12 @@
   },
   {
    "prefab_uid": "0bff7468-adcf-8943-a005-2185a052e02f",
-   "id": 7,
+   "uid": "65cf5308-4340-de46-92a2-a278f09ce3a9",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "65cf5308-4340-de46-92a2-a278f09ce3a9"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Beta_Surface",
@@ -4341,7 +4663,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "0bff7468-adcf-8943-a005-2185a052e02f"
+     "id": "0bff7468-adcf-8943-a005-2185a052e02f",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4351,11 +4674,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -4370,23 +4692,35 @@
      },
      "parent": {
       "prefab_uid": "8183af62-541e-2c45-bc86-7efc5a614f40",
-      "id": 4
+      "uid": "cc25dc84-9569-ba45-ac27-93da7d47c361"
      },
      "children": [],
      "active": true
     },
     "has_submesh_component": true,
     "submesh_component": {
-     "submeshes": [
-      0
+     "entries": [
+      {
+       "submesh_index": 0,
+       "stable_id": 0,
+       "material_override": {
+        "uid": "nil"
+       },
+       "casts_shadow": true,
+       "enabled": true
+      }
      ]
     }
    }
   },
   {
    "prefab_uid": "4e50fdc4-cc46-544b-8053-897ab2520517",
-   "id": 8,
+   "uid": "d9169c25-cd1c-4742-bdd0-48f22cd02745",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "d9169c25-cd1c-4742-bdd0-48f22cd02745"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Beta_Joints",
@@ -4400,7 +4734,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "4e50fdc4-cc46-544b-8053-897ab2520517"
+     "id": "4e50fdc4-cc46-544b-8053-897ab2520517",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4410,11 +4745,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -4429,23 +4763,35 @@
      },
      "parent": {
       "prefab_uid": "8183af62-541e-2c45-bc86-7efc5a614f40",
-      "id": 4
+      "uid": "cc25dc84-9569-ba45-ac27-93da7d47c361"
      },
      "children": [],
      "active": true
     },
     "has_submesh_component": true,
     "submesh_component": {
-     "submeshes": [
-      1
+     "entries": [
+      {
+       "submesh_index": 1,
+       "stable_id": 0,
+       "material_override": {
+        "uid": "nil"
+       },
+       "casts_shadow": true,
+       "enabled": true
+      }
      ]
     }
    }
   },
   {
    "prefab_uid": "20294aaa-e839-d548-81a2-593d0ef1eb60",
-   "id": 5,
+   "uid": "5e65b27d-a368-0d41-9bbc-f94e2f7bd492",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "5e65b27d-a368-0d41-9bbc-f94e2f7bd492"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Main Camera",
@@ -4459,7 +4805,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "20294aaa-e839-d548-81a2-593d0ef1eb60"
+     "id": "20294aaa-e839-d548-81a2-593d0ef1eb60",
+     "document": "ed842c3a-d6d8-494b-bc32-bc865ffa1c4d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -4469,11 +4816,10 @@
        "y": 4.174868583679199,
        "z": -4.9160614013671879
       },
-      "rotation": {
-       "x": 0.1305263340473175,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 0.9914448261260986
+      "rotation_euler": {
+       "x": 15.000018119812012,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -4488,7 +4834,7 @@
      },
      "parent": {
       "prefab_uid": "4a0751b3-90c2-1b44-b6aa-71261628308a",
-      "id": 1048579
+      "uid": "c8b8c00c-8ec2-f949-92b5-a116f8674ce1"
      },
      "children": [],
      "active": true
@@ -4520,6 +4866,40 @@
       "mask": 0
      }
     },
+    "has_tonemapping_component": true,
+    "tonemapping_component": {
+     "enabled": true,
+     "settings": {
+      "exposure": 1.0,
+      "method": 6,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 1.0,
+      "saturation": 1.0,
+      "lift": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gamma": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gain": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "vignette_intensity": 0.0,
+      "vignette_smoothness": 0.5,
+      "grain_intensity": 0.0,
+      "dithering": true
+     }
+    },
     "has_assao_component": true,
     "assao_component": {
      "enabled": true,
@@ -4539,14 +4919,6 @@
       "temporal_supersampling_radius_offset": 1.0,
       "detail_shadow_strength": 0.5,
       "generate_normals": false
-     }
-    },
-    "has_tonemapping_component": true,
-    "tonemapping_component": {
-     "enabled": true,
-     "settings": {
-      "exposure": 1.0,
-      "method": 6
      }
     },
     "has_fxaa_component": true,

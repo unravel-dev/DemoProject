@@ -1,9 +1,18 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
-   "id": 4194307,
+   "uid": "7e5f30d7-a97b-8742-9020-592d0c6c56d1",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "7e5f30d7-a97b-8742-9020-592d0c6c56d1"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "GameUI",
@@ -17,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337"
+     "id": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -27,11 +37,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -45,21 +54,21 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [
       {
        "prefab_uid": "466422c5-14ca-1e45-a119-ddc36d49af40",
-       "id": 4194308
+       "uid": "5e1d7fab-cc67-ce44-9d9a-b7a2ff255cda"
       },
       {
        "prefab_uid": "531932bf-4358-1449-85fe-2d2ea88a54b6",
-       "id": 4194309
+       "uid": "6e000397-d975-f940-83da-362deb9a7642"
       },
       {
        "prefab_uid": "153132be-843d-fa4e-b15c-c0077f1bac98",
-       "id": 3145734
+       "uid": "c2b82c33-2f1d-e747-9036-af1d010a0807"
       }
      ],
      "active": true
@@ -71,17 +80,23 @@
        "type": "GameUI",
        "GameMenu": {
         "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
+        "prefab_uid": "nil",
+        "uid": "nil"
        },
        "SettingsMenu": {
         "flags": 2,
-        "prefab_uid": "00000000-0000-0000-0000-000000000000",
-        "id": 4294967295
+        "prefab_uid": "nil",
+        "uid": "nil"
+       },
+       "BackgroundAudioSource": {
+        "flags": 2,
+        "prefab_uid": "nil",
+        "uid": "nil"
        },
        "MainMenuScene": {
         "uid": "fe66cc52-feeb-6e49-9739-74156206fafd"
-       }
+       },
+       "IsGamePaused": false
       }
      ]
     }
@@ -89,8 +104,12 @@
   },
   {
    "prefab_uid": "466422c5-14ca-1e45-a119-ddc36d49af40",
-   "id": 4194308,
+   "uid": "5e1d7fab-cc67-ce44-9d9a-b7a2ff255cda",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "5e1d7fab-cc67-ce44-9d9a-b7a2ff255cda"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "GameMenu",
@@ -104,7 +123,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "466422c5-14ca-1e45-a119-ddc36d49af40"
+     "id": "466422c5-14ca-1e45-a119-ddc36d49af40",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -114,11 +134,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -133,10 +152,23 @@
      },
      "parent": {
       "prefab_uid": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
-      "id": 4194307
+      "uid": "7e5f30d7-a97b-8742-9020-592d0c6c56d1"
      },
      "children": [],
      "active": false
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "0c134efa-1af1-554b-9754-f3e7742d05fd"
+     },
+     "render_mode": 0,
+     "size": {
+      "width": 512,
+      "height": 512
+     },
+     "pixels_per_world_unit": 100.0
     },
     "has_script_component": true,
     "script_component": {
@@ -145,20 +177,17 @@
        "type": "GameMenu"
       }
      ]
-    },
-    "has_ui_document_component": true,
-    "ui_document_component": {
-     "enabled": true,
-     "asset": {
-      "uid": "0c134efa-1af1-554b-9754-f3e7742d05fd"
-     }
     }
    }
   },
   {
    "prefab_uid": "531932bf-4358-1449-85fe-2d2ea88a54b6",
-   "id": 4194309,
+   "uid": "6e000397-d975-f940-83da-362deb9a7642",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "6e000397-d975-f940-83da-362deb9a7642"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "SettingsMenu",
@@ -172,7 +201,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "531932bf-4358-1449-85fe-2d2ea88a54b6"
+     "id": "531932bf-4358-1449-85fe-2d2ea88a54b6",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -182,11 +212,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -201,10 +230,23 @@
      },
      "parent": {
       "prefab_uid": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
-      "id": 4194307
+      "uid": "7e5f30d7-a97b-8742-9020-592d0c6c56d1"
      },
      "children": [],
      "active": false
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
+     },
+     "render_mode": 0,
+     "size": {
+      "width": 512,
+      "height": 512
+     },
+     "pixels_per_world_unit": 100.0
     },
     "has_script_component": true,
     "script_component": {
@@ -213,20 +255,17 @@
        "type": "SettingsMenu"
       }
      ]
-    },
-    "has_ui_document_component": true,
-    "ui_document_component": {
-     "enabled": true,
-     "asset": {
-      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
-     }
     }
    }
   },
   {
    "prefab_uid": "153132be-843d-fa4e-b15c-c0077f1bac98",
-   "id": 3145734,
+   "uid": "c2b82c33-2f1d-e747-9036-af1d010a0807",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "c2b82c33-2f1d-e747-9036-af1d010a0807"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "BackgroundAudioSource",
@@ -240,7 +279,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "153132be-843d-fa4e-b15c-c0077f1bac98"
+     "id": "153132be-843d-fa4e-b15c-c0077f1bac98",
+     "document": "6e59541b-a348-6248-9685-aba84bc78076"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -250,11 +290,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -269,7 +308,7 @@
      },
      "parent": {
       "prefab_uid": "7b2a12a5-b8bc-7749-9b5e-f9c9d0a9f337",
-      "id": 4194307
+      "uid": "7e5f30d7-a97b-8742-9020-592d0c6c56d1"
      },
      "children": [],
      "active": false
@@ -278,6 +317,10 @@
     "audio_source_component": {
      "auto_play": true,
      "loop": true,
+     "mute": false,
+     "spatial": false,
+     "bus": 0,
+     "priority": 0,
      "volume": 0.4050000011920929,
      "pitch": 1.0,
      "volume_rolloff": 0.0,

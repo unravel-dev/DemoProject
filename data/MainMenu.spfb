@@ -2,15 +2,15 @@
  "entities_count": 5,
  "entities": [
   {
-   "uid": "b349b202-ed21-d647-bb33-5c3489c871e9",
+   "uid": "cb6034cc-0e5b-1846-82c5-78ea3c39ace9",
    "components": {
     "has_id_component": true,
     "id_component": {
-     "id": "b349b202-ed21-d647-bb33-5c3489c871e9"
+     "id": "cb6034cc-0e5b-1846-82c5-78ea3c39ace9"
     },
     "has_tag_component": true,
     "tag_component": {
-     "name": "Main Camera",
+     "name": "Post Process Volume",
      "tag": ""
     },
     "has_layer_component": true,
@@ -27,11 +27,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -50,31 +49,16 @@
      "children": [],
      "active": true
     },
-    "has_camera_component": true,
-    "camera_component": {
-     "camera": {
-      "projection_mode": 0,
-      "field_of_view": 60.0,
-      "near_clip": 0.10000000149011612,
-      "far_clip": 1000.0,
-      "viewport_position": {
-       "x": 0,
-       "y": 0
-      },
-      "viewport_size": {
-       "width": 1399,
-       "height": 903
-      },
-      "orthographic_size": 5.0,
-      "aspect_ratio": 1.5492801666259766,
-      "aspect_locked": false,
-      "frustum_locked": false
-     },
-     "render_include_layers": {
-      "mask": -1
-     },
-     "render_exclude_layers": {
-      "mask": 0
+    "has_volume_component": true,
+    "volume_component": {
+     "mode": 1,
+     "priority": 0,
+     "weight": 1.0,
+     "blend_distance": 1.0,
+     "extents": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
      }
     },
     "has_tonemapping_component": true,
@@ -82,7 +66,33 @@
      "enabled": true,
      "settings": {
       "exposure": 1.0,
-      "method": 6
+      "method": 7,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 1.0,
+      "saturation": 1.0,
+      "lift": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gamma": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gain": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "vignette_intensity": 0.0,
+      "vignette_smoothness": 0.5,
+      "grain_intensity": 0.0,
+      "dithering": true
      }
     },
     "has_assao_component": true,
@@ -121,8 +131,7 @@
        "brightness": 1.0,
        "facing_reflections_fading": 0.10000000149011612,
        "roughness_depth_tolerance": 1.0,
-       "fade_in_start": 0.10000000149011612,
-       "fade_in_end": 0.20000000298023225,
+       "screen_edge_fade": 0.10000000149011612,
        "resolution": 1,
        "enable_cone_tracing": false,
        "cone_tracing": {
@@ -147,477 +156,6 @@
         "passes": 3
        }
       }
-     }
-    },
-    "has_audio_listener_component": true,
-    "audio_listener_component": {}
-   }
-  }
- ],
- "version": "1.0.0",
- "entities": [
-  {
-   "uid": "9a0d7081-0ade-ab44-a67c-5900cee5dc5c",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "9a0d7081-0ade-ab44-a67c-5900cee5dc5c"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "Sky & Directional Light",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 1.0,
-       "z": 0.0
-      },
-      "rotation": {
-       "x": 0.10938168317079544,
-       "y": 0.875426173210144,
-       "z": -0.40821796655654909,
-       "w": 0.2345697581768036
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "nil"
-     },
-     "children": [],
-     "active": true
-    },
-    "has_light_component": true,
-    "light_component": {
-     "light": {
-      "type": 2,
-      "intensity": 2.5,
-      "color": {
-       "r": 1.0,
-       "g": 0.9568628072738648,
-       "b": 0.8392157554626465,
-       "a": 1.0
-      },
-      "casts_shadows": true,
-      "shadow_params": {
-       "type": 1,
-       "depth": 0,
-       "resolution": 2,
-       "bias": 0.0010999999940395356,
-       "normal_bias": 0.014999999664723874,
-       "near_plane": 0.20000000298023225,
-       "far_plane": 550.0,
-       "show_coverage": false,
-       "pcf_x_offset": 1.0,
-       "pcf_y_offset": 1.0
-      },
-      "contact_shadow": {
-       "enabled": false,
-       "ray_length": 0.20000000298023225,
-       "thickness": 0.15000000596046449,
-       "n_dot_l_fade_start": 0.0,
-       "n_dot_l_fade_end": 0.4749999940395355,
-       "normal_facing_reject": -1.0
-      },
-      "directional_data": {},
-      "directional_shadow_params": {
-       "num_splits": 4,
-       "split_distribution": 0.800000011920929,
-       "stabilize": true
-      }
-     }
-    },
-    "has_skylight_component": true,
-    "skylight_component": {
-     "mode": 1,
-     "sky_brightness": 1.0,
-     "turbidity": 1.899999976158142,
-     "cloud_mode": 2,
-     "cloud_coverage": 0.44999998807907107,
-     "cloud_base_altitude": 27500.0,
-     "cloud_top_altitude": 45000.0,
-     "cloud_speed": 1.0,
-     "cloud_density": 1.0,
-     "cloud_absorption": 0.07999999821186066,
-     "cloud_light_absorption": 0.10000000149011612,
-     "cloud_vol_uv_scale": 0.00007999999797903001,
-     "cloud_vol_edge_width": 0.20000000298023225,
-     "cloud_vol_shape_power": 1.1200000047683716,
-     "cloud_vol_detail_erode": 0.47999998927116396,
-     "cloud_vol_macro_strength": 0.36000001430511477,
-     "cloud_vol_coarse_scale": 0.3799999952316284,
-     "cloud_vol_base_mix": 0.44999998807907107,
-     "cloud_vol_sun_intensity": 24.0,
-     "irradiance_intensity": 0.05000000074505806,
-     "irradiance_tint": {
-      "r": 1.0,
-      "g": 1.0,
-      "b": 1.0,
-      "a": 1.0
-     },
-     "irradiance_quality": 1,
-     "cubemap": {
-      "uid": "nil"
-     }
-    }
-   }
-  }
- ],
- "version": "1.0.0",
- "entities": [
-  {
-   "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "f15679d5-b867-5743-ae1d-a9803b783ab5"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "LobbyUI",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_prefab_component": true,
-    "prefab_component": {
-     "source": {
-      "uid": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
-     },
-     "property_overrides": [
-      {
-       "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
-       "component_path": "audio_source_component/auto_play",
-       "pretty_component_path": "Audio Source/Auto Play"
-      },
-      {
-       "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
-       "component_path": "audio_source_component/loop",
-       "pretty_component_path": "Audio Source/Loop"
-      },
-      {
-       "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
-       "component_path": "tag_component/name",
-       "pretty_component_path": "Tag/Name"
-      },
-      {
-       "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
-       "component_path": "transform_component/active",
-       "pretty_component_path": "Transform/Active"
-      }
-     ],
-     "removed_entities": []
-    },
-    "has_prefab_id_component": true,
-    "prefab_id_component": {
-     "id": "5100a106-231b-8840-b67e-df42df315363"
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      },
-      "rotation": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "nil"
-     },
-     "children": [
-      {
-       "uid": "07690b95-7160-7e46-936b-1d0c3fe614f0"
-      },
-      {
-       "uid": "42fcceac-0804-f747-9729-99d554c70b81"
-      },
-      {
-       "uid": "3344d860-969d-7046-9e92-f1c144f29ad0"
-      }
-     ],
-     "active": true
-    },
-    "has_script_component": true,
-    "script_component": {
-     "script_components": [
-      {
-       "type": "LobbyUI",
-       "MainMenu": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "SettingsMenu": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "GameScene": {
-        "uid": "1da1116f-307c-fd49-8002-81a794aa83d9"
-       },
-       "BackgroundAudioSource": {
-        "flags": 2,
-        "uid": "nil"
-       }
-      }
-     ]
-    }
-   }
-  },
-  {
-   "uid": "07690b95-7160-7e46-936b-1d0c3fe614f0",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "07690b95-7160-7e46-936b-1d0c3fe614f0"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "MainMenu",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_prefab_id_component": true,
-    "prefab_id_component": {
-     "id": "af8efd56-6ba6-c946-aefb-45bbcc79cff5"
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      },
-      "rotation": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
-     },
-     "children": [],
-     "active": true
-    },
-    "has_ui_document_component": true,
-    "ui_document_component": {
-     "enabled": true,
-     "asset": {
-      "uid": "d3f75e99-1d69-4e47-96d8-9da797deda18"
-     },
-     "render_mode": 0,
-     "size": {
-      "width": 512,
-      "height": 512
-     },
-     "pixels_per_world_unit": 100.0
-    },
-    "has_script_component": true,
-    "script_component": {
-     "script_components": [
-      {
-       "type": "MainMenu"
-      }
-     ]
-    }
-   }
-  },
-  {
-   "uid": "42fcceac-0804-f747-9729-99d554c70b81",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "42fcceac-0804-f747-9729-99d554c70b81"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "SettingsMenu",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_prefab_id_component": true,
-    "prefab_id_component": {
-     "id": "f0be3f9a-2578-484e-9862-596215a6c9a9"
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      },
-      "rotation": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
-     },
-     "children": [],
-     "active": false
-    },
-    "has_ui_document_component": true,
-    "ui_document_component": {
-     "enabled": true,
-     "asset": {
-      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
-     },
-     "render_mode": 0,
-     "size": {
-      "width": 512,
-      "height": 512
-     },
-     "pixels_per_world_unit": 100.0
-    },
-    "has_script_component": true,
-    "script_component": {
-     "script_components": [
-      {
-       "type": "SettingsMenu"
-      }
-     ]
-    }
-   }
-  },
-  {
-   "uid": "3344d860-969d-7046-9e92-f1c144f29ad0",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "3344d860-969d-7046-9e92-f1c144f29ad0"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "BackgroundAudioSource",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_prefab_id_component": true,
-    "prefab_id_component": {
-     "id": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d"
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      },
-      "rotation": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
-     },
-     "children": [],
-     "active": false
-    },
-    "has_audio_source_component": true,
-    "audio_source_component": {
-     "auto_play": true,
-     "loop": true,
-     "volume": 0.37299999594688418,
-     "pitch": 1.0,
-     "volume_rolloff": 0.0,
-     "range": {
-      "min": 1.0,
-      "max": 20.0
-     },
-     "clip": {
-      "uid": "c3015e55-b5cc-3c4c-a695-821016c5d381"
      }
     }
    }
@@ -648,12 +186,23 @@
      "source": {
       "uid": "4a33ba22-3dea-cd44-a33f-62f824e89476"
      },
-     "property_overrides": [],
-     "removed_entities": []
+     "instance_id": "nil",
+     "instance_document": "nil",
+     "from_document": {
+      "overrides": [],
+      "removed_entities": [],
+      "removed_instances": []
+     },
+     "local": {
+      "overrides": [],
+      "removed_entities": [],
+      "removed_instances": []
+     }
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "360630d3-1219-3d44-80f4-c256f7502554"
+     "id": "360630d3-1219-3d44-80f4-c256f7502554",
+     "document": "4a33ba22-3dea-cd44-a33f-62f824e89476"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -663,11 +212,10 @@
        "y": 0.12508001923561097,
        "z": 13.123638153076172
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.720901608467102,
@@ -689,10 +237,12 @@
     "has_particle_emitter_component": true,
     "particle_emitter_component": {
      "enabled": true,
+     "culling_mode": 1,
      "shape": 2,
      "direction": 0,
      "spawn_location": 0,
      "simulation_space": 0,
+     "simulation_backend": 0,
      "max_particles": 1024,
      "emission_lifetime": {
       "count": 2.0
@@ -890,15 +440,375 @@
  "version": "1.0.0",
  "entities": [
   {
-   "uid": "cb6034cc-0e5b-1846-82c5-78ea3c39ace9",
+   "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5",
    "components": {
     "has_id_component": true,
     "id_component": {
-     "id": "cb6034cc-0e5b-1846-82c5-78ea3c39ace9"
+     "id": "f15679d5-b867-5743-ae1d-a9803b783ab5"
     },
     "has_tag_component": true,
     "tag_component": {
-     "name": "Post Process Volume",
+     "name": "LobbyUI",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_component": true,
+    "prefab_component": {
+     "source": {
+      "uid": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
+     },
+     "instance_id": "nil",
+     "instance_document": "nil",
+     "from_document": {
+      "overrides": [],
+      "removed_entities": [],
+      "removed_instances": []
+     },
+     "local": {
+      "overrides": [
+       {
+        "instance_path": [],
+        "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+        "component_path": "audio_source_component/auto_play",
+        "pretty_component_path": "Audio Source/Auto Play"
+       },
+       {
+        "instance_path": [],
+        "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+        "component_path": "audio_source_component/loop",
+        "pretty_component_path": "Audio Source/Loop"
+       },
+       {
+        "instance_path": [],
+        "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+        "component_path": "tag_component/name",
+        "pretty_component_path": "Tag/Name"
+       },
+       {
+        "instance_path": [],
+        "entity_uuid": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+        "component_path": "transform_component/active",
+        "pretty_component_path": "Transform/Active"
+       }
+      ],
+      "removed_entities": [],
+      "removed_instances": []
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "5100a106-231b-8840-b67e-df42df315363",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [
+      {
+       "uid": "07690b95-7160-7e46-936b-1d0c3fe614f0"
+      },
+      {
+       "uid": "42fcceac-0804-f747-9729-99d554c70b81"
+      },
+      {
+       "uid": "3344d860-969d-7046-9e92-f1c144f29ad0"
+      }
+     ],
+     "active": true
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "LobbyUI",
+       "MainMenu": {
+        "flags": 2,
+        "uid": "nil"
+       },
+       "SettingsMenu": {
+        "flags": 2,
+        "uid": "nil"
+       },
+       "GameScene": {
+        "uid": "1da1116f-307c-fd49-8002-81a794aa83d9"
+       },
+       "BackgroundAudioSource": {
+        "flags": 2,
+        "uid": "nil"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "uid": "07690b95-7160-7e46-936b-1d0c3fe614f0",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "07690b95-7160-7e46-936b-1d0c3fe614f0"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "MainMenu",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "af8efd56-6ba6-c946-aefb-45bbcc79cff5",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "d3f75e99-1d69-4e47-96d8-9da797deda18"
+     },
+     "render_mode": 0,
+     "size": {
+      "width": 512,
+      "height": 512
+     },
+     "pixels_per_world_unit": 100.0
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "MainMenu"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "uid": "42fcceac-0804-f747-9729-99d554c70b81",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "42fcceac-0804-f747-9729-99d554c70b81"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "SettingsMenu",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "f0be3f9a-2578-484e-9862-596215a6c9a9",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
+     },
+     "children": [],
+     "active": false
+    },
+    "has_ui_document_component": true,
+    "ui_document_component": {
+     "enabled": true,
+     "asset": {
+      "uid": "a3e52d6a-a8d4-e340-9430-116f9818c5e9"
+     },
+     "render_mode": 0,
+     "size": {
+      "width": 512,
+      "height": 512
+     },
+     "pixels_per_world_unit": 100.0
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "SettingsMenu"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "uid": "3344d860-969d-7046-9e92-f1c144f29ad0",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "3344d860-969d-7046-9e92-f1c144f29ad0"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "BackgroundAudioSource",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "7fc27b2b-f7eb-bd4a-a3d1-ad8e7e160c1d",
+     "document": "ed1dda9d-9d24-1a4c-a1af-1be971a451e1"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "f15679d5-b867-5743-ae1d-a9803b783ab5"
+     },
+     "children": [],
+     "active": false
+    },
+    "has_audio_source_component": true,
+    "audio_source_component": {
+     "auto_play": true,
+     "loop": true,
+     "mute": false,
+     "spatial": false,
+     "bus": 0,
+     "priority": 0,
+     "volume": 0.37299999594688418,
+     "pitch": 1.0,
+     "volume_rolloff": 0.0,
+     "range": {
+      "min": 1.0,
+      "max": 20.0
+     },
+     "clip": {
+      "uid": "c3015e55-b5cc-3c4c-a695-821016c5d381"
+     }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "9a0d7081-0ade-ab44-a67c-5900cee5dc5c",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "9a0d7081-0ade-ab44-a67c-5900cee5dc5c"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Sky & Directional Light",
      "tag": ""
     },
     "has_layer_component": true,
@@ -912,14 +822,13 @@
      "local_transform": {
       "position": {
        "x": 0.0,
-       "y": 0.0,
+       "y": 1.0,
        "z": 0.0
       },
-      "rotation": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+      "rotation_euler": {
+       "x": -130.0,
+       "y": 30.000001907348634,
+       "z": 180.0
       },
       "scale": {
        "x": 1.0,
@@ -938,16 +847,158 @@
      "children": [],
      "active": true
     },
-    "has_volume_component": true,
-    "volume_component": {
+    "has_light_component": true,
+    "light_component": {
+     "light": {
+      "type": 2,
+      "intensity": 2.5,
+      "color": {
+       "r": 1.0,
+       "g": 0.9568628072738648,
+       "b": 0.8392157554626465,
+       "a": 1.0
+      },
+      "casts_shadows": true,
+      "shadow_params": {
+       "type": 1,
+       "depth": 0,
+       "resolution": 2,
+       "depth_bias_texels": 0.5,
+       "slope_bias_texels": 0.5,
+       "normal_bias_texels": 0.5,
+       "near_plane": 0.20000000298023225,
+       "far_plane": 550.0,
+       "show_coverage": false,
+       "pcf_x_offset": 1.0,
+       "pcf_y_offset": 1.0
+      },
+      "contact_shadow": {
+       "enabled": false,
+       "ray_length": 0.20000000298023225,
+       "occluder_thickness": 0.029999999329447748,
+       "max_distance": 50.0,
+       "opacity": 1.0
+      },
+      "directional_data": {},
+      "directional_shadow_params": {
+       "num_splits": 4,
+       "split_distribution": 0.800000011920929,
+       "stabilize": true
+      }
+     }
+    },
+    "has_skylight_component": true,
+    "skylight_component": {
      "mode": 1,
-     "priority": 0,
-     "weight": 1.0,
-     "blend_distance": 1.0,
-     "extents": {
-      "x": 1.0,
-      "y": 1.0,
-      "z": 1.0
+     "sky_brightness": 1.0,
+     "turbidity": 1.899999976158142,
+     "cloud_mode": 2,
+     "cloud_coverage": 0.44999998807907107,
+     "cloud_macro_variation": 0.36000001430511477,
+     "cloud_base_altitude": 27500.0,
+     "cloud_thickness": 17500.0,
+     "cloud_size": 12500.0,
+     "cloud_density": 1.0,
+     "cloud_shadow_strength": 0.2500000298023224,
+     "cloud_brightness": 1.0,
+     "cloud_world_space_altitude": true,
+     "cloud_shadows": false,
+     "cloud_shadow_opacity": 1.0,
+     "cloud_softness": 0.20000000298023225,
+     "cloud_detail_erode": 0.47999998927116396,
+     "cloud_speed": 1.0,
+     "cloud_wind_direction": 35.0,
+     "irradiance_intensity": 0.05000000074505806,
+     "irradiance_tint": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "irradiance_quality": 1,
+     "irradiance_use_sky": true,
+     "cubemap": {
+      "uid": "nil"
+     }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "b349b202-ed21-d647-bb33-5c3489c871e9",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "b349b202-ed21-d647-bb33-5c3489c871e9"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Main Camera",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_camera_component": true,
+    "camera_component": {
+     "camera": {
+      "projection_mode": 0,
+      "field_of_view": 60.0,
+      "near_clip": 0.10000000149011612,
+      "far_clip": 1000.0,
+      "viewport_position": {
+       "x": 0,
+       "y": 0
+      },
+      "viewport_size": {
+       "width": 1399,
+       "height": 903
+      },
+      "orthographic_size": 5.0,
+      "aspect_ratio": 1.5492801666259766,
+      "aspect_locked": false,
+      "frustum_locked": false
+     },
+     "render_include_layers": {
+      "mask": -1
+     },
+     "render_exclude_layers": {
+      "mask": 0
      }
     },
     "has_tonemapping_component": true,
@@ -955,7 +1006,33 @@
      "enabled": true,
      "settings": {
       "exposure": 1.0,
-      "method": 7
+      "method": 6,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 1.0,
+      "saturation": 1.0,
+      "lift": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gamma": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gain": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "vignette_intensity": 0.0,
+      "vignette_smoothness": 0.5,
+      "grain_intensity": 0.0,
+      "dithering": true
      }
     },
     "has_assao_component": true,
@@ -994,8 +1071,7 @@
        "brightness": 1.0,
        "facing_reflections_fading": 0.10000000149011612,
        "roughness_depth_tolerance": 1.0,
-       "fade_in_start": 0.10000000149011612,
-       "fade_in_end": 0.20000000298023225,
+       "screen_edge_fade": 0.10000000149011612,
        "resolution": 1,
        "enable_cone_tracing": false,
        "cone_tracing": {
@@ -1021,7 +1097,9 @@
        }
       }
      }
-    }
+    },
+    "has_audio_listener_component": true,
+    "audio_listener_component": {}
    }
   }
  ],

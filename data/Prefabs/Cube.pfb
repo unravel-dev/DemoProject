@@ -1,4 +1,9 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "50011467-0fdc-9849-9586-0218049419ea",
@@ -21,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "50011467-0fdc-9849-9586-0218049419ea"
+     "id": "50011467-0fdc-9849-9586-0218049419ea",
+     "document": "21500ecd-9926-3e42-96e6-7e2a39ae603a"
     },
     "has_transform_component": true,
     "transform_component": {

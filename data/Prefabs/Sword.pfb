@@ -1,9 +1,18 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "419de788-bfee-f24c-a0af-110622fc69c4",
-   "id": 2097155,
+   "uid": "2cee6334-e788-6b4e-a71e-4171afc6788b",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "2cee6334-e788-6b4e-a71e-4171afc6788b"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Sword",
@@ -17,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "419de788-bfee-f24c-a0af-110622fc69c4"
+     "id": "419de788-bfee-f24c-a0af-110622fc69c4",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -27,11 +37,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -45,13 +54,13 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [
       {
        "prefab_uid": "67d5b82d-95ab-1d4e-b177-f4f69a68c277",
-       "id": 1048580
+       "uid": "ff5903f7-e290-b444-ad4b-713df5570386"
       }
      ],
      "active": true
@@ -59,9 +68,13 @@
     "has_physics_component": true,
     "physics_component": {
      "is_using_gravity": false,
-     "is_kinematic": false,
+     "body_type": 2,
      "is_sensor": true,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -80,7 +93,7 @@
       "z": false
      },
      "material": {
-      "uid": "00000000-0000-0000-0000-000000000000"
+      "uid": "nil"
      },
      "shapes": [
       {
@@ -114,8 +127,12 @@
   },
   {
    "prefab_uid": "67d5b82d-95ab-1d4e-b177-f4f69a68c277",
-   "id": 1048580,
+   "uid": "ff5903f7-e290-b444-ad4b-713df5570386",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "ff5903f7-e290-b444-ad4b-713df5570386"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "sword",
@@ -129,7 +146,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "67d5b82d-95ab-1d4e-b177-f4f69a68c277"
+     "id": "67d5b82d-95ab-1d4e-b177-f4f69a68c277",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -139,11 +157,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
-       "x": 0.7071068286895752,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 0.7071067094802856
+      "rotation_euler": {
+       "x": 90.00000762939453,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -158,12 +175,12 @@
      },
      "parent": {
       "prefab_uid": "419de788-bfee-f24c-a0af-110622fc69c4",
-      "id": 2097155
+      "uid": "2cee6334-e788-6b4e-a71e-4171afc6788b"
      },
      "children": [
       {
        "prefab_uid": "acaef78e-1e99-3944-acc8-e6b9da154efc",
-       "id": 1048581
+       "uid": "22c0cc92-d418-fa4e-8e4c-ec81e816d0da"
       }
      ],
      "active": true
@@ -173,7 +190,6 @@
      "enabled": true,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -182,24 +198,28 @@
       ],
       "materials": [
        {
-        "uid": "e77cd60b-f148-7c44-9d76-b385a3ec9b58"
+        "uid": "nil"
        }
       ],
       "material_instances": [],
-      "lod_limits": [
-       {
-        "min": 0,
-        "max": 100
-       }
-      ]
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
      }
     }
    }
   },
   {
    "prefab_uid": "acaef78e-1e99-3944-acc8-e6b9da154efc",
-   "id": 1048581,
+   "uid": "22c0cc92-d418-fa4e-8e4c-ec81e816d0da",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "22c0cc92-d418-fa4e-8e4c-ec81e816d0da"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Sketchfab_model",
@@ -213,7 +233,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "acaef78e-1e99-3944-acc8-e6b9da154efc"
+     "id": "acaef78e-1e99-3944-acc8-e6b9da154efc",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -223,11 +244,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
-       "x": -0.7071068286895752,
+      "rotation_euler": {
+       "x": -90.0,
        "y": 0.0,
-       "z": 0.0,
-       "w": 0.7071068286895752
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -242,12 +262,12 @@
      },
      "parent": {
       "prefab_uid": "67d5b82d-95ab-1d4e-b177-f4f69a68c277",
-      "id": 1048580
+      "uid": "ff5903f7-e290-b444-ad4b-713df5570386"
      },
      "children": [
       {
        "prefab_uid": "21a871b4-ef32-bf45-8cbc-61f410d625d9",
-       "id": 1048582
+       "uid": "625303ef-76f8-d742-8b9f-2de6acc4e97a"
       }
      ],
      "active": true
@@ -256,8 +276,12 @@
   },
   {
    "prefab_uid": "21a871b4-ef32-bf45-8cbc-61f410d625d9",
-   "id": 1048582,
+   "uid": "625303ef-76f8-d742-8b9f-2de6acc4e97a",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "625303ef-76f8-d742-8b9f-2de6acc4e97a"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Sword_uh1fdetfa_Low.fbx",
@@ -271,7 +295,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "21a871b4-ef32-bf45-8cbc-61f410d625d9"
+     "id": "21a871b4-ef32-bf45-8cbc-61f410d625d9",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -281,11 +306,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
-       "x": 0.7071068286895752,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 0.7071068286895752
+      "rotation_euler": {
+       "x": 90.0,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.009999999776482582,
@@ -300,12 +324,12 @@
      },
      "parent": {
       "prefab_uid": "acaef78e-1e99-3944-acc8-e6b9da154efc",
-      "id": 1048581
+      "uid": "22c0cc92-d418-fa4e-8e4c-ec81e816d0da"
      },
      "children": [
       {
        "prefab_uid": "3be3108d-3134-464e-80ec-b47d31a7adc2",
-       "id": 1048583
+       "uid": "0b3e983c-6fd1-3742-9c2a-1e8c317c5ec5"
       }
      ],
      "active": true
@@ -314,8 +338,12 @@
   },
   {
    "prefab_uid": "3be3108d-3134-464e-80ec-b47d31a7adc2",
-   "id": 1048583,
+   "uid": "0b3e983c-6fd1-3742-9c2a-1e8c317c5ec5",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "0b3e983c-6fd1-3742-9c2a-1e8c317c5ec5"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "RootNode",
@@ -329,7 +357,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "3be3108d-3134-464e-80ec-b47d31a7adc2"
+     "id": "3be3108d-3134-464e-80ec-b47d31a7adc2",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -339,11 +368,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -358,12 +386,12 @@
      },
      "parent": {
       "prefab_uid": "21a871b4-ef32-bf45-8cbc-61f410d625d9",
-      "id": 1048582
+      "uid": "625303ef-76f8-d742-8b9f-2de6acc4e97a"
      },
      "children": [
       {
        "prefab_uid": "81316099-4ff6-9f46-a64a-cfc6bd2a7236",
-       "id": 1048584
+       "uid": "9c222d74-7f7d-ba45-a9a1-5868a352c9b2"
       }
      ],
      "active": true
@@ -372,8 +400,12 @@
   },
   {
    "prefab_uid": "81316099-4ff6-9f46-a64a-cfc6bd2a7236",
-   "id": 1048584,
+   "uid": "9c222d74-7f7d-ba45-a9a1-5868a352c9b2",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "9c222d74-7f7d-ba45-a9a1-5868a352c9b2"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "uh1fdetfa_LOD0_TIER3_000",
@@ -387,7 +419,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "81316099-4ff6-9f46-a64a-cfc6bd2a7236"
+     "id": "81316099-4ff6-9f46-a64a-cfc6bd2a7236",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -397,11 +430,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -416,12 +448,12 @@
      },
      "parent": {
       "prefab_uid": "3be3108d-3134-464e-80ec-b47d31a7adc2",
-      "id": 1048583
+      "uid": "0b3e983c-6fd1-3742-9c2a-1e8c317c5ec5"
      },
      "children": [
       {
        "prefab_uid": "4fb85fee-a7eb-6b44-be7e-aea3815d9fcc",
-       "id": 1048585
+       "uid": "82c945b5-017c-2c4f-adc1-d02d30948ca6"
       }
      ],
      "active": true
@@ -430,8 +462,12 @@
   },
   {
    "prefab_uid": "4fb85fee-a7eb-6b44-be7e-aea3815d9fcc",
-   "id": 1048585,
+   "uid": "82c945b5-017c-2c4f-adc1-d02d30948ca6",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "82c945b5-017c-2c4f-adc1-d02d30948ca6"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "uh1fdetfa_LOD0_TIER3_000_MatID_1_0",
@@ -445,7 +481,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "4fb85fee-a7eb-6b44-be7e-aea3815d9fcc"
+     "id": "4fb85fee-a7eb-6b44-be7e-aea3815d9fcc",
+     "document": "fbe26e77-25e9-e04b-927a-920bbfe920d9"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -455,11 +492,10 @@
        "y": 0.0,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 1.0,
@@ -474,15 +510,23 @@
      },
      "parent": {
       "prefab_uid": "81316099-4ff6-9f46-a64a-cfc6bd2a7236",
-      "id": 1048584
+      "uid": "9c222d74-7f7d-ba45-a9a1-5868a352c9b2"
      },
      "children": [],
      "active": true
     },
     "has_submesh_component": true,
     "submesh_component": {
-     "submeshes": [
-      0
+     "entries": [
+      {
+       "submesh_index": 0,
+       "stable_id": 0,
+       "material_override": {
+        "uid": "nil"
+       },
+       "casts_shadow": true,
+       "enabled": true
+      }
      ]
     }
    }

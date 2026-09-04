@@ -2,598 +2,6 @@
  "entities_count": 5,
  "entities": [
   {
-   "uid": "be63c6e9-6be5-6445-b5c4-3349b777aca9",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "be63c6e9-6be5-6445-b5c4-3349b777aca9"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "Main Camera",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 4.9666290283203129,
-       "z": -15.496834754943848
-      },
-      "rotation_euler": {
-       "x": 0.0,
-       "y": -0.0,
-       "z": 0.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "nil"
-     },
-     "children": [],
-     "active": true
-    },
-    "has_camera_component": true,
-    "camera_component": {
-     "camera": {
-      "projection_mode": 0,
-      "field_of_view": 60.0,
-      "near_clip": 0.10000000149011612,
-      "far_clip": 1000.0,
-      "viewport_position": {
-       "x": 0,
-       "y": 0
-      },
-      "viewport_size": {
-       "width": 640,
-       "height": 480
-      },
-      "orthographic_size": 5.0,
-      "aspect_ratio": 1.3333333730697632,
-      "aspect_locked": false,
-      "frustum_locked": false
-     },
-     "render_include_layers": {
-      "mask": -1
-     },
-     "render_exclude_layers": {
-      "mask": 0
-     }
-    },
-    "has_audio_listener_component": true,
-    "audio_listener_component": {}
-   }
-  }
- ],
- "version": "1.0.0",
- "entities": [
-  {
-   "uid": "17efea04-9010-f148-90c7-41002ff3d442",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "17efea04-9010-f148-90c7-41002ff3d442"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "Sky & Directional Light",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 1.0,
-       "z": 0.0
-      },
-      "rotation_euler": {
-       "x": -130.0,
-       "y": 30.00000762939453,
-       "z": 180.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "nil"
-     },
-     "children": [],
-     "active": true
-    },
-    "has_light_component": true,
-    "light_component": {
-     "light": {
-      "type": 2,
-      "intensity": 5.0,
-      "color": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "casts_shadows": true,
-      "shadow_params": {
-       "type": 1,
-       "depth": 0,
-       "resolution": 2,
-       "bias": 0.0010000000474974514,
-       "normal_bias": 0.12999999523162843,
-       "near_plane": 0.20000000298023225,
-       "far_plane": 550.0,
-       "show_coverage": false,
-       "pcf_x_offset": 1.0,
-       "pcf_y_offset": 1.0
-      },
-      "contact_shadow": {
-       "enabled": false,
-       "ray_length": 0.20000000298023225,
-       "thickness": 0.15000000596046449,
-       "n_dot_l_fade_start": 0.0,
-       "n_dot_l_fade_end": 0.4749999940395355,
-       "normal_facing_reject": -1.0
-      },
-      "directional_data": {},
-      "directional_shadow_params": {
-       "num_splits": 4,
-       "split_distribution": 0.800000011920929,
-       "stabilize": true
-      }
-     }
-    },
-    "has_skylight_component": true,
-    "skylight_component": {
-     "mode": 1,
-     "sky_brightness": 1.0,
-     "turbidity": 1.899999976158142,
-     "cloud_mode": 0,
-     "cloud_coverage": 0.5199999809265137,
-     "cloud_base_altitude": 27500.0,
-     "cloud_top_altitude": 45000.0,
-     "cloud_speed": 0.0,
-     "cloud_density": 1.5,
-     "cloud_absorption": 0.07999999821186066,
-     "cloud_light_absorption": 0.10000000149011612,
-     "cloud_vol_uv_scale": 0.00007999999797903001,
-     "cloud_vol_edge_width": 0.20000000298023225,
-     "cloud_vol_shape_power": 1.1200000047683716,
-     "cloud_vol_detail_erode": 0.47999998927116396,
-     "cloud_vol_macro_strength": 0.36000001430511477,
-     "cloud_vol_coarse_scale": 0.3799999952316284,
-     "cloud_vol_base_mix": 0.44999998807907107,
-     "cloud_vol_sun_intensity": 24.0,
-     "irradiance_intensity": 0.05000000074505806,
-     "irradiance_tint": {
-      "r": 1.0,
-      "g": 1.0,
-      "b": 1.0,
-      "a": 1.0
-     },
-     "irradiance_quality": 1,
-     "irradiance_use_sky": true,
-     "cubemap": {
-      "uid": "nil"
-     }
-    }
-   }
-  }
- ],
- "version": "1.0.0",
- "entities": [
-  {
-   "uid": "3816b3ac-25b4-794c-962e-d2ef550ec5d0",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "3816b3ac-25b4-794c-962e-d2ef550ec5d0"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "Reflection Probe Global",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 0.10000000149011612,
-       "z": 0.0
-      },
-      "rotation_euler": {
-       "x": 0.0,
-       "y": -0.0,
-       "z": 0.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "nil"
-     },
-     "children": [],
-     "active": true
-    },
-    "has_reflection_probe_component": true,
-    "reflection_probe_component": {
-     "probe": {
-      "type": 1,
-      "method": 0,
-      "intensity": 1.0,
-      "range": 1000.0
-     },
-     "update_mode": 0,
-     "update_interval": 0.0,
-     "faces_per_frame": 1,
-     "apply_prefilter": true,
-     "resolution": 4,
-     "capture_sky": true,
-     "capture_shadows": true
-    }
-   }
-  }
- ],
- "version": "1.0.0",
- "entities": [
-  {
-   "uid": "264cfa57-facc-e448-b24c-159a8a620733",
-   "components": {
-    "has_id_component": true,
-    "id_component": {
-     "id": "264cfa57-facc-e448-b24c-159a8a620733"
-    },
-    "has_tag_component": true,
-    "tag_component": {
-     "name": "Volume Global",
-     "tag": ""
-    },
-    "has_layer_component": true,
-    "layer_component": {
-     "layers": {
-      "mask": 1
-     }
-    },
-    "has_transform_component": true,
-    "transform_component": {
-     "local_transform": {
-      "position": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      },
-      "rotation_euler": {
-       "x": 0.0,
-       "y": -0.0,
-       "z": 0.0
-      },
-      "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
-      },
-      "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
-      }
-     },
-     "parent": {
-      "uid": "nil"
-     },
-     "children": [],
-     "active": true
-    },
-    "has_volume_component": true,
-    "volume_component": {
-     "mode": 1,
-     "priority": 0,
-     "weight": 1.0,
-     "blend_distance": 1.0,
-     "extents": {
-      "x": 1.0,
-      "y": 1.0,
-      "z": 1.0
-     }
-    },
-    "has_auto_exposure_component": true,
-    "auto_exposure_component": {
-     "enabled": false,
-     "settings": {
-      "min_ev": -3.0,
-      "max_ev": 16.0,
-      "compensation": 3.0,
-      "dark_adaptation": 0.10000000149011612,
-      "adaptation_speed_up": 3.0,
-      "adaptation_speed_down": 1.0,
-      "low_percentile": 0.800000011920929,
-      "high_percentile": 0.9800000190734863,
-      "metering_mode": 1,
-      "metering_area": 0.699999988079071
-     }
-    },
-    "has_tonemapping_component": true,
-    "tonemapping_component": {
-     "enabled": true,
-     "settings": {
-      "exposure": 1.0,
-      "method": 13,
-      "temperature": 0.0,
-      "tint": 0.0,
-      "contrast": 1.0,
-      "saturation": 1.0,
-      "lift": {
-       "r": 0.5,
-       "g": 0.5,
-       "b": 0.5,
-       "a": 1.0
-      },
-      "gamma": {
-       "r": 0.5,
-       "g": 0.5,
-       "b": 0.5,
-       "a": 1.0
-      },
-      "gain": {
-       "r": 0.5,
-       "g": 0.5,
-       "b": 0.5,
-       "a": 1.0
-      },
-      "vignette_intensity": 0.0,
-      "vignette_smoothness": 0.5,
-      "grain_intensity": 0.0,
-      "dithering": true
-     }
-    },
-    "has_assao_component": true,
-    "assao_component": {
-     "enabled": false,
-     "settings": {
-      "radius": 1.2000000476837159,
-      "shadow_multiplier": 1.0,
-      "shadow_power": 1.0,
-      "shadow_clamp": 0.9800000190734863,
-      "horizon_angle_threshold": 0.05999999865889549,
-      "fade_out_from": 50.0,
-      "fade_out_to": 200.0,
-      "quality_level": 3,
-      "adaptive_quality_limit": 0.44999998807907107,
-      "blur_pass_count": 2,
-      "sharpness": 0.9800000190734863,
-      "temporal_supersampling_angle_offset": 0.0,
-      "temporal_supersampling_radius_offset": 1.0,
-      "detail_shadow_strength": 0.5,
-      "generate_normals": false
-     }
-    },
-    "has_bloom_component": true,
-    "bloom_component": {
-     "enabled": false,
-     "settings": {
-      "threshold": 0.0,
-      "soft_knee": 0.5,
-      "clamp": 100.0,
-      "intensity": 0.15000000596046449,
-      "scatter": 0.699999988079071,
-      "mip_count": 8,
-      "mip0_tint": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "mip1_tint": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "mip2_tint": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "mip3_tint": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "mip4_tint": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "mip5_tint": {
-       "r": 1.0,
-       "g": 1.0,
-       "b": 1.0,
-       "a": 1.0
-      },
-      "dirt_intensity": 0.0,
-      "dirt_texture": {
-       "uid": "nil"
-      }
-     }
-    },
-    "has_fxaa_component": true,
-    "fxaa_component": {
-     "enabled": true
-    },
-    "has_taa_component": true,
-    "taa_component": {
-     "enabled": false,
-     "settings": {
-      "temporal_sample_count": 8,
-      "jitter_mode": 3,
-      "jitter_amplitude": 1.0,
-      "jitter_temporal_phase_scale": 0.44999998807907107,
-      "history_blend": 0.8199999928474426,
-      "sharpen": 0.5,
-      "depth_reject_scale": 1.0,
-      "variance_clip_scale": 1.350000023841858
-     }
-    },
-    "has_ssr_component": true,
-    "ssr_component": {
-     "enabled": false,
-     "settings": {
-      "fidelityfx": {
-       "max_steps": 64,
-       "max_rays": 4,
-       "depth_tolerance": 0.10000000149011612,
-       "brightness": 1.0,
-       "facing_reflections_fading": 0.10000000149011612,
-       "roughness_depth_tolerance": 1.0,
-       "fade_in_start": 0.10000000149011612,
-       "fade_in_end": 0.20000000298023225,
-       "resolution": 1,
-       "enable_cone_tracing": false,
-       "cone_tracing": {
-        "cone_angle_bias": 0.05000000074505806,
-        "max_mip_level": 6,
-        "blur_base_sigma": 1.0
-       },
-       "enable_temporal_accumulation": true,
-       "temporal": {
-        "history_strength": 0.8999999761581421,
-        "depth_threshold": 0.009999999776482582,
-        "roughness_sensitivity": 0.30000001192092898,
-        "motion_scale_pixels": 120.0,
-        "normal_dot_threshold": 0.949999988079071,
-        "max_accum_frames": 8
-       },
-       "enable_spatial_denoise": false,
-       "spatial_denoise": {
-        "depth_sigma": 0.019999999552965165,
-        "normal_power": 64.0,
-        "luma_sigma": 1.0,
-        "passes": 3
-       }
-      }
-     }
-    },
-    "has_ssil_component": true,
-    "ssil_component": {
-     "enabled": false,
-     "settings": {
-      "max_rays": 4,
-      "max_steps": 64,
-      "depth_tolerance": 0.15000000596046449,
-      "thickness": 0.5,
-      "brightness": 0.5,
-      "max_distance": 300.0,
-      "resolution": 1,
-      "enable_multi_bounce": true,
-      "multi_bounce_intensity": 0.800000011920929,
-      "enable_spatial_denoise": true,
-      "spatial_denoise": {
-       "depth_sigma": 0.019999999552965165,
-       "normal_power": 64.0,
-       "luma_sigma": 4.0,
-       "passes": 4,
-       "full_res_passes": 0,
-       "max_step": 16
-      },
-      "enable_temporal_accumulation": true,
-      "temporal": {
-       "history_strength": 0.8999999761581421,
-       "depth_threshold": 0.20000000298023225,
-       "normal_dot_threshold": 0.6000000238418579,
-       "max_accum_frames": 16
-      }
-     }
-    },
-    "has_gi_component": true,
-    "gi_component": {
-     "enabled": false,
-     "settings": {
-      "resolve": {
-       "intensity": 1.0,
-       "resolution": 2,
-       "probe_spacing": 16,
-       "enable_screen_trace": true,
-       "probe_visibility_variance_gate": 0.15000000596046449,
-       "adaptive_probes": true,
-       "probe_space_temporal": true,
-       "enable_reflections": true,
-       "reflection_temporal_frames": 8,
-       "enable_temporal": true,
-       "max_accum_frames": 24.0,
-       "reprojection_tolerance": 0.25,
-       "enable_spatial_denoise": true,
-       "denoise_passes": 3,
-       "denoise_normal_power": 32.0,
-       "denoise_luma_phi": 32.0,
-       "denoise_plane_tolerance": 0.019999999552965165,
-       "denoise_low_count_boost": 16.0,
-       "enable_bilateral_upsample": true,
-       "upsample_normal_power": 32.0,
-       "upsample_plane_tolerance": 0.019999999552965165
-      },
-      "clipmap": {
-       "compose_on_gpu": true,
-       "resolution": 128,
-       "base_extent": 16.0,
-       "level_scale": 2.0,
-       "blend_voxels": 4.0,
-       "max_levels_per_update": 1,
-       "cull_composition": true
-      }
-     }
-    }
-   }
-  }
- ],
- "version": "1.0.0",
- "entities": [
-  {
    "uid": "7625b55d-88c6-884f-8968-92ee33d4d617",
    "components": {
     "has_id_component": true,
@@ -405090,6 +404498,599 @@
       }
      ]
     }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "264cfa57-facc-e448-b24c-159a8a620733",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "264cfa57-facc-e448-b24c-159a8a620733"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Volume Global",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_volume_component": true,
+    "volume_component": {
+     "mode": 1,
+     "priority": 0,
+     "weight": 1.0,
+     "blend_distance": 1.0,
+     "extents": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+     }
+    },
+    "has_auto_exposure_component": true,
+    "auto_exposure_component": {
+     "enabled": false,
+     "settings": {
+      "min_ev": -3.0,
+      "max_ev": 16.0,
+      "compensation": 3.0,
+      "dark_adaptation": 0.10000000149011612,
+      "adaptation_speed_up": 3.0,
+      "adaptation_speed_down": 1.0,
+      "low_percentile": 0.800000011920929,
+      "high_percentile": 0.9800000190734863,
+      "metering_mode": 1,
+      "metering_area": 0.699999988079071
+     }
+    },
+    "has_tonemapping_component": true,
+    "tonemapping_component": {
+     "enabled": true,
+     "settings": {
+      "exposure": 1.0,
+      "method": 13,
+      "temperature": 0.0,
+      "tint": 0.0,
+      "contrast": 1.0,
+      "saturation": 1.0,
+      "lift": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gamma": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "gain": {
+       "r": 0.5,
+       "g": 0.5,
+       "b": 0.5,
+       "a": 1.0
+      },
+      "vignette_intensity": 0.0,
+      "vignette_smoothness": 0.5,
+      "grain_intensity": 0.0,
+      "dithering": true
+     }
+    },
+    "has_assao_component": true,
+    "assao_component": {
+     "enabled": false,
+     "settings": {
+      "radius": 1.2000000476837159,
+      "shadow_multiplier": 1.0,
+      "shadow_power": 1.0,
+      "shadow_clamp": 0.9800000190734863,
+      "horizon_angle_threshold": 0.05999999865889549,
+      "fade_out_from": 50.0,
+      "fade_out_to": 200.0,
+      "quality_level": 3,
+      "adaptive_quality_limit": 0.44999998807907107,
+      "blur_pass_count": 2,
+      "sharpness": 0.9800000190734863,
+      "temporal_supersampling_angle_offset": 0.0,
+      "temporal_supersampling_radius_offset": 1.0,
+      "detail_shadow_strength": 0.5,
+      "generate_normals": false
+     }
+    },
+    "has_bloom_component": true,
+    "bloom_component": {
+     "enabled": false,
+     "settings": {
+      "threshold": 0.0,
+      "soft_knee": 0.5,
+      "clamp": 100.0,
+      "intensity": 0.15000000596046449,
+      "scatter": 0.699999988079071,
+      "mip_count": 8,
+      "mip0_tint": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "mip1_tint": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "mip2_tint": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "mip3_tint": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "mip4_tint": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "mip5_tint": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "dirt_intensity": 0.0,
+      "dirt_texture": {
+       "uid": "nil"
+      }
+     }
+    },
+    "has_fxaa_component": true,
+    "fxaa_component": {
+     "enabled": true
+    },
+    "has_taa_component": true,
+    "taa_component": {
+     "enabled": false,
+     "settings": {
+      "temporal_sample_count": 8,
+      "jitter_mode": 3,
+      "jitter_amplitude": 1.0,
+      "jitter_temporal_phase_scale": 0.44999998807907107,
+      "history_blend": 0.8199999928474426,
+      "sharpen": 0.5,
+      "depth_reject_scale": 1.0,
+      "variance_clip_scale": 1.350000023841858
+     }
+    },
+    "has_ssr_component": true,
+    "ssr_component": {
+     "enabled": false,
+     "settings": {
+      "fidelityfx": {
+       "max_steps": 64,
+       "max_rays": 4,
+       "depth_tolerance": 0.10000000149011612,
+       "brightness": 1.0,
+       "facing_reflections_fading": 0.10000000149011612,
+       "roughness_depth_tolerance": 1.0,
+       "screen_edge_fade": 0.10000000149011612,
+       "resolution": 1,
+       "enable_cone_tracing": false,
+       "cone_tracing": {
+        "cone_angle_bias": 0.05000000074505806,
+        "max_mip_level": 6,
+        "blur_base_sigma": 1.0
+       },
+       "enable_temporal_accumulation": true,
+       "temporal": {
+        "history_strength": 0.8999999761581421,
+        "depth_threshold": 0.009999999776482582,
+        "roughness_sensitivity": 0.30000001192092898,
+        "motion_scale_pixels": 120.0,
+        "normal_dot_threshold": 0.949999988079071,
+        "max_accum_frames": 8
+       },
+       "enable_spatial_denoise": false,
+       "spatial_denoise": {
+        "depth_sigma": 0.019999999552965165,
+        "normal_power": 64.0,
+        "luma_sigma": 1.0,
+        "passes": 3
+       }
+      }
+     }
+    },
+    "has_ssil_component": true,
+    "ssil_component": {
+     "enabled": false,
+     "settings": {
+      "max_rays": 4,
+      "max_steps": 64,
+      "depth_tolerance": 0.15000000596046449,
+      "thickness": 0.5,
+      "brightness": 0.5,
+      "max_distance": 300.0,
+      "resolution": 1,
+      "enable_multi_bounce": true,
+      "multi_bounce_intensity": 0.800000011920929,
+      "enable_spatial_denoise": true,
+      "spatial_denoise": {
+       "depth_sigma": 0.019999999552965165,
+       "normal_power": 64.0,
+       "luma_sigma": 4.0,
+       "passes": 4,
+       "full_res_passes": 0,
+       "max_step": 16
+      },
+      "enable_temporal_accumulation": true,
+      "temporal": {
+       "history_strength": 0.8999999761581421,
+       "depth_threshold": 0.20000000298023225,
+       "normal_dot_threshold": 0.6000000238418579,
+       "max_accum_frames": 16
+      }
+     }
+    },
+    "has_gi_component": true,
+    "gi_component": {
+     "enabled": false,
+     "settings": {
+      "resolve": {
+       "intensity": 1.0,
+       "resolution": 2,
+       "probe_spacing": 16,
+       "enable_screen_trace": true,
+       "probe_visibility_variance_gate": 0.15000000596046449,
+       "adaptive_probes": true,
+       "adaptive_rays": false,
+       "enable_reflections": true,
+       "reflection_temporal_frames": 8,
+       "denoise_converged_early_out": true,
+       "enable_temporal": true,
+       "temporal_slow_frames": 96.0,
+       "reprojection_tolerance": 0.25,
+       "enable_spatial_denoise": true,
+       "denoise_passes": 3,
+       "denoise_normal_power": 32.0,
+       "denoise_luma_phi": 32.0,
+       "denoise_plane_tolerance": 0.019999999552965165,
+       "denoise_low_count_boost": 16.0,
+       "denoise_luma_floor": 0.07999999821186066,
+       "enable_bilateral_upsample": true,
+       "upsample_normal_power": 32.0,
+       "upsample_plane_tolerance": 0.019999999552965165
+      },
+      "clipmap": {
+       "compose_on_gpu": true,
+       "resolution": 128,
+       "base_extent": 16.0,
+       "level_scale": 2.0,
+       "blend_voxels": 4.0,
+       "max_levels_per_update": 1,
+       "cull_composition": true
+      }
+     }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "3816b3ac-25b4-794c-962e-d2ef550ec5d0",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "3816b3ac-25b4-794c-962e-d2ef550ec5d0"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Reflection Probe Global",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.10000000149011612,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_reflection_probe_component": true,
+    "reflection_probe_component": {
+     "probe": {
+      "type": 1,
+      "method": 0,
+      "intensity": 1.0,
+      "range": 1000.0
+     },
+     "update_mode": 0,
+     "update_interval": 0.0,
+     "faces_per_frame": 1,
+     "apply_prefilter": true,
+     "resolution": 4,
+     "capture_sky": true,
+     "capture_shadows": true
+    }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "17efea04-9010-f148-90c7-41002ff3d442",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "17efea04-9010-f148-90c7-41002ff3d442"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Sky & Directional Light",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 1.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": -130.0,
+       "y": 30.00000762939453,
+       "z": 180.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_light_component": true,
+    "light_component": {
+     "light": {
+      "type": 2,
+      "intensity": 5.0,
+      "color": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "casts_shadows": true,
+      "shadow_params": {
+       "type": 1,
+       "depth": 0,
+       "resolution": 2,
+       "depth_bias_texels": 0.5,
+       "slope_bias_texels": 0.5,
+       "normal_bias_texels": 0.5,
+       "near_plane": 0.20000000298023225,
+       "far_plane": 550.0,
+       "show_coverage": false,
+       "pcf_x_offset": 1.0,
+       "pcf_y_offset": 1.0
+      },
+      "contact_shadow": {
+       "enabled": false,
+       "ray_length": 0.20000000298023225,
+       "occluder_thickness": 0.029999999329447748,
+       "max_distance": 50.0,
+       "opacity": 1.0
+      },
+      "directional_data": {},
+      "directional_shadow_params": {
+       "num_splits": 4,
+       "split_distribution": 0.800000011920929,
+       "stabilize": true
+      }
+     }
+    },
+    "has_skylight_component": true,
+    "skylight_component": {
+     "mode": 1,
+     "sky_brightness": 1.0,
+     "turbidity": 1.899999976158142,
+     "cloud_mode": 0,
+     "cloud_coverage": 0.5199999809265137,
+     "cloud_macro_variation": 0.36000001430511477,
+     "cloud_base_altitude": 27500.0,
+     "cloud_thickness": 17500.0,
+     "cloud_size": 12500.0,
+     "cloud_density": 1.5,
+     "cloud_shadow_strength": 0.2500000298023224,
+     "cloud_brightness": 1.0,
+     "cloud_world_space_altitude": true,
+     "cloud_shadows": false,
+     "cloud_shadow_opacity": 1.0,
+     "cloud_softness": 0.20000000298023225,
+     "cloud_detail_erode": 0.47999998927116396,
+     "cloud_speed": 0.0,
+     "cloud_wind_direction": 35.0,
+     "irradiance_intensity": 0.05000000074505806,
+     "irradiance_tint": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "irradiance_quality": 1,
+     "irradiance_use_sky": true,
+     "cubemap": {
+      "uid": "nil"
+     }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "be63c6e9-6be5-6445-b5c4-3349b777aca9",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "be63c6e9-6be5-6445-b5c4-3349b777aca9"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Main Camera",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 4.9666290283203129,
+       "z": -15.496834754943848
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_camera_component": true,
+    "camera_component": {
+     "camera": {
+      "projection_mode": 0,
+      "field_of_view": 60.0,
+      "near_clip": 0.10000000149011612,
+      "far_clip": 1000.0,
+      "viewport_position": {
+       "x": 0,
+       "y": 0
+      },
+      "viewport_size": {
+       "width": 640,
+       "height": 480
+      },
+      "orthographic_size": 5.0,
+      "aspect_ratio": 1.3333333730697632,
+      "aspect_locked": false,
+      "frustum_locked": false
+     },
+     "render_include_layers": {
+      "mask": -1
+     },
+     "render_exclude_layers": {
+      "mask": 0
+     }
+    },
+    "has_audio_listener_component": true,
+    "audio_listener_component": {}
    }
   }
  ],

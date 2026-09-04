@@ -1,9 +1,18 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "50011467-0fdc-9849-9586-0218049419ea",
-   "id": 4194305,
+   "uid": "bbf94ed5-e9b8-924a-9db5-baacf3d23861",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "bbf94ed5-e9b8-924a-9db5-baacf3d23861"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Fireball",
@@ -17,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "50011467-0fdc-9849-9586-0218049419ea"
+     "id": "50011467-0fdc-9849-9586-0218049419ea",
+     "document": "080509df-4ef4-974c-9442-bca3a20f0b0d"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -27,11 +37,10 @@
        "y": 0.0,
        "z": 2.3775317668914797
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.20500001311302186,
@@ -45,8 +54,8 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [],
      "active": true
@@ -56,7 +65,6 @@
      "enabled": false,
      "static": false,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -96,12 +104,12 @@
            "b": 0.0,
            "a": 0.0
           },
-          "surface_data": {
-           "x": 0.3499999940395355,
-           "y": 0.0,
-           "z": 1.0,
-           "w": 0.25
-          },
+          "emissive_intensity": 1.0,
+          "roughness": 0.3499999940395355,
+          "metalness": 0.0,
+          "bumpiness": 1.0,
+          "alpha_mode": 0,
+          "alpha_cutoff": 0.25,
           "tiling": {
            "x": 1.0,
            "y": 1.0
@@ -111,22 +119,22 @@
            "y": 0.0
           },
           "color_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
+           "uid": "nil"
           },
           "normal_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
+           "uid": "nil"
           },
           "roughness_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
+           "uid": "nil"
           },
           "metalness_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
+           "uid": "nil"
           },
           "emissive_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
+           "uid": "nil"
           },
           "ao_map": {
-           "uid": "00000000-0000-0000-0000-000000000000"
+           "uid": "nil"
           }
          }
         }
@@ -143,9 +151,13 @@
     "has_physics_component": true,
     "physics_component": {
      "is_using_gravity": false,
-     "is_kinematic": false,
+     "body_type": 2,
      "is_sensor": false,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -189,10 +201,12 @@
     "has_particle_emitter_component": true,
     "particle_emitter_component": {
      "enabled": true,
+     "culling_mode": 1,
      "shape": 1,
      "direction": 1,
      "spawn_location": 0,
      "simulation_space": 0,
+     "simulation_backend": 0,
      "max_particles": 1024,
      "emission_lifetime": {
       "count": 2.0
@@ -311,6 +325,7 @@
       "z": 1.0
      },
      "opacity": 1.0,
+     "color_intensity": 1.0,
      "color_gradient": {
       "points": [
        {

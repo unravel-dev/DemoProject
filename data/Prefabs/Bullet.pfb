@@ -1,9 +1,18 @@
 {
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
  "entities": [
   {
    "prefab_uid": "379a75f5-6bea-f944-a345-545ceac8f62b",
-   "id": 3,
+   "uid": "ac2de8a3-0538-644d-b999-18788eb1e4de",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "ac2de8a3-0538-644d-b999-18788eb1e4de"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Bullet",
@@ -17,7 +26,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "379a75f5-6bea-f944-a345-545ceac8f62b"
+     "id": "379a75f5-6bea-f944-a345-545ceac8f62b",
+     "document": "c8414c14-1047-374b-a0ba-4a8139514002"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -27,11 +37,10 @@
        "y": 2.074410915374756,
        "z": 0.0
       },
-      "rotation": {
+      "rotation_euler": {
        "x": 0.0,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 1.0
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.20000000298023225,
@@ -45,13 +54,13 @@
       }
      },
      "parent": {
-      "prefab_uid": "00000000-0000-0000-0000-000000000000",
-      "id": 4294967295
+      "prefab_uid": "nil",
+      "uid": "nil"
      },
      "children": [
       {
        "prefab_uid": "6db68ba4-4af7-0a4a-be81-7654765255b3",
-       "id": 4
+       "uid": "36749f67-e66e-3843-8bab-366211d28c7f"
       }
      ],
      "active": true
@@ -59,9 +68,13 @@
     "has_physics_component": true,
     "physics_component": {
      "is_using_gravity": false,
-     "is_kinematic": false,
+     "body_type": 2,
      "is_sensor": true,
      "is_autoscaled": true,
+     "sensor_events": true,
+     "collision_events": true,
+     "sensor_exit_on_destroy": true,
+     "collision_exit_on_destroy": false,
      "mass": 1.0,
      "include_layers": {
       "mask": -1
@@ -80,7 +93,7 @@
       "z": false
      },
      "material": {
-      "uid": "00000000-0000-0000-0000-000000000000"
+      "uid": "nil"
      },
      "shapes": [
       {
@@ -114,8 +127,12 @@
   },
   {
    "prefab_uid": "6db68ba4-4af7-0a4a-be81-7654765255b3",
-   "id": 4,
+   "uid": "36749f67-e66e-3843-8bab-366211d28c7f",
    "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "36749f67-e66e-3843-8bab-366211d28c7f"
+    },
     "has_tag_component": true,
     "tag_component": {
      "name": "Cylinder",
@@ -129,7 +146,8 @@
     },
     "has_prefab_id_component": true,
     "prefab_id_component": {
-     "id": "6db68ba4-4af7-0a4a-be81-7654765255b3"
+     "id": "6db68ba4-4af7-0a4a-be81-7654765255b3",
+     "document": "c8414c14-1047-374b-a0ba-4a8139514002"
     },
     "has_transform_component": true,
     "transform_component": {
@@ -139,11 +157,10 @@
        "y": -0.00005817413330078125,
        "z": -8.843004106751096e-10
       },
-      "rotation": {
-       "x": 0.70710688829422,
-       "y": 0.0,
-       "z": 0.0,
-       "w": 0.7071066498756409
+      "rotation_euler": {
+       "x": 90.0000228881836,
+       "y": -0.0,
+       "z": 0.0
       },
       "scale": {
        "x": 0.9999995231628418,
@@ -158,7 +175,7 @@
      },
      "parent": {
       "prefab_uid": "379a75f5-6bea-f944-a345-545ceac8f62b",
-      "id": 3
+      "uid": "ac2de8a3-0538-644d-b999-18788eb1e4de"
      },
      "children": [],
      "active": true
@@ -168,7 +185,6 @@
      "enabled": true,
      "static": true,
      "casts_shadow": true,
-     "casts_reflection": false,
      "model": {
       "lods": [
        {
@@ -181,12 +197,12 @@
        }
       ],
       "material_instances": [],
-      "lod_limits": [
-       {
-        "min": 0,
-        "max": 100
-       }
-      ]
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
      }
     }
    }
