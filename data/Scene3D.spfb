@@ -182,26 +182,26 @@
     "light_component": {
      "light": {
       "type": 2,
-      "intensity": 2.3610000610351564,
+      "intensity": 5.0,
       "color": {
        "r": 1.0,
-       "g": 0.9568628072738648,
-       "b": 0.8392157554626465,
+       "g": 1.0,
+       "b": 1.0,
        "a": 1.0
       },
       "casts_shadows": true,
       "shadow_params": {
-       "type": 2,
+       "type": 1,
        "depth": 0,
        "resolution": 3,
        "depth_bias_texels": 0.5,
        "slope_bias_texels": 0.5,
        "normal_bias_texels": 0.5,
        "near_plane": 0.20000000298023225,
-       "far_plane": 550.0,
+       "far_plane": 200.0,
        "show_coverage": false,
-       "pcss_penumbra_x_offset": 1.0,
-       "pcss_penumbra_y_offset": 1.0
+       "pcf_x_offset": 1.0,
+       "pcf_y_offset": 1.0
       },
       "contact_shadow": {
        "enabled": false,
@@ -615,7 +615,6 @@
        "temporal": {
         "history_strength": 0.8999999761581421,
         "depth_threshold": 0.009999999776482582,
-        "roughness_sensitivity": 0.30000001192092898,
         "motion_scale_pixels": 120.0,
         "normal_dot_threshold": 0.949999988079071,
         "max_accum_frames": 8
@@ -6726,9 +6725,6 @@
       {
        "submesh_index": 0,
        "stable_id": 619405091,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -6790,9 +6786,6 @@
       {
        "submesh_index": 1,
        "stable_id": 580766005,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -10912,9 +10905,6 @@
       {
        "submesh_index": 0,
        "stable_id": 619405091,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -10976,9 +10966,6 @@
       {
        "submesh_index": 1,
        "stable_id": 580766005,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -11432,7 +11419,7 @@
        "PrimarySpread": 0.4000000059604645,
        "PrimaryCount": 1,
        "BurstSpread": 2.4000000953674318,
-       "BurstCount": 10,
+       "BurstCount": 30,
        "ExplosionRadius": 5.0,
        "ExplosionForce": 1.0,
        "ProjectileLayerName": "Projectiles",
@@ -15396,9 +15383,6 @@
       {
        "submesh_index": 0,
        "stable_id": 619405091,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -15460,9 +15444,6 @@
       {
        "submesh_index": 1,
        "stable_id": 580766005,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -19940,9 +19921,6 @@
       {
        "submesh_index": 0,
        "stable_id": 619405091,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }
@@ -20004,9 +19982,6 @@
       {
        "submesh_index": 1,
        "stable_id": 580766005,
-       "material_override": {
-        "uid": "nil"
-       },
        "casts_shadow": true,
        "enabled": true
       }

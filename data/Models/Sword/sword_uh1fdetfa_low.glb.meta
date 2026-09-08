@@ -20,13 +20,15 @@
      },
      "sdf": {
       "generate_sdf": true,
+      "target_voxel_size": 0.0,
       "resolution": 64,
       "min_voxel_size": 0.009999999776482582,
       "max_voxel_size": 1.0,
       "max_total_voxels": 262144,
       "lod_index": 2,
       "two_sided": false,
-      "two_sided_thickness": 0.05000000074505806
+      "two_sided_thickness": 0.05000000074505806,
+      "max_component_spread": 32.0
      },
      "rig": {},
      "animations": {
