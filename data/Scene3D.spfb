@@ -455,16 +455,23 @@
     "auto_exposure_component": {
      "enabled": true,
      "settings": {
-      "min_ev": -3.0,
-      "max_ev": 16.0,
-      "compensation": 3.0,
-      "dark_adaptation": 0.10000000149011612,
-      "adaptation_speed_up": 3.0,
-      "adaptation_speed_down": 1.0,
-      "low_percentile": 0.800000011920929,
-      "high_percentile": 0.9800000190734863,
-      "metering_mode": 1,
-      "metering_area": 0.699999988079071
+      "settings_version": 2,
+      "compensation": 0.0,
+      "min_ev": -4.0,
+      "max_ev": 20.0,
+      "low_percentile": 0.10000000149011612,
+      "high_percentile": 0.8999999761581421,
+      "speed_up": 3.0,
+      "speed_down": 1.0,
+      "dark_adaptation": 0.0,
+      "metering_mode": 0,
+      "metering_area": 0.699999988079071,
+      "local_highlight_contrast": 1.0,
+      "local_shadow_contrast": 1.0,
+      "local_detail_strength": 1.0,
+      "local_blurred_blend": 0.6000000238418579,
+      "local_blurred_kernel_percent": 50.0,
+      "local_middle_grey_bias": 0.0
      }
     },
     "has_tonemapping_component": true,
@@ -503,7 +510,7 @@
     },
     "has_assao_component": true,
     "assao_component": {
-     "enabled": true,
+     "enabled": false,
      "settings": {
       "radius": 1.2000000476837159,
       "shadow_multiplier": 1.0,
@@ -520,6 +527,29 @@
       "temporal_supersampling_radius_offset": 1.0,
       "detail_shadow_strength": 0.5,
       "generate_normals": false
+     }
+    },
+    "has_gtao_component": true,
+    "gtao_component": {
+     "enabled": true,
+     "settings": {
+      "radius": 0.5,
+      "visibility_bitmask": false,
+      "falloff_range": 0.30000001192092898,
+      "max_screen_radius": 0.05000000074505806,
+      "final_power": 2.200000047683716,
+      "intensity": 1.0,
+      "occluder_thickness": 0.25,
+      "quality_level": 1,
+      "resolution": 2,
+      "denoise_passes": 0,
+      "enable_temporal": true,
+      "temporal_history": 0.8999999761581421,
+      "temporal_depth_threshold": 0.10000000149011612,
+      "bent_normal_strength": 0.0,
+      "multi_bounce": true,
+      "generate_normals": false,
+      "normal_map_detail": 1.0
      }
     },
     "has_bloom_component": true,
@@ -667,11 +697,12 @@
       "resolve": {
        "intensity": 1.0,
        "resolution": 2,
-       "probe_spacing": 32,
+       "probe_spacing": 16,
        "enable_screen_trace": true,
        "probe_visibility_variance_gate": 0.15000000596046449,
+       "probe_filter_passes": 3,
        "adaptive_probes": true,
-       "adaptive_rays": false,
+       "adaptive_rays": true,
        "world_probe_jitter": false,
        "enable_reflections": true,
        "reflection_temporal_frames": 8,
@@ -680,7 +711,7 @@
        "temporal_slow_frames": 24.0,
        "reprojection_tolerance": 0.10000000149011612,
        "enable_spatial_denoise": true,
-       "denoise_passes": 3,
+       "denoise_passes": 4,
        "denoise_normal_power": 32.0,
        "denoise_luma_phi": 32.0,
        "denoise_plane_tolerance": 0.019999999552965165,
@@ -11496,11 +11527,11 @@
        "y": 0
       },
       "viewport_size": {
-       "width": 722,
-       "height": 849
+       "width": 3840,
+       "height": 2160
       },
       "orthographic_size": 5.0,
-      "aspect_ratio": 0.8504122495651245,
+      "aspect_ratio": 1.7777777910232545,
       "aspect_locked": false,
       "frustum_locked": false
      },

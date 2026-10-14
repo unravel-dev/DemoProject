@@ -7,11 +7,11 @@
  "entities": [
   {
    "prefab_uid": "50011467-0fdc-9849-9586-0218049419ea",
-   "uid": "c5d58b62-14b4-3d42-8e42-6dc4bec70b42",
+   "uid": "8826f004-ef84-b240-9bb5-a6a0e2515fe1",
    "components": {
     "has_id_component": true,
     "id_component": {
-     "id": "c5d58b62-14b4-3d42-8e42-6dc4bec70b42"
+     "id": "8826f004-ef84-b240-9bb5-a6a0e2515fe1"
     },
     "has_tag_component": true,
     "tag_component": {
@@ -94,7 +94,7 @@
      "sensor_events": true,
      "collision_events": true,
      "sensor_exit_on_destroy": true,
-     "collision_exit_on_destroy": false,
+     "collision_exit_on_destroy": true,
      "mass": 1.0,
      "include_layers": {
       "mask": -1

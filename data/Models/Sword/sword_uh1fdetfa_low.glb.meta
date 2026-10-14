@@ -30,6 +30,11 @@
       "two_sided_thickness": 0.05000000074505806,
       "max_component_spread": 32.0
      },
+     "cards": {
+      "generate_cards": true,
+      "max_cards": 12,
+      "lod_index": 1
+     },
      "rig": {},
      "animations": {
       "import_animations": true
