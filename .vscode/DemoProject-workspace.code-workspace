@@ -5,7 +5,7 @@
         }
     ],
     "settings": {
-        "dotnet.preferCSharpExtension": true,
+        "dotnet.preferCSharpExtension": false,
         "files.exclude": {
             "**/.git": true,
             "**/.svn": true,
@@ -69,7 +69,7 @@
             {
                 "name": "Attach to unravel-editor",
                 "type": "coreclr",
-                "request": "attach"
+                "request": "attach",
                 "processName": "unravel-editor"
             },
             {

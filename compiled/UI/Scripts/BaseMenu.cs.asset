@@ -187,7 +187,7 @@ public abstract class BaseMenu : ScriptComponent
 	protected void PlayButtonClickSound(UIElement buttonElement, UIPointerEvent ev)
 	{
 		var clip = Assets.GetAsset<AudioClip>(AudioPaths.ButtonClick);
-		AudioSourceComponent.PlayClipAtPoint(clip, new Vector3(0, 0, 0), 1f);
+		Audio.PlayOneShot(clip);
 	}
 	
 	/// <summary>
@@ -201,7 +201,7 @@ public abstract class BaseMenu : ScriptComponent
 		if (ev.targetElementId == buttonElement.ElementId)
 		{
 			var clip = Assets.GetAsset<AudioClip>(AudioPaths.ButtonHover);
-			AudioSourceComponent.PlayClipAtPoint(clip, new Vector3(0, 0, 0), 1f);
+			Audio.PlayOneShot(clip);
 		}
 	}
 
